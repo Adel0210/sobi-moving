@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 import { supabasePublic } from "@/lib/supabase/public";
+import { LOCATIONS } from "@/lib/locations";
+import { SERVICE_TYPES } from "@/lib/serviceTypes";
 
 // Regenerate hourly so newly published blog posts appear in the sitemap
 // without needing a redeploy.
@@ -15,6 +17,9 @@ const STATIC_ROUTES = [
   "/contact",
   "/quote",
   "/blog",
+  "/movers",
+  ...SERVICE_TYPES.map((s) => `/services/${s.slug}`),
+  ...LOCATIONS.map((l) => `/movers/${l.slug}`),
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

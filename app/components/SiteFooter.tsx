@@ -38,12 +38,12 @@ export const SiteFooter = ({
         <div>
           <h4>Services</h4>
           <ul className="footer-list">
-            <li><Link href="/services">Full Moving Service</Link></li>
-            <li><Link href="/services">White Glove Setup</Link></li>
-            <li><Link href="/services">Full Packing</Link></li>
-            <li><Link href="/services">Unpacking Services</Link></li>
-            <li><Link href="/services">Furniture Assembly</Link></li>
-            <li><Link href="/services">Junk Removal</Link></li>
+            <li><Link href="/services">All services</Link></li>
+            <li><Link href="/services/local-moving">Local Moving</Link></li>
+            <li><Link href="/services/long-distance-moving">Long-Distance Moving</Link></li>
+            <li><Link href="/services/residential-moving">Residential Moving</Link></li>
+            <li><Link href="/services/commercial-moving">Commercial Moving</Link></li>
+            <li><Link href="/senior-moving">Senior Moving</Link></li>
           </ul>
         </div>
         <div>
@@ -56,8 +56,8 @@ export const SiteFooter = ({
             <li><Link href="/quote">Get a Quote</Link></li>
           </ul>
           <h4 style={{ marginTop: 32 }}>Service Areas</h4>
-          <p style={{ fontSize: 13, color: "#908a7f", lineHeight: 1.7 }}>
-            Sandy Springs · Alpharetta · Roswell · Marietta · Dunwoody · Brookhaven · Decatur · Buckhead · Midtown · East Cobb · Johns Creek · Smyrna
+          <p style={{ fontSize: 13, lineHeight: 1.9, color: "#908a7f" }}>
+            <Link href="/movers/sandy-springs">Sandy Springs</Link> · <Link href="/movers/alpharetta">Alpharetta</Link> · <Link href="/movers/roswell">Roswell</Link> · <Link href="/movers/marietta">Marietta</Link> · <Link href="/movers/dunwoody">Dunwoody</Link> · <Link href="/movers/johns-creek">Johns Creek</Link> · <Link href="/movers/smyrna">Smyrna</Link> · <Link href="/movers/decatur">Decatur</Link> · <Link href="/movers/buckhead">Buckhead</Link> · <Link href="/movers">View all areas →</Link>
           </p>
         </div>
         <div>
