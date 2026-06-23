@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="fm_wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4d9c2"></stop>
+      <stop offset="1" stop-color="#ecd8cc"></stop>
+    </linearGradient>
+    <linearGradient id="fm_floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d9c9b3"></stop>
+      <stop offset="1" stop-color="#bfa988"></stop>
+    </linearGradient>
+    <linearGradient id="fm_window" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4d9c2"></stop>
+      <stop offset="1" stop-color="#fffaf2"></stop>
+    </linearGradient>
+    <linearGradient id="fm_cream" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fffaf2"></stop>
+      <stop offset="1" stop-color="#efe4cf"></stop>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="1000" fill="url(#fm_wall)"></rect>
+  <rect y="720" width="800" height="280" fill="url(#fm_floor)"></rect>
+  <rect y="720" width="800" height="6" fill="#a08864" opacity="0.4"></rect>
+
+  <!-- bright large window -->
+  <g transform="translate(230,110)">
+    <rect x="-16" y="-16" width="372" height="372" fill="#fffaf2" opacity="0.6"></rect>
+    <rect width="340" height="340" fill="url(#fm_window)" stroke="#1a1815" stroke-width="3"></rect>
+    <line x1="170" y1="0" x2="170" y2="340" stroke="#1a1815" stroke-width="3"></line>
+    <line x1="0" y1="170" x2="340" y2="170" stroke="#1a1815" stroke-width="3"></line>
+    <circle cx="250" cy="90" r="40" fill="#f4d9c2" opacity="0.85"></circle>
+    <!-- distant bushes outside -->
+    <circle cx="60" cy="270" r="40" fill="#8aa07a" opacity="0.5"></circle>
+    <circle cx="120" cy="280" r="34" fill="#7d9269" opacity="0.5"></circle>
+  </g>
+  <!-- light onto floor -->
+  <polygon points="280,560 540,560 620,720 200,720" fill="#fffaf2" opacity="0.22"></polygon>
+
+  <!-- a small gold box set down (just moved in) -->
+  <g transform="translate(60,640)">
+    <ellipse cx="55" cy="120" rx="60" ry="8" fill="#1a1815" opacity="0.2"></ellipse>
+    <polygon points="0,30 56,12 112,30 112,86 56,106 0,86" fill="#c69749"></polygon>
+    <polygon points="0,30 56,12 112,30 56,48" fill="#dcb672"></polygon>
+    <polygon points="112,30 112,86 56,106 56,48" fill="#9c7227"></polygon>
+    <line x1="56" y1="48" x2="56" y2="106" stroke="#7a5a1c" stroke-width="2"></line>
+  </g>
+
+  <!-- potted plant -->
+  <g transform="translate(650,600)">
+    <ellipse cx="50" cy="208" rx="50" ry="9" fill="#1a1815" opacity="0.2"></ellipse>
+    <path d="M50,130 Q12,50 28,16" fill="none" stroke="#7d9269" stroke-width="9" stroke-linecap="round"></path>
+    <path d="M50,130 Q90,56 74,16" fill="none" stroke="#8aa07a" stroke-width="9" stroke-linecap="round"></path>
+    <ellipse cx="28" cy="18" rx="17" ry="26" fill="#8aa07a" stroke="#1a1815" stroke-width="2" transform="rotate(-25 28 18)"></ellipse>
+    <ellipse cx="74" cy="16" rx="17" ry="26" fill="#7d9269" stroke="#1a1815" stroke-width="2" transform="rotate(25 74 16)"></ellipse>
+    <path d="M20,130 L80,130 L72,200 L28,200 Z" fill="#b85c3c" stroke="#1a1815" stroke-width="3"></path>
+  </g>
+
+  <!-- shared shadow under the two figures -->
+  <ellipse cx="400" cy="900" rx="240" ry="26" fill="#1a1815" opacity="0.2"></ellipse>
+
+  <!-- older parent figure (shorter, grey hair) -->
+  <g transform="translate(300,560)">
+    <!-- legs -->
+    <rect x="34" y="240" width="26" height="100" rx="10" fill="#5a554d"></rect>
+    <rect x="70" y="240" width="26" height="100" rx="10" fill="#5a554d"></rect>
+    <rect x="26" y="332" width="42" height="16" rx="8" fill="#1a1815"></rect>
+    <rect x="64" y="332" width="42" height="16" rx="8" fill="#1a1815"></rect>
+    <!-- body / terracotta shirt -->
+    <path d="M26,140 Q66,124 104,140 L108,252 Q66,264 22,252 Z" fill="#b85c3c"></path>
+    <path d="M26,140 Q66,124 104,140 L108,252 Q66,264 22,252 Z" fill="none" stroke="#1a1815" stroke-width="3"></path>
+    <!-- near arm reaching toward child -->
+    <path d="M104,160 Q140,184 150,210" fill="none" stroke="#b85c3c" stroke-width="24" stroke-linecap="round"></path>
+    <!-- head with grey hair -->
+    <circle cx="65" cy="96" r="40" fill="#efe4cf"></circle>
+    <circle cx="65" cy="96" r="40" fill="none" stroke="#1a1815" stroke-width="3"></circle>
+    <path d="M30,82 Q65,46 100,82 Q86,62 65,62 Q44,62 30,82" fill="#8a857c"></path>
+  </g>
+
+  <!-- adult child figure (taller, dark hair) -->
+  <g transform="translate(420,510)">
+    <!-- legs -->
+    <rect x="38" y="290" width="28" height="110" rx="11" fill="#5a554d"></rect>
+    <rect x="76" y="290" width="28" height="110" rx="11" fill="#5a554d"></rect>
+    <rect x="30" y="392" width="46" height="18" rx="9" fill="#1a1815"></rect>
+    <rect x="70" y="392" width="46" height="18" rx="9" fill="#1a1815"></rect>
+    <!-- body / cream shirt -->
+    <path d="M28,160 Q72,142 116,160 L120,300 Q72,314 24,300 Z" fill="url(#fm_cream)"></path>
+    <path d="M28,160 Q72,142 116,160 L120,300 Q72,314 24,300 Z" fill="none" stroke="#1a1815" stroke-width="3"></path>
+    <!-- arm around parent's shoulder -->
+    <path d="M30,180 Q-14,150 -42,168" fill="none" stroke="#efe4cf" stroke-width="26" stroke-linecap="round"></path>
+    <path d="M30,180 Q-14,150 -42,168" fill="none" stroke="#1a1815" stroke-width="3" opacity="0.0"></path>
+    <!-- head with dark hair -->
+    <circle cx="72" cy="106" r="44" fill="#efe4cf"></circle>
+    <circle cx="72" cy="106" r="44" fill="none" stroke="#1a1815" stroke-width="3"></circle>
+    <path d="M30,96 Q72,52 114,96 Q98,72 72,72 Q46,72 30,96" fill="#1a1815"></path>
+  </g>
+</svg>

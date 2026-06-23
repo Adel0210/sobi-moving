@@ -1,0 +1,60 @@
+/* ============================================================
+   MOBILE POLISH — additive fixes layered on top of the approved
+   design. Everything here is inside phone/tablet media queries
+   (or harmless global guards), so the desktop design is untouched.
+   ============================================================ */
+
+/* Never allow horizontal scroll / right-edge clipping on small screens */
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* Images & illustrations never exceed their container */
+img {
+  max-width: 100%;
+}
+
+@media (max-width: 880px) {
+  /* Clean mobile nav: use the hamburger menu (and its dropdown) instead of
+     the cramped, page-widening horizontal link strip.
+     Selectors are scoped under `.nav` to outrank mobile.css's
+     `.nav-links{display:flex!important}` regardless of bundle order. */
+  header.nav .nav-links {
+    display: none !important;
+  }
+  header.nav .nav-menu-btn {
+    display: inline-flex !important;
+  }
+  header.nav .nav-inner {
+    justify-content: space-between;
+  }
+
+  /* Collapse hero grids to a single column even when the column count is set
+     inline on the element (an inline style otherwise beats the media query). */
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Two-column inline lists (e.g. the senior "what we'll do" checklist)
+     stack on phones for readability. */
+  .hero-copy ul {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Quote progress bar: let the 3 steps shrink to fit the phone width
+     (default padding/labels pushed the 3rd step past the edge). */
+  .quote-progress {
+    gap: 6px;
+    padding: 0;
+  }
+  .quote-progress .qp-step {
+    min-width: 0;
+    padding: 10px 8px;
+  }
+  .quote-progress .qp-label {
+    font-size: 11px;
+  }
+}

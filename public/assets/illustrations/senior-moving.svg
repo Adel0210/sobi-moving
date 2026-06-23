@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sm_sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4d9c2"></stop>
+      <stop offset="1" stop-color="#ecd8cc"></stop>
+    </linearGradient>
+    <linearGradient id="sm_ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d9c9b3"></stop>
+      <stop offset="1" stop-color="#bfa988"></stop>
+    </linearGradient>
+    <linearGradient id="sm_house" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fffaf2"></stop>
+      <stop offset="1" stop-color="#efe4cf"></stop>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="1000" fill="url(#sm_sky)"></rect>
+
+  <g opacity="0.5">
+    <circle cx="90" cy="560" r="80" fill="#8aa07a"></circle>
+    <circle cx="210" cy="540" r="100" fill="#7d9269"></circle>
+    <circle cx="700" cy="560" r="90" fill="#8aa07a"></circle>
+  </g>
+
+  <rect y="640" width="800" height="360" fill="url(#sm_ground)"></rect>
+  <rect y="640" width="800" height="6" fill="#a08864" opacity="0.4"></rect>
+
+  <!-- cozy home entrance -->
+  <g transform="translate(360,120)">
+    <polygon points="-20,200 200,60 420,200" fill="#b85c3c"></polygon>
+    <polygon points="-20,200 200,60 420,200" fill="#000" opacity="0.05"></polygon>
+    <rect x="0" y="200" width="400" height="440" fill="url(#sm_house)"></rect>
+    <rect x="0" y="200" width="400" height="440" fill="none" stroke="#1a1815" stroke-width="3"></rect>
+    <!-- door -->
+    <rect x="150" y="380" width="110" height="260" fill="#1a1815"></rect>
+    <rect x="150" y="380" width="110" height="260" fill="none" stroke="#1a1815" stroke-width="3"></rect>
+    <circle cx="245" cy="510" r="5" fill="#c69749"></circle>
+    <!-- window -->
+    <rect x="280" y="270" width="90" height="90" fill="#f4d9c2"></rect>
+    <rect x="280" y="270" width="90" height="90" fill="none" stroke="#1a1815" stroke-width="3"></rect>
+    <line x1="325" y1="270" x2="325" y2="360" stroke="#1a1815" stroke-width="2"></line>
+    <line x1="280" y1="315" x2="370" y2="315" stroke="#1a1815" stroke-width="2"></line>
+    <!-- step -->
+    <rect x="120" y="640" width="170" height="14" fill="#8a857c"></rect>
+  </g>
+
+  <!-- sage bushes near entrance -->
+  <g>
+    <circle cx="120" cy="780" r="55" fill="#7d9269"></circle>
+    <circle cx="170" cy="760" r="45" fill="#8aa07a"></circle>
+    <circle cx="80" cy="800" r="38" fill="#8aa07a"></circle>
+    <circle cx="700" cy="790" r="50" fill="#7d9269"></circle>
+    <circle cx="650" cy="800" r="38" fill="#8aa07a"></circle>
+  </g>
+
+  <!-- mover figure gently carrying a gold box -->
+  <g transform="translate(300,560)">
+    <ellipse cx="60" cy="320" rx="95" ry="14" fill="#1a1815" opacity="0.2"></ellipse>
+    <!-- legs -->
+    <rect x="30" y="220" width="26" height="100" rx="10" fill="#5a554d"></rect>
+    <rect x="66" y="220" width="26" height="100" rx="10" fill="#5a554d"></rect>
+    <rect x="22" y="312" width="42" height="16" rx="8" fill="#1a1815"></rect>
+    <rect x="60" y="312" width="42" height="16" rx="8" fill="#1a1815"></rect>
+    <!-- terracotta shirt / body -->
+    <path d="M22,120 Q60,104 98,120 L102,232 Q60,244 18,232 Z" fill="#b85c3c"></path>
+    <path d="M22,120 Q60,104 98,120 L102,232 Q60,244 18,232 Z" fill="none" stroke="#1a1815" stroke-width="3"></path>
+    <!-- arms cradling box -->
+    <path d="M20,140 Q-6,176 30,200" fill="none" stroke="#b85c3c" stroke-width="26" stroke-linecap="round"></path>
+    <path d="M100,140 Q126,176 90,200" fill="none" stroke="#b85c3c" stroke-width="26" stroke-linecap="round"></path>
+    <!-- head -->
+    <circle cx="60" cy="74" r="40" fill="#efe4cf"></circle>
+    <circle cx="60" cy="74" r="40" fill="none" stroke="#1a1815" stroke-width="3"></circle>
+    <path d="M28,58 Q60,28 92,58" fill="#1a1815"></path>
+    <!-- gold box being carried -->
+    <g transform="translate(8,168)">
+      <polygon points="0,30 56,12 112,30 112,82 56,100 0,82" fill="#b88a4a"></polygon>
+      <polygon points="0,30 56,12 112,30 56,48" fill="#d6ad6e"></polygon>
+      <polygon points="112,30 112,82 56,100 56,48" fill="#8a6224"></polygon>
+      <line x1="56" y1="48" x2="56" y2="100" stroke="#6e4f1c" stroke-width="2"></line>
+    </g>
+  </g>
+
+  <!-- a small gold box on the step -->
+  <g transform="translate(520,690)">
+    <ellipse cx="55" cy="120" rx="58" ry="8" fill="#1a1815" opacity="0.2"></ellipse>
+    <polygon points="0,30 56,12 112,30 112,86 56,106 0,86" fill="#c69749"></polygon>
+    <polygon points="0,30 56,12 112,30 56,48" fill="#dcb672"></polygon>
+    <polygon points="112,30 112,86 56,106 56,48" fill="#9c7227"></polygon>
+    <line x1="56" y1="48" x2="56" y2="106" stroke="#7a5a1c" stroke-width="2"></line>
+  </g>
+</svg>

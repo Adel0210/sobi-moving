@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="tk_sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4d9c2"></stop>
+      <stop offset="1" stop-color="#ecd8cc"></stop>
+    </linearGradient>
+    <linearGradient id="tk_ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d9c9b3"></stop>
+      <stop offset="1" stop-color="#bfa988"></stop>
+    </linearGradient>
+    <linearGradient id="tk_house" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fffaf2"></stop>
+      <stop offset="1" stop-color="#efe4cf"></stop>
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="600" fill="url(#tk_sky)"></rect>
+
+  <!-- background foliage -->
+  <g opacity="0.5">
+    <circle cx="120" cy="330" r="70" fill="#8aa07a"></circle>
+    <circle cx="60" cy="360" r="55" fill="#7d9269"></circle>
+    <circle cx="800" cy="330" r="80" fill="#8aa07a"></circle>
+    <circle cx="860" cy="360" r="60" fill="#7d9269"></circle>
+  </g>
+
+  <!-- house behind -->
+  <g transform="translate(300,150)">
+    <polygon points="-10,120 150,30 310,120" fill="#b85c3c"></polygon>
+    <polygon points="-10,120 150,30 310,120" fill="#000" opacity="0.05"></polygon>
+    <rect x="220" y="55" width="28" height="55" fill="#8a4127"></rect>
+    <rect x="20" y="120" width="280" height="170" fill="url(#tk_house)"></rect>
+    <rect x="20" y="120" width="280" height="170" fill="none" stroke="#1a1815" stroke-width="3"></rect>
+    <rect x="130" y="195" width="56" height="95" fill="#1a1815"></rect>
+    <rect x="130" y="195" width="56" height="95" fill="none" stroke="#1a1815" stroke-width="3"></rect>
+    <circle cx="178" cy="245" r="3" fill="#c69749"></circle>
+    <rect x="50" y="150" width="60" height="60" fill="#f4d9c2"></rect>
+    <rect x="50" y="150" width="60" height="60" fill="none" stroke="#1a1815" stroke-width="3"></rect>
+    <line x1="80" y1="150" x2="80" y2="210" stroke="#1a1815" stroke-width="2"></line>
+    <line x1="50" y1="180" x2="110" y2="180" stroke="#1a1815" stroke-width="2"></line>
+    <rect x="210" y="150" width="60" height="60" fill="#f4d9c2"></rect>
+    <rect x="210" y="150" width="60" height="60" fill="none" stroke="#1a1815" stroke-width="3"></rect>
+    <line x1="240" y1="150" x2="240" y2="210" stroke="#1a1815" stroke-width="2"></line>
+    <line x1="210" y1="180" x2="270" y2="180" stroke="#1a1815" stroke-width="2"></line>
+  </g>
+
+  <!-- sage tree -->
+  <g transform="translate(680,250)">
+    <rect x="-8" y="60" width="16" height="80" fill="#8a4127"></rect>
+    <circle cx="0" cy="40" r="58" fill="#8aa07a"></circle>
+    <circle cx="-36" cy="60" r="40" fill="#7d9269"></circle>
+    <circle cx="34" cy="58" r="40" fill="#7d9269"></circle>
+    <circle cx="0" cy="40" r="58" fill="none" stroke="#1a1815" stroke-width="3"></circle>
+  </g>
+
+  <!-- ground -->
+  <rect y="430" width="900" height="170" fill="url(#tk_ground)"></rect>
+  <rect y="430" width="900" height="6" fill="#a08864" opacity="0.4"></rect>
+
+  <!-- truck -->
+  <g transform="translate(210,300)">
+    <ellipse cx="240" cy="245" rx="240" ry="16" fill="#1a1815" opacity="0.2"></ellipse>
+    <!-- box body -->
+    <rect x="0" y="0" width="320" height="170" fill="#1a1815"></rect>
+    <rect x="0" y="0" width="320" height="170" fill="none" stroke="#1a1815" stroke-width="3"></rect>
+    <rect x="22" y="24" width="276" height="118" fill="#b85c3c"></rect>
+    <text x="160" y="74" font-family="Georgia, serif" font-size="40" font-weight="700" fill="#fffaf2" text-anchor="middle" letter-spacing="2">SOBI</text>
+    <text x="160" y="100" font-family="Georgia, serif" font-size="16" fill="#fffaf2" text-anchor="middle" letter-spacing="5">MOVING</text>
+    <line x1="80" y1="114" x2="240" y2="114" stroke="#fffaf2" stroke-width="1" opacity="0.4"></line>
+    <text x="160" y="132" font-family="system-ui, sans-serif" font-size="10" fill="#fffaf2" text-anchor="middle" letter-spacing="2" opacity="0.85">ATLANTA · LICENSED &amp; INSURED</text>
+    <!-- cab -->
+    <rect x="320" y="48" width="92" height="122" fill="#fffaf2" stroke="#1a1815" stroke-width="3"></rect>
+    <rect x="332" y="66" width="68" height="58" fill="#7da9c9" stroke="#1a1815" stroke-width="2"></rect>
+    <!-- wheels -->
+    <circle cx="72" cy="182" r="26" fill="#1a1815"></circle>
+    <circle cx="72" cy="182" r="11" fill="#5a554d"></circle>
+    <circle cx="252" cy="182" r="26" fill="#1a1815"></circle>
+    <circle cx="252" cy="182" r="11" fill="#5a554d"></circle>
+    <circle cx="368" cy="182" r="26" fill="#1a1815"></circle>
+    <circle cx="368" cy="182" r="11" fill="#5a554d"></circle>
+  </g>
+
+  <!-- gold box on ground -->
+  <g transform="translate(110,470)">
+    <ellipse cx="56" cy="100" rx="58" ry="7" fill="#1a1815" opacity="0.2"></ellipse>
+    <polygon points="0,30 56,12 116,30 116,84 56,104 0,84" fill="#b88a4a"></polygon>
+    <polygon points="0,30 56,12 116,30 56,48" fill="#d6ad6e"></polygon>
+    <polygon points="116,30 116,84 56,104 56,48" fill="#8a6224"></polygon>
+    <line x1="56" y1="48" x2="56" y2="104" stroke="#6e4f1c" stroke-width="2"></line>
+  </g>
+</svg>

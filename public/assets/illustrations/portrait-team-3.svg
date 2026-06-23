@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="t3-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fffaf2"/>
+      <stop offset="1" stop-color="#efe4cf"/>
+    </linearGradient>
+    <clipPath id="t3-clip"><rect width="800" height="1000"/></clipPath>
+  </defs>
+  <g clip-path="url(#t3-clip)">
+    <rect width="800" height="1000" fill="#f1e7d4"/>
+    <circle cx="400" cy="430" r="360" fill="url(#t3-bg)"/>
+    <ellipse cx="400" cy="930" rx="240" ry="26" fill="#1a1815" opacity="0.2"/>
+    <!-- shoulders / cream shirt with dark placket -->
+    <path d="M150 1000 V820 q0-130 120-180 l130-46 130 46 q120 50 120 180 V1000 Z" fill="#fffaf2"/>
+    <path d="M150 1000 V820 q0-130 120-180 l130-46 130 46 q120 50 120 180 V1000 Z" fill="none" stroke="#1a1815" stroke-width="3"/>
+    <path d="M340 614 l60 64 60-64 -20-12 -40 34 -40-34 Z" fill="#efe4cf" stroke="#1a1815" stroke-width="3" stroke-linejoin="round"/>
+    <rect x="384" y="676" width="32" height="120" fill="#1a1815"/>
+    <circle cx="400" cy="720" r="4" fill="#fffaf2"/>
+    <circle cx="400" cy="766" r="4" fill="#fffaf2"/>
+    <!-- neck -->
+    <rect x="360" y="544" width="80" height="116" rx="20" fill="#7a4f30"/>
+    <rect x="360" y="544" width="80" height="116" rx="20" fill="none" stroke="#1a1815" stroke-width="3"/>
+    <!-- head -->
+    <ellipse cx="400" cy="420" rx="148" ry="168" fill="#7a4f30"/>
+    <ellipse cx="400" cy="420" rx="148" ry="168" fill="none" stroke="#1a1815" stroke-width="3"/>
+    <!-- ears -->
+    <circle cx="254" cy="425" r="25" fill="#7a4f30" stroke="#1a1815" stroke-width="3"/>
+    <circle cx="546" cy="425" r="25" fill="#7a4f30" stroke="#1a1815" stroke-width="3"/>
+    <!-- short cropped hair -->
+    <path d="M256 392 q-6-150 144-156 q150 6 144 156 q-22-78 -144-78 q-122 0 -144 78 Z" fill="#1a1815"/>
+    <!-- eyebrows -->
+    <path d="M322 396 q32-14 60 2" fill="none" stroke="#1a1815" stroke-width="6" stroke-linecap="round"/>
+    <path d="M418 398 q32-16 60-2" fill="none" stroke="#1a1815" stroke-width="6" stroke-linecap="round"/>
+    <!-- eyes -->
+    <circle cx="352" cy="434" r="9" fill="#1a1815"/>
+    <circle cx="448" cy="434" r="9" fill="#1a1815"/>
+    <!-- nose -->
+    <path d="M400 444 v34 q-11 7 -21 1" fill="none" stroke="#1a1815" stroke-width="4" stroke-linecap="round"/>
+    <!-- smile -->
+    <path d="M348 508 q52 44 104 0" fill="none" stroke="#1a1815" stroke-width="5" stroke-linecap="round"/>
+  </g>
+</svg>

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bd_wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4d9c2"></stop>
+      <stop offset="1" stop-color="#ecd8cc"></stop>
+    </linearGradient>
+    <linearGradient id="bd_floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d9c9b3"></stop>
+      <stop offset="1" stop-color="#bfa988"></stop>
+    </linearGradient>
+    <linearGradient id="bd_window" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4d9c2"></stop>
+      <stop offset="1" stop-color="#fffaf2"></stop>
+    </linearGradient>
+    <linearGradient id="bd_cream" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fffaf2"></stop>
+      <stop offset="1" stop-color="#efe4cf"></stop>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#bd_wall)"></rect>
+  <rect y="560" width="800" height="240" fill="url(#bd_floor)"></rect>
+  <rect y="560" width="800" height="6" fill="#a08864" opacity="0.4"></rect>
+
+  <!-- soft window with light -->
+  <g transform="translate(110,90)">
+    <rect x="-10" y="-10" width="280" height="280" fill="#fffaf2" opacity="0.6"></rect>
+    <rect width="260" height="260" fill="url(#bd_window)" stroke="#1a1815" stroke-width="3"></rect>
+    <line x1="130" y1="0" x2="130" y2="260" stroke="#1a1815" stroke-width="3"></line>
+    <line x1="0" y1="130" x2="260" y2="130" stroke="#1a1815" stroke-width="3"></line>
+    <!-- gentle sun glow -->
+    <circle cx="190" cy="70" r="34" fill="#f4d9c2" opacity="0.8"></circle>
+  </g>
+  <!-- light rays cast onto floor -->
+  <polygon points="120,360 260,360 340,560 60,560" fill="#fffaf2" opacity="0.25"></polygon>
+
+  <!-- neatly made bed with pillows -->
+  <g transform="translate(300,300)">
+    <ellipse cx="240" cy="378" rx="280" ry="22" fill="#1a1815" opacity="0.2"></ellipse>
+    <!-- headboard -->
+    <rect x="0" y="40" width="40" height="220" rx="8" fill="#8a4127" stroke="#1a1815" stroke-width="3"></rect>
+    <path d="M40,120 Q40,60 100,60 L460,60 Q480,60 480,90 L480,150 L40,150 Z" fill="#b85c3c" stroke="#1a1815" stroke-width="3"></path>
+    <!-- mattress / bed base -->
+    <rect x="30" y="150" width="450" height="130" rx="10" fill="url(#bd_cream)" stroke="#1a1815" stroke-width="3"></rect>
+    <!-- duvet fold line -->
+    <line x1="30" y1="210" x2="480" y2="210" stroke="#1a1815" stroke-width="2" opacity="0.4"></line>
+    <!-- blanket draped -->
+    <path d="M30,240 L480,240 L480,360 Q255,380 30,360 Z" fill="#d6ad6e" stroke="#1a1815" stroke-width="3"></path>
+    <line x1="60" y1="250" x2="60" y2="358" stroke="#1a1815" stroke-width="1.5" opacity="0.35"></line>
+    <line x1="250" y1="244" x2="250" y2="372" stroke="#1a1815" stroke-width="1.5" opacity="0.35"></line>
+    <line x1="440" y1="250" x2="440" y2="358" stroke="#1a1815" stroke-width="1.5" opacity="0.35"></line>
+    <!-- pillows -->
+    <rect x="60" y="120" width="150" height="80" rx="22" fill="#fffaf2" stroke="#1a1815" stroke-width="3"></rect>
+    <rect x="240" y="120" width="150" height="80" rx="22" fill="#fffaf2" stroke="#1a1815" stroke-width="3"></rect>
+    <!-- legs -->
+    <rect x="40" y="360" width="20" height="36" fill="#1a1815"></rect>
+    <rect x="460" y="360" width="20" height="36" fill="#1a1815"></rect>
+  </g>
+
+  <!-- nightstand with lamp and small framed photo -->
+  <g transform="translate(60,470)">
+    <ellipse cx="100" cy="232" rx="110" ry="14" fill="#1a1815" opacity="0.2"></ellipse>
+    <!-- lamp glow -->
+    <circle cx="60" cy="70" r="64" fill="#f4d9c2" opacity="0.5"></circle>
+    <!-- nightstand -->
+    <rect x="20" y="140" width="160" height="100" rx="6" fill="url(#bd_cream)" stroke="#1a1815" stroke-width="3"></rect>
+    <line x1="20" y1="190" x2="180" y2="190" stroke="#1a1815" stroke-width="2"></line>
+    <circle cx="100" cy="165" r="5" fill="#c69749"></circle>
+    <circle cx="100" cy="215" r="5" fill="#c69749"></circle>
+    <!-- lamp -->
+    <polygon points="38,40 82,40 96,100 24,100" fill="#d6ad6e" stroke="#1a1815" stroke-width="3"></polygon>
+    <rect x="55" y="100" width="10" height="34" fill="#5a554d"></rect>
+    <ellipse cx="60" cy="138" rx="26" ry="7" fill="#8a857c" stroke="#1a1815" stroke-width="2"></ellipse>
+    <!-- small framed photo -->
+    <g transform="translate(120,90)">
+      <rect width="50" height="44" fill="url(#bd_cream)" stroke="#1a1815" stroke-width="2.5"></rect>
+      <rect x="7" y="7" width="36" height="30" fill="#7da9c9" stroke="#1a1815" stroke-width="1.5"></rect>
+      <circle cx="25" cy="22" r="8" fill="#efe4cf" stroke="#1a1815" stroke-width="1.5"></circle>
+    </g>
+  </g>
+
+  <!-- small rug -->
+  <ellipse cx="540" cy="720" rx="200" ry="32" fill="#d6ad6e" opacity="0.45"></ellipse>
+</svg>

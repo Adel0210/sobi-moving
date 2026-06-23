@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sr-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fffaf2"/>
+      <stop offset="1" stop-color="#efe4cf"/>
+    </linearGradient>
+    <clipPath id="sr-clip"><rect width="800" height="1000"/></clipPath>
+  </defs>
+  <g clip-path="url(#sr-clip)">
+    <rect width="800" height="1000" fill="#f4ead8"/>
+    <circle cx="400" cy="430" r="360" fill="url(#sr-bg)"/>
+    <ellipse cx="400" cy="930" rx="240" ry="26" fill="#1a1815" opacity="0.2"/>
+    <!-- shoulders / soft sage cardigan -->
+    <path d="M150 1000 V820 q0-130 120-180 l130-46 130 46 q120 50 120 180 V1000 Z" fill="#8aa07a"/>
+    <path d="M150 1000 V820 q0-130 120-180 l130-46 130 46 q120 50 120 180 V1000 Z" fill="none" stroke="#1a1815" stroke-width="3"/>
+    <!-- cardigan opening -->
+    <path d="M400 626 L330 1000 M400 626 L470 1000" fill="none" stroke="#1a1815" stroke-width="3"/>
+    <path d="M400 626 l-70 374 40 0 30-330 30 330 40 0 Z" fill="#7d9269"/>
+    <circle cx="392" cy="760" r="5" fill="#5a554d"/>
+    <circle cx="392" cy="830" r="5" fill="#5a554d"/>
+    <!-- neck -->
+    <rect x="360" y="546" width="80" height="114" rx="20" fill="#e8b98f"/>
+    <rect x="360" y="546" width="80" height="114" rx="20" fill="none" stroke="#1a1815" stroke-width="3"/>
+    <!-- head -->
+    <ellipse cx="400" cy="422" rx="148" ry="166" fill="#e8b98f"/>
+    <ellipse cx="400" cy="422" rx="148" ry="166" fill="none" stroke="#1a1815" stroke-width="3"/>
+    <!-- ears -->
+    <circle cx="254" cy="427" r="25" fill="#e8b98f" stroke="#1a1815" stroke-width="3"/>
+    <circle cx="546" cy="427" r="25" fill="#e8b98f" stroke="#1a1815" stroke-width="3"/>
+    <!-- soft grey hair -->
+    <path d="M252 420 q-18-200 148-204 q166 4 148 204 q-26-96 -148-96 q-122 0 -148 96 Z" fill="#c9c4bb"/>
+    <path d="M252 420 q-18-200 148-204 q166 4 148 204" fill="none" stroke="#8a857c" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M276 372 q60-58 124-58 q64 0 124 58" fill="none" stroke="#b3aea4" stroke-width="3" stroke-linecap="round"/>
+    <!-- eyebrows (grey) -->
+    <path d="M322 398 q32-14 60 2" fill="none" stroke="#8a857c" stroke-width="6" stroke-linecap="round"/>
+    <path d="M418 400 q32-16 60-2" fill="none" stroke="#8a857c" stroke-width="6" stroke-linecap="round"/>
+    <!-- eyes -->
+    <circle cx="352" cy="436" r="8" fill="#1a1815"/>
+    <circle cx="448" cy="436" r="8" fill="#1a1815"/>
+    <!-- expression lines (soft) -->
+    <path d="M320 458 q-14 8 -22 22" fill="none" stroke="#1a1815" stroke-width="2.5" stroke-linecap="round" opacity="0.55"/>
+    <path d="M480 458 q14 8 22 22" fill="none" stroke="#1a1815" stroke-width="2.5" stroke-linecap="round" opacity="0.55"/>
+    <!-- nose -->
+    <path d="M400 446 v34 q-11 7 -21 1" fill="none" stroke="#1a1815" stroke-width="4" stroke-linecap="round"/>
+    <!-- gentle smile + smile lines -->
+    <path d="M348 510 q52 40 104 0" fill="none" stroke="#1a1815" stroke-width="5" stroke-linecap="round"/>
+    <path d="M338 502 q-8 12 -6 26" fill="none" stroke="#1a1815" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+    <path d="M462 502 q8 12 6 26" fill="none" stroke="#1a1815" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+  </g>
+</svg>

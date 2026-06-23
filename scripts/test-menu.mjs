@@ -1,0 +1,21 @@
+import puppeteer from "puppeteer-core";
+const CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
+const OUT = process.env.OUT;
+const b = await puppeteer.launch({ executablePath: CHROME, headless: true, args:["--no-sandbox"] });
+const p = await b.newPage();
+await p.setViewport({ width: 390, height: 800, deviceScaleFactor: 1 });
+await p.goto("http://localhost:3001/", { waitUntil: "networkidle0" });
+const btn = await p.$(".nav-menu-btn");
+console.log("hamburger button found:", !!btn);
+await btn.click();
+await new Promise(r=>setTimeout(r,300));
+const menu = await p.evaluate(() => {
+  const m = document.querySelector(".nav-mobile");
+  if (!m) return { present:false };
+  const links = [...m.querySelectorAll("a")].map(a=>a.textContent.trim());
+  const r = m.getBoundingClientRect();
+  return { present:true, visible: r.height>0, links };
+});
+console.log("mobile menu:", JSON.stringify(menu));
+await p.screenshot({ path: `${OUT}/acc-menu-open.png` });
+await b.close();

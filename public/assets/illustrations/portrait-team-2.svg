@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="t2-bg" cx="0.5" cy="0.45" r="0.6">
+      <stop offset="0" stop-color="#9fb38e"/>
+      <stop offset="1" stop-color="#7d9269"/>
+    </radialGradient>
+    <clipPath id="t2-clip"><rect width="800" height="1000"/></clipPath>
+  </defs>
+  <g clip-path="url(#t2-clip)">
+    <rect width="800" height="1000" fill="#6f835d"/>
+    <circle cx="400" cy="430" r="360" fill="url(#t2-bg)"/>
+    <ellipse cx="400" cy="930" rx="240" ry="26" fill="#1a1815" opacity="0.2"/>
+    <!-- shoulders / terracotta shirt -->
+    <path d="M150 1000 V820 q0-130 120-180 l130-46 130 46 q120 50 120 180 V1000 Z" fill="#b85c3c"/>
+    <path d="M150 1000 V820 q0-130 120-180 l130-46 130 46 q120 50 120 180 V1000 Z" fill="none" stroke="#1a1815" stroke-width="3"/>
+    <path d="M335 612 l65 70 65-70 v54 l-65 46 -65-46 Z" fill="#8a4127"/>
+    <!-- neck -->
+    <rect x="362" y="544" width="76" height="116" rx="20" fill="#9c6a42"/>
+    <rect x="362" y="544" width="76" height="116" rx="20" fill="none" stroke="#1a1815" stroke-width="3"/>
+    <!-- hair bun (behind head) -->
+    <circle cx="400" cy="252" r="40" fill="#1a1815"/>
+    <!-- head -->
+    <ellipse cx="400" cy="420" rx="146" ry="168" fill="#9c6a42"/>
+    <ellipse cx="400" cy="420" rx="146" ry="168" fill="none" stroke="#1a1815" stroke-width="3"/>
+    <!-- ears -->
+    <circle cx="256" cy="425" r="24" fill="#9c6a42" stroke="#1a1815" stroke-width="3"/>
+    <circle cx="544" cy="425" r="24" fill="#9c6a42" stroke="#1a1815" stroke-width="3"/>
+    <!-- hair tied back: smooth crown -->
+    <path d="M258 408 q-14-186 142-192 q156 6 142 192 q-26-118 -142-118 q-116 0 -142 118 Z" fill="#1a1815"/>
+    <!-- eyebrows -->
+    <path d="M322 394 q32-16 60 0" fill="none" stroke="#1a1815" stroke-width="5" stroke-linecap="round"/>
+    <path d="M418 394 q32-16 60 0" fill="none" stroke="#1a1815" stroke-width="5" stroke-linecap="round"/>
+    <!-- eyes -->
+    <circle cx="352" cy="432" r="9" fill="#1a1815"/>
+    <circle cx="448" cy="432" r="9" fill="#1a1815"/>
+    <!-- lashes hint -->
+    <path d="M338 424 l-10-6" stroke="#1a1815" stroke-width="3" stroke-linecap="round"/>
+    <path d="M462 424 l10-6" stroke="#1a1815" stroke-width="3" stroke-linecap="round"/>
+    <!-- nose -->
+    <path d="M400 444 v32 q-9 6 -18 1" fill="none" stroke="#1a1815" stroke-width="4" stroke-linecap="round"/>
+    <!-- smile -->
+    <path d="M350 506 q50 44 100 0" fill="none" stroke="#1a1815" stroke-width="5" stroke-linecap="round"/>
+  </g>
+</svg>

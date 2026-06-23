@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="lr_wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4d9c2"></stop>
+      <stop offset="1" stop-color="#ecd8cc"></stop>
+    </linearGradient>
+    <linearGradient id="lr_floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d9c9b3"></stop>
+      <stop offset="1" stop-color="#bfa988"></stop>
+    </linearGradient>
+    <linearGradient id="lr_chair" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c96e4a"></stop>
+      <stop offset="1" stop-color="#b85c3c"></stop>
+    </linearGradient>
+    <linearGradient id="lr_cream" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fffaf2"></stop>
+      <stop offset="1" stop-color="#efe4cf"></stop>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="1000" fill="url(#lr_wall)"></rect>
+  <rect y="700" width="800" height="300" fill="url(#lr_floor)"></rect>
+  <rect y="700" width="800" height="6" fill="#a08864" opacity="0.4"></rect>
+
+  <!-- framed family photos on the wall -->
+  <g transform="translate(120,150)">
+    <rect width="150" height="120" fill="url(#lr_cream)" stroke="#1a1815" stroke-width="3"></rect>
+    <rect x="16" y="16" width="118" height="88" fill="#7da9c9" stroke="#1a1815" stroke-width="2"></rect>
+    <circle cx="60" cy="70" r="18" fill="#efe4cf" stroke="#1a1815" stroke-width="2"></circle>
+    <circle cx="95" cy="74" r="14" fill="#b85c3c" stroke="#1a1815" stroke-width="2"></circle>
+  </g>
+  <g transform="translate(300,200)">
+    <rect width="110" height="90" fill="url(#lr_cream)" stroke="#1a1815" stroke-width="3"></rect>
+    <rect x="14" y="14" width="82" height="62" fill="#f4d9c2" stroke="#1a1815" stroke-width="2"></rect>
+    <circle cx="55" cy="46" r="16" fill="#efe4cf" stroke="#1a1815" stroke-width="2"></circle>
+  </g>
+
+  <!-- lamp glow -->
+  <circle cx="620" cy="430" r="130" fill="#f4d9c2" opacity="0.55"></circle>
+
+  <!-- side table with lamp turned on -->
+  <g transform="translate(560,470)">
+    <ellipse cx="60" cy="252" rx="80" ry="12" fill="#1a1815" opacity="0.2"></ellipse>
+    <!-- table top -->
+    <rect x="0" y="170" width="130" height="20" rx="4" fill="url(#lr_cream)" stroke="#1a1815" stroke-width="3"></rect>
+    <rect x="14" y="190" width="14" height="64" fill="#5a554d"></rect>
+    <rect x="102" y="190" width="14" height="64" fill="#5a554d"></rect>
+    <!-- lamp -->
+    <polygon points="35,40 95,40 110,120 20,120" fill="#d6ad6e" stroke="#1a1815" stroke-width="3"></polygon>
+    <rect x="60" y="120" width="10" height="48" fill="#5a554d"></rect>
+    <ellipse cx="65" cy="170" rx="34" ry="9" fill="#8a857c" stroke="#1a1815" stroke-width="2"></ellipse>
+  </g>
+
+  <!-- comfortable armchair -->
+  <g transform="translate(190,500)">
+    <ellipse cx="180" cy="320" rx="200" ry="18" fill="#1a1815" opacity="0.2"></ellipse>
+    <!-- back -->
+    <path d="M40,60 Q180,30 320,60 L320,200 L40,200 Z" fill="url(#lr_chair)" stroke="#1a1815" stroke-width="3"></path>
+    <!-- arms -->
+    <rect x="0" y="150" width="70" height="160" rx="26" fill="url(#lr_chair)" stroke="#1a1815" stroke-width="3"></rect>
+    <rect x="290" y="150" width="70" height="160" rx="26" fill="url(#lr_chair)" stroke="#1a1815" stroke-width="3"></rect>
+    <!-- seat cushion -->
+    <rect x="55" y="180" width="250" height="80" rx="20" fill="#c96e4a" stroke="#1a1815" stroke-width="3"></rect>
+    <!-- throw pillow -->
+    <rect x="80" y="120" width="90" height="90" rx="14" fill="#d6ad6e" stroke="#1a1815" stroke-width="3" transform="rotate(-8 125 165)"></rect>
+    <!-- legs -->
+    <rect x="30" y="300" width="20" height="40" fill="#1a1815"></rect>
+    <rect x="310" y="300" width="20" height="40" fill="#1a1815"></rect>
+  </g>
+
+  <!-- potted plant -->
+  <g transform="translate(70,560)">
+    <ellipse cx="55" cy="262" rx="55" ry="10" fill="#1a1815" opacity="0.2"></ellipse>
+    <path d="M55,160 Q10,60 30,20" fill="none" stroke="#7d9269" stroke-width="10" stroke-linecap="round"></path>
+    <path d="M55,160 Q100,70 80,18" fill="none" stroke="#8aa07a" stroke-width="10" stroke-linecap="round"></path>
+    <path d="M55,160 Q55,80 55,30" fill="none" stroke="#7d9269" stroke-width="10" stroke-linecap="round"></path>
+    <ellipse cx="30" cy="22" rx="20" ry="30" fill="#8aa07a" stroke="#1a1815" stroke-width="2" transform="rotate(-25 30 22)"></ellipse>
+    <ellipse cx="80" cy="20" rx="20" ry="30" fill="#7d9269" stroke="#1a1815" stroke-width="2" transform="rotate(25 80 20)"></ellipse>
+    <ellipse cx="55" cy="14" rx="18" ry="30" fill="#8aa07a" stroke="#1a1815" stroke-width="2"></ellipse>
+    <path d="M22,160 L88,160 L78,250 L32,250 Z" fill="#b85c3c" stroke="#1a1815" stroke-width="3"></path>
+  </g>
+
+  <!-- small rug under chair -->
+  <ellipse cx="380" cy="830" rx="240" ry="40" fill="#d6ad6e" opacity="0.5"></ellipse>
+</svg>

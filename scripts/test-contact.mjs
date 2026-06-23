@@ -1,0 +1,16 @@
+import puppeteer from "puppeteer-core";
+const CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
+const b = await puppeteer.launch({ executablePath: CHROME, headless: true, args:["--no-sandbox"] });
+const p = await b.newPage();
+await p.goto("http://localhost:3000/contact", { waitUntil:"networkidle0" });
+await p.type('input[placeholder="Jane Smith"]', "TEST Lead — Claude");
+await p.type('input[placeholder="jane@example.com"]', "test+claude@sobimoving.com");
+await p.type('input[placeholder="(404) 555-0123"]', "(404) 555-9999");
+await p.type('textarea', "Automated test submission — please ignore/delete.");
+await p.click('button[type="submit"]');
+await new Promise(r=>setTimeout(r,2500));
+const txt = await p.evaluate(()=>document.body.innerText);
+if (txt.includes("Message received")) console.log("RESULT: SUCCESS — lead saved (success screen shown)");
+else if (txt.includes("something went wrong")) console.log("RESULT: ERROR shown — table likely not created yet");
+else console.log("RESULT: UNKNOWN — neither success nor error text found");
+await b.close();

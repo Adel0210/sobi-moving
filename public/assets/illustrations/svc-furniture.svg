@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="fr-wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fffaf2"/>
+      <stop offset="1" stop-color="#efe4cf"/>
+    </linearGradient>
+    <linearGradient id="fr-floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#efe4cf"/>
+      <stop offset="1" stop-color="#d9c9b3"/>
+    </linearGradient>
+    <linearGradient id="fr-wood" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d6ad6e"/>
+      <stop offset="1" stop-color="#b88a4a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="1000" fill="url(#fr-wall)"/>
+  <rect y="660" width="800" height="340" fill="url(#fr-floor)"/>
+  <line x1="0" y1="660" x2="800" y2="660" stroke="#a08864" stroke-width="3" opacity="0.5"/>
+
+  <!-- partly-assembled dresser -->
+  <g transform="translate(150,300)">
+    <ellipse cx="230" cy="400" rx="270" ry="18" fill="#1a1815" opacity="0.2"/>
+    <!-- carcass -->
+    <rect x="40" y="60" width="380" height="320" fill="url(#fr-wood)" stroke="#1a1815" stroke-width="3"/>
+    <!-- top -->
+    <rect x="24" y="40" width="412" height="28" fill="#c69749" stroke="#1a1815" stroke-width="3"/>
+    <!-- drawer dividers -->
+    <line x1="40" y1="170" x2="420" y2="170" stroke="#1a1815" stroke-width="3"/>
+    <line x1="40" y1="280" x2="420" y2="280" stroke="#1a1815" stroke-width="3"/>
+    <!-- top drawer fitted -->
+    <rect x="60" y="84" width="340" height="66" fill="#dcb672" stroke="#1a1815" stroke-width="3"/>
+    <rect x="200" y="110" width="60" height="14" rx="7" fill="#1a1815"/>
+    <!-- middle drawer half-out -->
+    <rect x="60" y="192" width="340" height="66" fill="#b88a4a" stroke="#1a1815" stroke-width="3"/>
+    <rect x="200" y="218" width="60" height="14" rx="7" fill="#1a1815"/>
+    <!-- bottom slot empty (panel removed) -->
+    <rect x="60" y="298" width="340" height="66" fill="#8a6224" stroke="#1a1815" stroke-width="3"/>
+    <!-- legs -->
+    <rect x="56" y="380" width="20" height="38" fill="#1a1815"/>
+    <rect x="384" y="380" width="20" height="38" fill="#1a1815"/>
+  </g>
+
+  <!-- flat-pack panel leaning -->
+  <g transform="translate(560,360)">
+    <polygon points="0,360 30,346 130,316 100,330 100,330" fill="#d6ad6e"/>
+    <rect x="0" y="40" width="150" height="320" fill="url(#fr-wood)" stroke="#1a1815" stroke-width="3" transform="skewY(-10)"/>
+    <line x1="0" y1="160" x2="150" y2="134" stroke="#6e4f1c" stroke-width="2" transform="skewY(-10)"/>
+    <line x1="0" y1="260" x2="150" y2="234" stroke="#6e4f1c" stroke-width="2" transform="skewY(-10)"/>
+    <circle cx="30" cy="78" r="5" fill="#1a1815" transform="skewY(-10)"/>
+    <circle cx="120" cy="62" r="5" fill="#1a1815" transform="skewY(-10)"/>
+  </g>
+
+  <!-- tools on floor: screwdriver -->
+  <g transform="translate(150,740)">
+    <rect x="0" y="40" width="90" height="20" rx="10" fill="#b85c3c" stroke="#1a1815" stroke-width="3" transform="rotate(-12 45 50)"/>
+    <rect x="88" y="44" width="80" height="10" rx="3" fill="#8a857c" stroke="#1a1815" stroke-width="2" transform="rotate(-12 128 49)"/>
+    <rect x="166" y="44" width="14" height="10" fill="#5a554d" stroke="#1a1815" stroke-width="2" transform="rotate(-12 173 49)"/>
+  </g>
+
+  <!-- allen key -->
+  <g transform="translate(380,800)">
+    <path d="M0,0 L90,0 L90,16 L16,16 L16,70 L0,70 Z" fill="#5a554d" stroke="#1a1815" stroke-width="3"/>
+  </g>
+</svg>

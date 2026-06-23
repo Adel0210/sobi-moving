@@ -1,0 +1,137 @@
+/* ============================================================
+   MOBILE OVERRIDES — final pass for phone viewports
+   ============================================================ */
+
+/* TABLET / SMALL DESKTOP */
+@media (max-width: 880px) {
+  .nav-inner { padding: 12px 18px; gap: 12px; }
+  .nav-brand { font-size: 19px; }
+  .nav-brand img { width: 32px; height: 32px; }
+
+  /* Restore nav links as a horizontal scroll strip */
+  .nav-links {
+    display: flex !important;
+    margin-left: 0;
+    gap: 2px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    flex: 1;
+    padding: 4px 0;
+  }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-link { padding: 6px 10px; font-size: 13.5px; flex-shrink: 0; }
+
+  .nav-cta { gap: 6px; }
+  .nav-phone { padding: 6px 10px; font-size: 13.5px; }
+  .nav-phone span { display: inline; }
+  .nav-cta .btn { padding: 10px 14px; font-size: 13.5px; }
+
+  /* Hero trust row stacks tighter */
+  .hero-trust { gap: 14px; flex-wrap: wrap; font-size: 13px; }
+
+  /* Adult-child block padding */
+  .adult-child-block { padding: 28px 22px !important; }
+  .adult-child-block ul { grid-template-columns: 1fr !important; gap: 10px !important; }
+
+  /* Senior process num */
+  .senior-process-step { padding: 24px 0; }
+
+  /* Container padding */
+  .container, .container-narrow { padding: 0 22px; }
+
+  /* Section head row stacks cleaner */
+  .section-head-row { flex-direction: column; align-items: flex-start; gap: 18px; }
+  .section-head-row .lead { max-width: none !important; }
+
+  /* Footer bottom */
+  .footer { padding: 60px 0 28px; }
+  .footer-bottom { flex-direction: column; gap: 12px; }
+}
+
+/* PHONE */
+@media (max-width: 640px) {
+  section { padding: 56px 0 !important; }
+  section.tight { padding: 40px 0 !important; }
+
+  /* Type sizes — keep readable for senior eyes */
+  h1 { font-size: clamp(34px, 8vw, 44px) !important; line-height: 1.1; }
+  h2 { font-size: clamp(26px, 6.5vw, 34px) !important; line-height: 1.15; }
+  h3 { font-size: 20px !important; }
+  .lead { font-size: 17px !important; line-height: 1.6; }
+  body { font-size: 16.5px; }
+
+  /* Hero CTA row stacks */
+  .hero-copy .row { gap: 10px !important; }
+  .hero-copy .btn { padding: 13px 18px; font-size: 14.5px; }
+
+  /* Buttons fill width on narrow screens for easy tap */
+  .cta-grid .btn,
+  .cta-buttons .btn,
+  .adult-child-block .btn { flex: 1 1 100%; justify-content: center; }
+
+  /* Photo slot heights */
+  .hero-photo-wrap image-slot { aspect-ratio: 4 / 5; }
+  .photo-placeholder { min-height: 180px; padding: 18px; }
+  .photo-placeholder.tall { min-height: 320px; }
+  .photo-placeholder.wide { min-height: 220px; }
+
+  /* Stats row */
+  .stats-row { gap: 24px 16px; }
+  .stat-value { font-size: 36px !important; }
+
+  /* Service cards photo */
+  .service-card-photo .photo-placeholder { min-height: 180px; }
+
+  /* Testimonial card */
+  .testimonial-card { padding: 28px 24px; }
+
+  /* Senior pillars + senior process */
+  .senior-pillars .pillar { padding: 28px 22px; }
+  .senior-process-num { font-size: 28px; }
+
+  /* Service detail */
+  .service-detail-grid { gap: 28px !important; }
+
+  /* Quote form */
+  .quote-grid { gap: 32px; }
+  .form-block { margin-bottom: 22px; }
+  .qp-step .qp-label { font-size: 12px; }
+
+  /* Footer */
+  .footer { padding: 48px 0 24px; }
+  .footer-grid { gap: 28px !important; }
+  .footer h4 { margin-bottom: 12px; }
+
+  /* CTA band */
+  .cta-grid { gap: 24px; }
+
+  /* Tag row wraps */
+  .row { flex-wrap: wrap; }
+
+  /* Service area pills */
+  .area-pill { font-size: 13px; padding: 8px 12px; }
+
+  /* Adult-child block — even tighter */
+  .adult-child-block { padding: 24px 18px !important; border-radius: 14px !important; }
+  .adult-child-block h2 { font-size: 24px !important; }
+  .adult-child-block p { font-size: 15.5px !important; }
+
+  /* Senior quote block */
+  .senior-quote-block { padding: 24px !important; }
+  .senior-quote-block blockquote { font-size: 19px !important; line-height: 1.4; }
+
+  /* Founder name card */
+  .founder-name-card { padding: 16px !important; }
+
+  /* Tweaks panel — keep out of the way on phones */
+}
+
+/* VERY SMALL */
+@media (max-width: 380px) {
+  .container, .container-narrow { padding: 0 16px; }
+  .nav-cta .btn { display: none; }
+  .nav-brand strong { display: none; }
+  h1 { font-size: 30px !important; }
+  h2 { font-size: 24px !important; }
+}

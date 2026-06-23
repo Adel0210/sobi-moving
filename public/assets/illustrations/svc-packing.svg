@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="pk-wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fffaf2"/>
+      <stop offset="1" stop-color="#efe4cf"/>
+    </linearGradient>
+    <linearGradient id="pk-floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#efe4cf"/>
+      <stop offset="1" stop-color="#d9c9b3"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="1000" fill="url(#pk-wall)"/>
+  <rect y="640" width="800" height="360" fill="url(#pk-floor)"/>
+  <line x1="0" y1="640" x2="800" y2="640" stroke="#a08864" stroke-width="3" opacity="0.5"/>
+
+  <!-- shadow -->
+  <ellipse cx="400" cy="800" rx="280" ry="20" fill="#1a1815" opacity="0.2"/>
+
+  <!-- stacked boxes: bottom big -->
+  <g transform="translate(200,560)">
+    <polygon points="0,80 160,28 320,80 320,250 160,302 0,250" fill="#b88a4a"/>
+    <polygon points="0,80 160,28 320,80 160,132 0,80" fill="#d6ad6e"/>
+    <polygon points="320,80 320,250 160,302 160,132 320,80" fill="#8a6224"/>
+    <line x1="160" y1="132" x2="160" y2="302" stroke="#6e4f1c" stroke-width="2"/>
+  </g>
+
+  <!-- right closed box (FRAGILE) -->
+  <g transform="translate(470,470)">
+    <polygon points="0,60 110,24 220,60 220,180 110,216 0,180" fill="#c69749"/>
+    <polygon points="0,60 110,24 220,60 110,96 0,60" fill="#dcb672"/>
+    <polygon points="220,60 220,180 110,216 110,96 220,60" fill="#9c7227"/>
+    <line x1="110" y1="96" x2="110" y2="216" stroke="#7a5a1c" stroke-width="2"/>
+    <text x="38" y="160" font-family="Georgia, serif" font-size="22" fill="#1a1815" opacity="0.55" letter-spacing="2">FRAGILE</text>
+  </g>
+
+  <!-- open box on top with packing paper -->
+  <g transform="translate(230,330)">
+    <!-- open flaps -->
+    <polygon points="40,90 120,58 120,30 40,62" fill="#9c7227"/>
+    <polygon points="200,90 120,58 120,30 200,62" fill="#b88a4a"/>
+    <polygon points="40,62 120,30 50,8 -30,40" fill="#dcb672"/>
+    <polygon points="200,62 120,30 190,8 270,40" fill="#dcb672"/>
+    <!-- packing paper poking out -->
+    <polygon points="90,52 130,18 160,46 145,70" fill="#fffaf2" stroke="#1a1815" stroke-width="2"/>
+    <polygon points="100,56 120,30 140,50" fill="#efe4cf" stroke="#1a1815" stroke-width="2"/>
+    <!-- box body -->
+    <polygon points="40,90 120,62 200,90 200,180 120,212 40,180" fill="#b88a4a"/>
+    <polygon points="200,90 200,180 120,212 120,122 200,90" fill="#8a6224"/>
+    <line x1="120" y1="122" x2="120" y2="212" stroke="#6e4f1c" stroke-width="2"/>
+    <polygon points="40,90 120,62 200,90 120,118 40,90" fill="none" stroke="#1a1815" stroke-width="2" opacity="0.3"/>
+  </g>
+
+  <!-- roll of tape on floor -->
+  <g transform="translate(540,720)">
+    <ellipse cx="50" cy="60" rx="60" ry="9" fill="#1a1815" opacity="0.2"/>
+    <ellipse cx="50" cy="40" rx="55" ry="26" fill="#b85c3c" stroke="#1a1815" stroke-width="3"/>
+    <ellipse cx="50" cy="40" rx="22" ry="11" fill="#efe4cf" stroke="#1a1815" stroke-width="3"/>
+    <path d="M5,40 Q-10,30 -8,18 L6,22 Q4,32 12,38 Z" fill="#fffaf2" stroke="#1a1815" stroke-width="2"/>
+  </g>
+</svg>

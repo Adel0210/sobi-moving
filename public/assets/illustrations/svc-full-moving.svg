@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="fm-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4d9c2"/>
+      <stop offset="1" stop-color="#ecd8cc"/>
+    </linearGradient>
+    <linearGradient id="fm-ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d9c9b3"/>
+      <stop offset="1" stop-color="#bfa988"/>
+    </linearGradient>
+    <linearGradient id="fm-house" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fffaf2"/>
+      <stop offset="1" stop-color="#efe4cf"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="1000" fill="url(#fm-sky)"/>
+  <g opacity="0.5">
+    <circle cx="90" cy="430" r="80" fill="#8aa07a"/>
+    <circle cx="700" cy="420" r="95" fill="#7d9269"/>
+    <circle cx="760" cy="450" r="70" fill="#8aa07a"/>
+  </g>
+  <rect y="600" width="800" height="400" fill="url(#fm-ground)"/>
+  <rect y="600" width="800" height="6" fill="#a08864" opacity="0.4"/>
+
+  <!-- house -->
+  <g transform="translate(60,240)">
+    <polygon points="-10,170 180,40 370,170" fill="#b85c3c"/>
+    <rect x="20" y="170" width="320" height="240" fill="url(#fm-house)"/>
+    <rect x="20" y="170" width="320" height="240" fill="none" stroke="#1a1815" stroke-width="3"/>
+    <polygon points="-10,170 180,40 370,170" fill="none" stroke="#1a1815" stroke-width="3"/>
+    <rect x="150" y="270" width="70" height="140" fill="#1a1815"/>
+    <circle cx="208" cy="340" r="3" fill="#c69749"/>
+    <rect x="50" y="210" width="74" height="74" fill="#f4d9c2" stroke="#1a1815" stroke-width="3"/>
+    <line x1="87" y1="210" x2="87" y2="284" stroke="#1a1815" stroke-width="2"/>
+    <line x1="50" y1="247" x2="124" y2="247" stroke="#1a1815" stroke-width="2"/>
+    <rect x="246" y="210" width="74" height="74" fill="#f4d9c2" stroke="#1a1815" stroke-width="3"/>
+    <line x1="283" y1="210" x2="283" y2="284" stroke="#1a1815" stroke-width="2"/>
+    <line x1="246" y1="247" x2="320" y2="247" stroke="#1a1815" stroke-width="2"/>
+  </g>
+
+  <!-- sage bushes -->
+  <g>
+    <circle cx="70" cy="660" r="40" fill="#7d9269" stroke="#1a1815" stroke-width="3"/>
+    <circle cx="110" cy="668" r="32" fill="#8aa07a" stroke="#1a1815" stroke-width="3"/>
+    <circle cx="430" cy="672" r="34" fill="#7d9269" stroke="#1a1815" stroke-width="3"/>
+  </g>
+
+  <!-- Sobi box truck -->
+  <g transform="translate(360,560)">
+    <ellipse cx="200" cy="280" rx="230" ry="14" fill="#1a1815" opacity="0.2"/>
+    <rect x="0" y="40" width="280" height="180" fill="#1a1815" stroke="#1a1815" stroke-width="3"/>
+    <rect x="22" y="62" width="236" height="136" fill="#b85c3c"/>
+    <text x="140" y="118" font-family="Georgia, serif" font-size="40" font-weight="700" fill="#fffaf2" text-anchor="middle" letter-spacing="2">SOBI</text>
+    <text x="140" y="148" font-family="Georgia, serif" font-size="16" fill="#fffaf2" text-anchor="middle" letter-spacing="5">MOVING</text>
+    <rect x="280" y="90" width="90" height="130" fill="#fffaf2" stroke="#1a1815" stroke-width="3"/>
+    <rect x="292" y="108" width="66" height="58" fill="#7da9c9" stroke="#1a1815" stroke-width="2"/>
+    <circle cx="70" cy="230" r="26" fill="#1a1815"/>
+    <circle cx="70" cy="230" r="11" fill="#5a554d"/>
+    <circle cx="220" cy="230" r="26" fill="#1a1815"/>
+    <circle cx="220" cy="230" r="11" fill="#5a554d"/>
+    <circle cx="330" cy="230" r="26" fill="#1a1815"/>
+    <circle cx="330" cy="230" r="11" fill="#5a554d"/>
+  </g>
+
+  <!-- two gold boxes on ground being loaded -->
+  <g transform="translate(150,720)">
+    <ellipse cx="80" cy="170" rx="90" ry="9" fill="#1a1815" opacity="0.2"/>
+    <polygon points="0,46 80,18 160,46 160,140 80,168 0,140" fill="#b88a4a"/>
+    <polygon points="0,46 80,18 160,46 80,74" fill="#d6ad6e"/>
+    <polygon points="160,46 160,140 80,168 80,74" fill="#8a6224"/>
+    <line x1="80" y1="74" x2="80" y2="168" stroke="#6e4f1c" stroke-width="2"/>
+  </g>
+  <g transform="translate(250,660)">
+    <polygon points="0,30 56,12 116,30 116,84 56,104 0,84" fill="#c69749"/>
+    <polygon points="0,30 56,12 116,30 56,48" fill="#d6ad6e"/>
+    <polygon points="116,30 116,84 56,104 56,48" fill="#9c7227"/>
+    <line x1="56" y1="48" x2="56" y2="104" stroke="#7a5a1c" stroke-width="2"/>
+  </g>
+</svg>

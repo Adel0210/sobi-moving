@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="up-wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fffaf2"/>
+      <stop offset="1" stop-color="#efe4cf"/>
+    </linearGradient>
+    <linearGradient id="up-floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#efe4cf"/>
+      <stop offset="1" stop-color="#d9c9b3"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="1000" fill="url(#up-wall)"/>
+  <rect y="640" width="800" height="360" fill="url(#up-floor)"/>
+  <line x1="0" y1="640" x2="800" y2="640" stroke="#a08864" stroke-width="3" opacity="0.5"/>
+
+  <!-- bookshelf partly filled -->
+  <g transform="translate(430,150)">
+    <rect width="300" height="490" fill="#d6ad6e" stroke="#1a1815" stroke-width="3"/>
+    <rect x="0" y="118" width="300" height="8" fill="#1a1815"/>
+    <rect x="0" y="244" width="300" height="8" fill="#1a1815"/>
+    <rect x="0" y="370" width="300" height="8" fill="#1a1815"/>
+    <!-- top shelf books -->
+    <rect x="20" y="40" width="22" height="78" fill="#b85c3c" stroke="#1a1815" stroke-width="2"/>
+    <rect x="44" y="52" width="20" height="66" fill="#7d9269" stroke="#1a1815" stroke-width="2"/>
+    <rect x="66" y="44" width="22" height="74" fill="#7da9c9" stroke="#1a1815" stroke-width="2"/>
+    <rect x="90" y="58" width="20" height="60" fill="#c69749" stroke="#1a1815" stroke-width="2"/>
+    <!-- second shelf books (partly filled) -->
+    <rect x="20" y="170" width="22" height="74" fill="#8a4127" stroke="#1a1815" stroke-width="2"/>
+    <rect x="44" y="178" width="20" height="66" fill="#8aa07a" stroke="#1a1815" stroke-width="2"/>
+    <rect x="66" y="172" width="22" height="72" fill="#b85c3c" stroke="#1a1815" stroke-width="2"/>
+    <!-- a leaning book -->
+    <rect x="92" y="192" width="20" height="52" fill="#7da9c9" stroke="#1a1815" stroke-width="2" transform="rotate(12 102 218)"/>
+    <!-- third shelf: a plant -->
+    <path d="M150,370 L186,370 L192,316 L144,316 Z" fill="#b85c3c" stroke="#1a1815" stroke-width="2"/>
+    <circle cx="168" cy="296" r="24" fill="#7d9269" stroke="#1a1815" stroke-width="2"/>
+  </g>
+
+  <!-- open box with items lifting out -->
+  <g transform="translate(110,440)">
+    <ellipse cx="140" cy="320" rx="150" ry="14" fill="#1a1815" opacity="0.2"/>
+    <!-- items lifting out -->
+    <rect x="92" y="20" width="28" height="80" fill="#7da9c9" stroke="#1a1815" stroke-width="2" transform="rotate(-10 106 60)"/>
+    <rect x="130" y="34" width="26" height="70" fill="#b85c3c" stroke="#1a1815" stroke-width="2" transform="rotate(8 143 69)"/>
+    <circle cx="180" cy="56" r="26" fill="#d6ad6e" stroke="#1a1815" stroke-width="2"/>
+    <!-- open flaps -->
+    <polygon points="40,130 140,98 140,70 40,102" fill="#9c7227"/>
+    <polygon points="240,130 140,98 140,70 240,102" fill="#b88a4a"/>
+    <polygon points="40,102 140,70 70,46 -30,78" fill="#dcb672"/>
+    <polygon points="240,102 140,70 210,46 310,78" fill="#dcb672"/>
+    <!-- box body -->
+    <polygon points="40,130 140,98 240,130 240,250 140,290 40,250" fill="#b88a4a"/>
+    <polygon points="240,130 240,250 140,290 140,162 240,130" fill="#8a6224"/>
+    <line x1="140" y1="162" x2="140" y2="290" stroke="#6e4f1c" stroke-width="2"/>
+  </g>
+
+  <!-- closed box -->
+  <g transform="translate(120,760)">
+    <polygon points="0,40 80,16 160,40 160,130 80,158 0,130" fill="#c69749"/>
+    <polygon points="0,40 80,16 160,40 80,64 0,40" fill="#dcb672"/>
+    <polygon points="160,40 160,130 80,158 80,64 160,40" fill="#9c7227"/>
+    <line x1="80" y1="64" x2="80" y2="158" stroke="#7a5a1c" stroke-width="2"/>
+  </g>
+
+  <!-- flattened empty box leaning -->
+  <g transform="translate(560,560)">
+    <polygon points="0,300 70,260 110,330 40,370" fill="#b88a4a" stroke="#1a1815" stroke-width="3"/>
+    <line x1="35" y1="280" x2="75" y2="345" stroke="#6e4f1c" stroke-width="2"/>
+  </g>
+</svg>

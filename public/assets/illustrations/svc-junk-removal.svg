@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="jr-wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fffaf2"/>
+      <stop offset="1" stop-color="#efe4cf"/>
+    </linearGradient>
+    <linearGradient id="jr-floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#efe4cf"/>
+      <stop offset="1" stop-color="#d9c9b3"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="1000" fill="url(#jr-wall)"/>
+  <rect y="660" width="800" height="340" fill="url(#jr-floor)"/>
+  <line x1="0" y1="660" x2="800" y2="660" stroke="#a08864" stroke-width="3" opacity="0.5"/>
+
+  <!-- hand-truck / dolly holding stacked box -->
+  <g transform="translate(440,300)">
+    <ellipse cx="120" cy="470" rx="180" ry="16" fill="#1a1815" opacity="0.2"/>
+    <!-- dolly frame -->
+    <rect x="60" y="0" width="16" height="430" fill="#1a1815"/>
+    <rect x="190" y="0" width="16" height="430" fill="#1a1815"/>
+    <rect x="60" y="60" width="146" height="12" fill="#1a1815"/>
+    <rect x="60" y="200" width="146" height="12" fill="#1a1815"/>
+    <!-- toe plate -->
+    <polygon points="40,430 226,430 256,470 10,470" fill="#5a554d" stroke="#1a1815" stroke-width="3"/>
+    <!-- handles -->
+    <path d="M60,0 q-30,-4 -34,30" fill="none" stroke="#1a1815" stroke-width="14" stroke-linecap="round"/>
+    <path d="M206,0 q30,-4 34,30" fill="none" stroke="#1a1815" stroke-width="14" stroke-linecap="round"/>
+    <!-- wheel -->
+    <circle cx="40" cy="430" r="34" fill="#1a1815"/>
+    <circle cx="40" cy="430" r="14" fill="#5a554d"/>
+    <circle cx="230" cy="430" r="34" fill="#1a1815"/>
+    <circle cx="230" cy="430" r="14" fill="#5a554d"/>
+    <!-- stacked box on plate -->
+    <g transform="translate(20,250)">
+      <polygon points="0,60 110,28 220,60 220,170 110,202 0,170" fill="#b88a4a"/>
+      <polygon points="0,60 110,28 220,60 110,92 0,60" fill="#d6ad6e"/>
+      <polygon points="220,60 220,170 110,202 110,92 220,60" fill="#8a6224"/>
+      <line x1="110" y1="92" x2="110" y2="202" stroke="#6e4f1c" stroke-width="2"/>
+    </g>
+    <!-- smaller box on top -->
+    <g transform="translate(70,170)">
+      <polygon points="0,40 62,20 124,40 124,98 62,118 0,98" fill="#c69749"/>
+      <polygon points="0,40 62,20 124,40 62,60 0,40" fill="#dcb672"/>
+      <polygon points="124,40 124,98 62,118 62,60 124,40" fill="#9c7227"/>
+    </g>
+  </g>
+
+  <!-- DONATE box on floor -->
+  <g transform="translate(110,640)">
+    <ellipse cx="120" cy="260" rx="130" ry="12" fill="#1a1815" opacity="0.2"/>
+    <polygon points="0,70 120,30 240,70 240,200 120,250 0,200" fill="#b88a4a"/>
+    <polygon points="0,70 120,30 240,70 120,110 0,70" fill="#d6ad6e"/>
+    <polygon points="240,70 240,200 120,250 120,110 240,70" fill="#8a6224"/>
+    <line x1="120" y1="110" x2="120" y2="250" stroke="#6e4f1c" stroke-width="2"/>
+    <text x="40" y="180" font-family="Georgia, serif" font-size="26" fill="#1a1815" opacity="0.55" letter-spacing="2">DONATE</text>
+  </g>
+
+  <!-- items set aside: a chair -->
+  <g transform="translate(150,470)">
+    <rect x="0" y="60" width="14" height="120" fill="#b85c3c" stroke="#1a1815" stroke-width="3"/>
+    <rect x="0" y="0" width="80" height="70" rx="8" fill="#c96a48" stroke="#1a1815" stroke-width="3"/>
+    <rect x="0" y="120" width="80" height="20" fill="#8a4127" stroke="#1a1815" stroke-width="3"/>
+    <rect x="0" y="140" width="12" height="40" fill="#1a1815"/>
+    <rect x="68" y="140" width="12" height="40" fill="#1a1815"/>
+  </g>
+
+  <!-- a rolled rug set aside -->
+  <g transform="translate(310,560)">
+    <ellipse cx="40" cy="40" rx="42" ry="40" fill="#7d9269" stroke="#1a1815" stroke-width="3"/>
+    <ellipse cx="40" cy="40" rx="16" ry="15" fill="#8aa07a" stroke="#1a1815" stroke-width="3"/>
+    <rect x="40" y="2" width="120" height="76" fill="#8aa07a"/>
+    <line x1="40" y1="20" x2="160" y2="20" stroke="#7d9269" stroke-width="3"/>
+    <line x1="40" y1="58" x2="160" y2="58" stroke="#7d9269" stroke-width="3"/>
+    <rect x="40" y="2" width="120" height="76" fill="none" stroke="#1a1815" stroke-width="3"/>
+  </g>
+</svg>
