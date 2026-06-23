@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { Icon } from "@/app/components/Icon";
+import { ImageUpload } from "../ImageUpload";
 import type { Post, FaqItem, Source } from "@/lib/types";
 
 type PostForm = Partial<Post>;
@@ -192,7 +193,7 @@ export function PostEditor({ postId }: { postId: string | null }) {
       </Field>
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
         <Field label="Cover image (URL)">
-          <input className="note-input" style={inputStyle} value={form.cover_image ?? ""} onChange={(e) => set("cover_image", e.target.value)} />
+          <ImageUpload value={form.cover_image ?? ""} onChange={(url) => set("cover_image", url)} folder="blog" />
         </Field>
         <Field label="Cover alt text">
           <input className="note-input" style={inputStyle} value={form.cover_alt ?? ""} onChange={(e) => set("cover_alt", e.target.value)} />
@@ -238,7 +239,7 @@ export function PostEditor({ postId }: { postId: string | null }) {
         </Field>
       </div>
       <Field label="OG image (URL)">
-        <input className="note-input" style={inputStyle} value={form.og_image ?? ""} onChange={(e) => set("og_image", e.target.value)} />
+        <ImageUpload value={form.og_image ?? ""} onChange={(url) => set("og_image", url)} folder="blog" />
       </Field>
       <div className="dk" style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
         <input type="checkbox" checked={!!form.noindex} onChange={(e) => set("noindex", e.target.checked)} />
