@@ -1,6 +1,10 @@
 import type { MetadataRoute } from "next";
 import { supabasePublic } from "@/lib/supabase/public";
 
+// Regenerate hourly so newly published blog posts appear in the sitemap
+// without needing a redeploy.
+export const revalidate = 3600;
+
 const SITE_URL = "https://www.sobimoving.com";
 
 const STATIC_ROUTES = [
