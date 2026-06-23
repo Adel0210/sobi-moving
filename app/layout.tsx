@@ -15,7 +15,6 @@ export const metadata: Metadata = {
   },
   description:
     "Local and long-distance movers across metro Atlanta — honest pricing, a careful crew, and full-service packing, moving, and setup.",
-  icons: { icon: "/assets/logo.png" },
   openGraph: {
     type: "website",
     siteName: "Sobi Moving",
