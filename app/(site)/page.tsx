@@ -7,6 +7,7 @@ import { getContent } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Atlanta Movers — Local & Long-Distance Moving",
   description: "Sobi Moving handles local and long-distance moves across metro Atlanta with honest pricing, careful crews, and full-service packing, setup, and junk removal. Get a free quote.",
+  alternates: { canonical: "/" },
 };
 
 const SERVICES = [
@@ -129,7 +130,7 @@ export default async function HomePage() {
           </div>
           <div className="services-grid">
             {SERVICES.map((s, i) => (
-              <Link key={s.id} href={`/services?s=${s.id}`} className="service-card">
+              <Link key={s.id} href={`/services#svc-${s.id}`} className="service-card">
                 <div className="service-card-photo">
                   <PhotoPlaceholder
                     src={`/assets/illustrations/svc-${s.id}.svg`}

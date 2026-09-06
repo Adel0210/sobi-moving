@@ -6,6 +6,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Senior & Downsizing Moves",
   description: "Compassionate senior moving and downsizing help across metro Atlanta — patient crews, full packing and setup, and coordination with families and care teams.",
+  alternates: { canonical: "/senior-moving" },
 };
 
 const SeniorMovingPage = () => {

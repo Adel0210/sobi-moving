@@ -6,6 +6,7 @@ import { PhotoSlot, PhotoPlaceholder } from "@/app/components/ui";
 export const metadata: Metadata = {
   title: "About Sobi Moving",
   description: "Meet Sobi Moving — a metro Atlanta moving company built on honest pricing, background-checked crews, and treating every home like our own.",
+  alternates: { canonical: "/about" },
 };
 
 const AboutPage = () => (

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Icon } from "./Icon";
+import { LOCATIONS } from "@/lib/locations";
 
 export const SiteFooter = ({
   phoneDisplay = "(630) 456-1347",
@@ -52,12 +53,21 @@ export const SiteFooter = ({
             <li><Link href="/about">About Us</Link></li>
             <li><Link href="/senior-moving">Senior Moving</Link></li>
             <li><Link href="/blog">Blog</Link></li>
+            <li><Link href="/movers">Service Areas</Link></li>
             <li><Link href="/contact">Contact</Link></li>
             <li><Link href="/quote">Get a Quote</Link></li>
           </ul>
           <h4 style={{ marginTop: 32 }}>Service Areas</h4>
+          {/* Driven off LOCATIONS so every city page gets a footer link. Six of
+              them used to be missing here and were earning almost no
+              impressions as a result. */}
           <p style={{ fontSize: 13, lineHeight: 1.9, color: "#908a7f" }}>
-            <Link href="/movers/sandy-springs">Sandy Springs</Link> · <Link href="/movers/alpharetta">Alpharetta</Link> · <Link href="/movers/roswell">Roswell</Link> · <Link href="/movers/marietta">Marietta</Link> · <Link href="/movers/dunwoody">Dunwoody</Link> · <Link href="/movers/johns-creek">Johns Creek</Link> · <Link href="/movers/smyrna">Smyrna</Link> · <Link href="/movers/decatur">Decatur</Link> · <Link href="/movers/buckhead">Buckhead</Link> · <Link href="/movers">View all areas →</Link>
+            {LOCATIONS.map((l, i) => (
+              <span key={l.slug}>
+                {i > 0 ? " · " : null}
+                <Link href={`/movers/${l.slug}`}>{l.city}</Link>
+              </span>
+            ))}
           </p>
         </div>
         <div>

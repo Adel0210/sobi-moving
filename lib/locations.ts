@@ -386,3 +386,34 @@ export const LOCATIONS: Location[] = [
     ],
   },
 ];
+
+// Real geographic adjacency, used to cross-link the city pages.
+//
+// Search Console showed why this matters: the 9 cities linked from the footer
+// earned 9,573 impressions, while the 6 that weren't linked from anywhere
+// earned 30 between them. Internal links are the cheapest ranking lever we
+// have, so every city now points at its actual neighbours instead of relying
+// on the footer alone.
+const NEARBY: Record<string, string[]> = {
+  "sandy-springs": ["dunwoody", "roswell", "buckhead", "brookhaven"],
+  roswell: ["alpharetta", "sandy-springs", "east-cobb", "johns-creek"],
+  alpharetta: ["roswell", "johns-creek", "cumming", "woodstock"],
+  dunwoody: ["sandy-springs", "brookhaven", "johns-creek", "roswell"],
+  "johns-creek": ["alpharetta", "roswell", "cumming", "dunwoody"],
+  marietta: ["east-cobb", "smyrna", "vinings", "woodstock"],
+  smyrna: ["vinings", "marietta", "buckhead", "east-cobb"],
+  brookhaven: ["buckhead", "dunwoody", "decatur", "sandy-springs"],
+  decatur: ["brookhaven", "midtown", "buckhead", "dunwoody"],
+  buckhead: ["midtown", "brookhaven", "sandy-springs", "vinings"],
+  "east-cobb": ["marietta", "roswell", "woodstock", "smyrna"],
+  vinings: ["smyrna", "buckhead", "marietta", "midtown"],
+  midtown: ["buckhead", "decatur", "vinings", "brookhaven"],
+  cumming: ["alpharetta", "johns-creek", "woodstock", "roswell"],
+  woodstock: ["marietta", "east-cobb", "cumming", "alpharetta"],
+};
+
+export function nearbyLocations(slug: string): Location[] {
+  return (NEARBY[slug] ?? [])
+    .map((s) => LOCATIONS.find((l) => l.slug === s))
+    .filter((l): l is Location => Boolean(l));
+}

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { LOCATIONS } from "@/lib/locations";
+import { LOCATIONS, nearbyLocations } from "@/lib/locations";
+import { SERVICE_TYPES } from "@/lib/serviceTypes";
 import { Icon } from "@/app/components/Icon";
 import { FAQItem } from "@/app/components/ui";
 
@@ -35,6 +36,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
   const { city } = await params;
   const loc = LOCATIONS.find((l) => l.slug === city);
   if (!loc) notFound();
+  const nearby = nearbyLocations(loc.slug);
 
   const faqLd = {
     "@context": "https://schema.org",
@@ -98,7 +100,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
           <h2 style={{ marginTop: 8, marginBottom: 28 }}>Full-service, start to finish</h2>
           <div className="services-grid">
             {SERVICES.map((s) => (
-              <Link key={s.id} href={`/services?s=${s.id}`} className="service-card">
+              <Link key={s.id} href={`/services#svc-${s.id}`} className="service-card">
                 <div className="service-card-body">
                   <div className="service-icon"><Icon name={s.icon} size={18} /></div>
                   <h3>{s.title}</h3>
@@ -108,6 +110,50 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
           </div>
         </div>
       </section>
+
+      {/* SERVICE PAGES — city-specific anchor text so each service page picks up
+          a local relevance signal instead of a bare "learn more". */}
+      <section style={{ paddingTop: 8, paddingBottom: 64 }}>
+        <div className="container">
+          <div style={{ maxWidth: 760 }}>
+            <h2 style={{ marginBottom: 8 }}>Moving services in {loc.city}</h2>
+            <p style={{ color: "var(--ink-soft)", marginBottom: 24 }}>
+              Every kind of move we handle for {loc.city} families and businesses.
+            </p>
+            <ul className="service-includes">
+              {SERVICE_TYPES.map((svc) => (
+                <li key={svc.slug}>
+                  <Icon name="check" size={15} />
+                  <Link href={`/services/${svc.slug}`} style={{ color: "var(--accent)", borderBottom: "1px solid currentColor" }}>
+                    {svc.name} in {loc.city}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* NEARBY CITIES */}
+      {nearby.length ? (
+        <section className="alt" style={{ paddingTop: 56, paddingBottom: 56 }}>
+          <div className="container">
+            <div className="eyebrow">Nearby</div>
+            <h2 style={{ marginTop: 8, marginBottom: 24 }}>We also move around {loc.city}</h2>
+            <div className="services-grid">
+              {nearby.map((n) => (
+                <Link key={n.slug} href={`/movers/${n.slug}`} className="service-card">
+                  <div className="service-card-body">
+                    <div className="service-icon"><Icon name="map" size={18} /></div>
+                    <h3>Movers in {n.city}</h3>
+                    <p>{n.county}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       {/* FAQ */}
       <section className="alt" style={{ paddingTop: 64, paddingBottom: 64 }}>

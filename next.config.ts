@@ -18,6 +18,14 @@ const nextConfig: NextConfig = {
       { source: "/quote.html", destination: "/quote", permanent: true },
       { source: "/senior-moving.php", destination: "/senior-moving", permanent: true },
       { source: "/senior.php", destination: "/senior-moving", permanent: true },
+      // Legacy pages that had no new equivalent were returning 403 and bleeding
+      // the impressions they still earn — point them at the closest live page.
+      { source: "/materials.php", destination: "/services", permanent: true },
+      { source: "/reviews.php", destination: "/about", permanent: true },
+      { source: "/blog.php", destination: "/blog", permanent: true },
+      { source: "/gallery.php", destination: "/about", permanent: true },
+      { source: "/faq.php", destination: "/", permanent: true },
+      { source: "/testimonials.php", destination: "/about", permanent: true },
     ];
   },
 };
