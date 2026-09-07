@@ -42,6 +42,15 @@ export function movingCompanySchema(c: SiteContent) {
       },
     ],
     aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "100", bestRating: "5" },
+    // Ties the site to the profiles Google already knows about, so the website
+    // and the Business Profile are understood as the same entity. Nothing
+    // linked these before, which is most of why the domain reads as unknown.
+    sameAs: [
+      "https://maps.google.com/?cid=7966170982154440477",
+      "https://www.yelp.com/biz/sobi-moving-sandy-springs-2",
+      "https://www.instagram.com/sobimoving/",
+      "https://www.mapquest.com/us/georgia/sobi-moving-796212179",
+    ],
     knowsAbout: [
       "Local moving", "Long distance moving", "Senior moving", "Packing services",
       "White glove setup", "Furniture assembly", "Junk removal",
