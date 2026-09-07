@@ -196,7 +196,7 @@ export default async function HomePage() {
             </div>
             <div className="row" style={{ gap: 4 }}>
               {[1,2,3,4,5].map(i => <Icon key={i} name="star" size={20}/>) }
-              <span style={{ marginLeft: 10, color: "var(--ink-soft)", fontSize: 14 }}>5.0 average — 100+ verified reviews</span>
+              <span style={{ marginLeft: 10, color: "var(--ink-soft)", fontSize: 14 }}>5.0 average — 32 verified Google reviews</span>
             </div>
           </div>
           <div className="testimonial-grid">

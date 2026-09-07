@@ -41,7 +41,10 @@ export function movingCompanySchema(c: SiteContent) {
         closes: "20:00",
       },
     ],
-    aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "100", bestRating: "5" },
+    // Mirrors the real Google Business Profile (5.0 from 32 reviews). Keep this
+    // in step with the profile — an inflated count is a manual-action risk, and
+    // Google expects the same reviews to be visible on the page.
+    aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "32", bestRating: "5" },
     // Ties the site to the profiles Google already knows about, so the website
     // and the Business Profile are understood as the same entity. Nothing
     // linked these before, which is most of why the domain reads as unknown.
