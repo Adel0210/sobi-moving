@@ -7,12 +7,18 @@ This version has breaking changes — APIs, conventions, and file structure may 
 <!-- BEGIN:ownership-rules -->
 # Ownership — HARD RULE
 
-Sobi Moving is Adel's **personal** client. **Nothing may trace back to SLIQ by Design.** No exceptions.
+This is a **personal** client project. It must stay unlinked from any agency, and
+nothing identifying one may appear in this repo, the content, or the deployed
+site. No exceptions.
 
-- Git author/committer must be `Adel <adel.abdullah17@gmail.com>` — never `adel@sliqbydesign.com`.
-- GitHub: use the `Adel0210` account (`gh auth switch --user Adel0210`), never `sliqbydesign`.
-- Vercel: deploy under Adel's **personal** Vercel account, never the SLIQ team (`william-houchieme-s-projects`).
-- No "SLIQ", "sliqbydesign", or agency branding, credits, footers, meta tags, comments, or emails anywhere in the code, content, or deployed site.
-- No SLIQ analytics, tracking, GTM, or third-party accounts wired into this project.
-- Before any commit, push, or deploy: verify identity and scope first.
+- Git author/committer is always `Adel <adel.abdullah17@gmail.com>`. Never any
+  other address.
+- GitHub: push as `Adel0210`. Another account is the machine default, so check
+  `gh auth status` and switch before pushing.
+- Vercel: deploy under the personal account only, never a team scope.
+- No agency name, branding, credits, footers, meta tags, comments, or email
+  addresses anywhere in the code, content, or deployed site.
+- No agency analytics, tracking, tag manager, or shared third-party accounts.
+- Before any commit, push, or deploy: verify identity and scope first, and check
+  the diff for stray identifiers. **This repo is public.**
 <!-- END:ownership-rules -->
