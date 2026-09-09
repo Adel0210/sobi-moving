@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { LOCATIONS, nearbyLocations } from "@/lib/locations";
+import { REVIEWS, REVIEW_COUNT, REVIEW_RATING, GBP_URL } from "@/lib/reviews";
 import { SERVICE_TYPES } from "@/lib/serviceTypes";
 import { Icon } from "@/app/components/Icon";
 import { FAQItem } from "@/app/components/ui";
@@ -26,8 +27,10 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   const loc = LOCATIONS.find((l) => l.slug === city);
   if (!loc) return {};
   return {
-    title: `Movers in ${loc.city}, GA — Local & Long-Distance`,
-    description: `Sobi Moving is ${loc.city}'s trusted moving company — full-service packing, white-glove setup, and a careful, licensed crew for local & long-distance moves. Get a free quote.`,
+    title: `Movers in ${loc.city}, GA | Sobi Moving`,
+    description: loc.depth
+      ? `Moving in ${loc.city}? Local and long-distance movers open 24/7, rated 5.0 from ${REVIEW_COUNT} Google reviews. Same-day itemised quotes, no hidden fees.`
+      : `Sobi Moving is ${loc.city}'s trusted moving company — full-service packing, white-glove setup, and a careful, licensed crew for local & long-distance moves. Get a free quote.`,
     alternates: { canonical: `/movers/${loc.slug}` },
   };
 }
@@ -41,7 +44,31 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
   const faqLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: loc.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+    mainEntity: [...(loc.depth?.faqExtra ?? []), ...loc.faq].map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+  };
+  // Service schema so the city page is understood as a service offered in a
+  // place, not just a page that mentions a city.
+  const serviceLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: `Moving services in ${loc.city}, GA`,
+    serviceType: "Moving company",
+    provider: { "@type": "MovingCompany", name: "Sobi Moving", "@id": `${SITE}/#business` },
+    areaServed: { "@type": "City", name: `${loc.city}, GA`, containedInPlace: { "@type": "AdministrativeArea", name: loc.county } },
+    description: loc.depth?.answer ?? loc.intro,
+    url: `${SITE}/movers/${loc.slug}`,
+  };
+  // Individual reviews backing the site-wide aggregateRating.
+  const reviewLd = {
+    "@context": "https://schema.org",
+    "@type": "MovingCompany",
+    "@id": `${SITE}/#business`,
+    review: REVIEWS.map((r) => ({
+      "@type": "Review",
+      author: { "@type": "Person", name: r.author },
+      reviewRating: { "@type": "Rating", ratingValue: String(r.rating), bestRating: "5" },
+      reviewBody: r.body,
+    })),
   };
   const crumbLd = {
     "@context": "https://schema.org",
@@ -57,6 +84,8 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
     <main className="page-enter">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewLd) }} />
 
       {/* HERO */}
       <section style={{ paddingTop: 56, paddingBottom: 56 }}>
@@ -64,7 +93,9 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
           <div style={{ maxWidth: 760 }}>
             <div className="eyebrow">Sobi Moving · {loc.county}</div>
             <h1 style={{ marginTop: 8 }}>Movers in <em style={{ fontStyle: "italic", color: "var(--accent)", fontWeight: 400 }}>{loc.city}, GA.</em></h1>
-            <p className="lead" style={{ marginTop: 20, maxWidth: 640 }}>{loc.intro}</p>
+            <p className="lead" style={{ marginTop: 20, maxWidth: 640 }}>
+              {loc.depth ? loc.depth.answer : loc.intro}
+            </p>
             <div className="row" style={{ marginTop: 30, gap: 12 }}>
               <Link href="/quote" className="btn btn-primary btn-arrow">Get your free quote</Link>
               <a href="tel:6304561347" className="btn btn-ghost"><Icon name="phone" size={14} /> (630) 456-1347</a>
@@ -110,6 +141,76 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
           </div>
         </div>
       </section>
+
+      {/* AREAS — named neighbourhoods with a real specific each. Generic metro
+          copy is what leaves these pages indistinguishable from every other
+          mover's location page. */}
+      {loc.depth ? (
+        <section style={{ paddingTop: 64, paddingBottom: 64 }}>
+          <div className="container">
+            <div style={{ maxWidth: 760 }}>
+              <h2 style={{ marginBottom: 8 }}>Where we move in {loc.city}</h2>
+              <p style={{ color: "var(--ink-soft)", marginBottom: 28 }}>
+                Access is different in every part of {loc.city}, and it changes how the day is planned.
+              </p>
+            </div>
+            <div className="services-grid">
+              {loc.depth.areas.map((a) => (
+                <div key={a.name} className="service-card" style={{ cursor: "default" }}>
+                  <div className="service-card-body">
+                    <div className="service-icon"><Icon name="map" size={18} /></div>
+                    <h3>{a.name}</h3>
+                    <p>{a.note}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      {/* CHALLENGES */}
+      {loc.depth ? (
+        <section className="alt" style={{ paddingTop: 64, paddingBottom: 64 }}>
+          <div className="container">
+            <div style={{ maxWidth: 760 }}>
+              <div className="eyebrow">Local knowledge</div>
+              <h2 style={{ marginTop: 8, marginBottom: 28 }}>What makes a {loc.city} move different</h2>
+              {loc.depth.challenges.map((c) => (
+                <div key={c.title} style={{ marginBottom: 28 }}>
+                  <h3 style={{ fontSize: 19, marginBottom: 8 }}>{c.title}</h3>
+                  <p style={{ color: "var(--ink-soft)", fontSize: 16, lineHeight: 1.65 }}>{c.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      {/* WHAT AFFECTS YOUR QUOTE — the cost question, answered honestly without
+          publishing figures we do not have. */}
+      {loc.depth ? (
+        <section style={{ paddingTop: 64, paddingBottom: 64 }}>
+          <div className="container">
+            <div style={{ maxWidth: 760 }}>
+              <div className="eyebrow">Pricing</div>
+              <h2 style={{ marginTop: 8, marginBottom: 12 }}>What affects the cost of your {loc.city} move</h2>
+              <p style={{ color: "var(--ink-soft)", marginBottom: 24, fontSize: 16, lineHeight: 1.65 }}>
+                Every quote is itemised, and these are the things that move the number. Tell us about
+                your move and you get the figure back the same day, with nothing added later.
+              </p>
+              <ul className="service-includes">
+                {loc.depth.quoteFactors.map((f) => (
+                  <li key={f}><Icon name="check" size={15} /> {f}</li>
+                ))}
+              </ul>
+              <div className="row" style={{ marginTop: 28, gap: 12 }}>
+                <Link href="/quote" className="btn btn-primary btn-arrow">Get your {loc.city} quote</Link>
+              </div>
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       {/* SERVICE PAGES — city-specific anchor text so each service page picks up
           a local relevance signal instead of a bare "learn more". */}
@@ -162,10 +263,47 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
             <div className="eyebrow">{loc.city} moving FAQ</div>
             <h2 style={{ marginTop: 8, marginBottom: 24 }}>Questions, answered</h2>
             <div className="faq-list">
-              {loc.faq.map((f, i) => (
+              {[...(loc.depth?.faqExtra ?? []), ...loc.faq].map((f, i) => (
                 <FAQItem key={i} q={f.q} a={f.a} defaultOpen={i === 0} />
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* REVIEWS — real Google reviews. These back the aggregateRating in the
+          site-wide schema, which Google expects to be visible on the page. */}
+      <section style={{ paddingTop: 64, paddingBottom: 64 }}>
+        <div className="container">
+          <div className="section-head-row">
+            <div>
+              <div className="eyebrow">Reviews</div>
+              <h2 style={{ marginTop: 8 }}>What customers say</h2>
+            </div>
+            <div className="row" style={{ gap: 4 }}>
+              {[1, 2, 3, 4, 5].map((i) => <Icon key={i} name="star" size={20} />)}
+              <span style={{ marginLeft: 10, color: "var(--ink-soft)", fontSize: 14 }}>
+                {REVIEW_RATING} from{" "}
+                <a href={GBP_URL} target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)", borderBottom: "1px solid currentColor" }}>
+                  {REVIEW_COUNT} Google reviews
+                </a>
+              </span>
+            </div>
+          </div>
+          <div className="testimonial-grid">
+            {REVIEWS.map((r) => (
+              <figure key={r.author} className="testimonial-card">
+                <div className="quote-mark">&ldquo;</div>
+                <blockquote>{r.body}</blockquote>
+                <figcaption>
+                  <div className="t-avatar"></div>
+                  <div>
+                    <div style={{ fontWeight: 500 }}>{r.author}</div>
+                    <div style={{ fontSize: 13, color: "var(--ink-mute)" }}>Google review · {r.when}</div>
+                  </div>
+                </figcaption>
+              </figure>
+            ))}
           </div>
         </div>
       </section>

@@ -1,3 +1,15 @@
+// Optional deep-content block. City pages started as one shared template, which
+// left every page at ~317 unique words against competitors running 2,000+.
+// A city gets upgraded by filling this in; pages without it render as before,
+// so the rollout can happen one city at a time.
+export type CityDepth = {
+  answer: string; // direct answer to "movers in <city>" — first thing on the page, no brand name
+  areas: { name: string; note: string }[]; // named areas with a real, checkable specific
+  challenges: { title: string; body: string }[]; // what actually makes a move here different
+  quoteFactors: string[]; // what moves the price, without quoting figures
+  faqExtra?: { q: string; a: string }[]; // city-specific questions beyond the shared three
+};
+
 export type Location = {
   slug: string; // url slug, e.g. "sandy-springs"
   city: string; // "Sandy Springs"
@@ -7,6 +19,7 @@ export type Location = {
   intro: string; // 2-3 sentence UNIQUE intro for the city's moving page
   local: string; // 1 paragraph (~3-4 sentences) about what moving IN/TO this specific city is like
   faq: { q: string; a: string }[]; // 3 Q&As, at least one city-specific
+  depth?: CityDepth; // present once the city has been built out properly
 };
 
 export const LOCATIONS: Location[] = [
@@ -159,6 +172,85 @@ export const LOCATIONS: Location[] = [
         a: "Yes. We can haul away unwanted items as part of your move so you don't have to deal with the leftovers.",
       },
     ],
+    depth: {
+      answer:
+        "Moving in Marietta means dealing with three very different kinds of property: historic homes around Marietta Square with narrow streets and original staircases, hillside houses on wooded lots toward Kennesaw Mountain, and newer apartments and townhomes along the Cobb Parkway and I-75 corridor. Each needs a different access plan.",
+      areas: [
+        {
+          name: "Marietta Square & Church-Cherokee",
+          note: "Late-1800s and early-1900s homes in the historic district. Narrow streets, on-street-only parking, original staircases and heart-pine floors that need runners and door padding before anything is carried. Square events close streets on weekends, so truck placement gets arranged ahead of the day.",
+        },
+        {
+          name: "Whitlock Avenue corridor",
+          note: "Antebellum and Victorian properties on deep lots. Long walkways from the street to the door mean a longer carry, and the crew sizes up for it rather than dragging the day out.",
+        },
+        {
+          name: "Kennesaw Mountain & west Marietta",
+          note: "Larger homes on hilly, wooded lots. Steep and curved driveways are common, and a full-size truck often cannot get to the door — we shuttle with a smaller vehicle when that is the case.",
+        },
+        {
+          name: "East Cobb border",
+          note: "Established subdivisions with HOA move-in rules. Where a certificate of insurance or a booked move-in window is required, we handle that paperwork with the management office before move day.",
+        },
+        {
+          name: "Cobb Parkway & Roswell Street",
+          note: "Apartments and townhomes near the Big Chicken and the I-75 interchange. Elevator buildings need reservations, and loading zones here fill up fast during weekday rush.",
+        },
+        {
+          name: "Fair Oaks & Dobbins",
+          note: "Close to Dobbins Air Reserve Base and the Lockheed Martin plant, where relocations run to fixed report dates. Moves here are scheduled around a deadline that does not move.",
+        },
+      ],
+      challenges: [
+        {
+          title: "Historic homes need a slower, protected approach",
+          body: "Homes near the Square and along Whitlock predate modern doorways and stair widths. Large furniture often will not clear a turn that looks fine on paper. The crew measures access first, protects floors and jambs, and disassembles more than a typical move needs rather than forcing a piece through.",
+        },
+        {
+          title: "Hills and driveways decide where the truck parks",
+          body: "West Marietta lots slope, and a loaded truck cannot safely use a steep or curved driveway. Where the truck has to stay on the street, the carry gets longer — planning it up front is the difference between a normal day and an overtime one.",
+        },
+        {
+          title: "I-75 and the Loop set the schedule",
+          body: "I-75, the South Marietta Loop and Cobb Parkway all back up hard at peak. Load times get set around the traffic instead of into it, so hours are not spent sitting in a truck.",
+        },
+        {
+          title: "Two school systems, two calendars",
+          body: "Marietta City Schools and Cobb County Schools run separate calendars, and families time moves to them. Late July and early August book out first — the earlier the date is set, the more of the day is yours to choose.",
+        },
+      ],
+      quoteFactors: [
+        "How much there is to move, and how much of it is packed before the crew arrives",
+        "Stairs, and how many flights — historic homes near the Square are frequently three levels",
+        "Carry distance from the door to where the truck can legally and safely park",
+        "Elevator or loading-dock booking in apartment and condo buildings",
+        "Whether packing, unpacking, or furniture disassembly is added to the move",
+        "Specialty items — pianos, safes, oversized glass, gym equipment",
+        "The date itself: weekends, month-end and the August school-year rush are the busiest windows",
+      ],
+      faqExtra: [
+        {
+          q: "How much do movers in Marietta cost?",
+          a: "There is no flat rate that is honest for every home, because the things that actually drive the number vary so much across Marietta — volume, stairs, carry distance, packing, and the date. Tell us the address, the date, and roughly what is moving, and you get an itemised quote back the same day with no hidden fees.",
+        },
+        {
+          q: "Can you move a historic home near Marietta Square?",
+          a: "Yes, and it is worth booking a walk-through first. Older doorways, tight stair turns and original floors change how a move is run, and knowing the access in advance is what keeps the house and the furniture intact.",
+        },
+        {
+          q: "Do you handle military and corporate relocations from Dobbins or Lockheed?",
+          a: "Yes. Relocations tied to a report date or a start date get scheduled backwards from that date, including long-distance moves out of Georgia, so the deadline is the fixed point everything else works around.",
+        },
+        {
+          q: "My driveway is steep. Is that a problem?",
+          a: "It is common in west Marietta and it is not a problem as long as we know beforehand. If a loaded truck cannot use the driveway safely, we park on the street and shuttle, and that gets built into the plan rather than discovered on the day.",
+        },
+        {
+          q: "Are you available on weekends and outside business hours?",
+          a: "We are open 24 hours, 7 days a week. Early starts, evenings and weekends are all normal for us, which matters for commercial moves and for buildings that only allow moves in a set window.",
+        },
+      ],
+    },
   },
   {
     slug: "smyrna",
