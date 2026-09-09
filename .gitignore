@@ -45,3 +45,6 @@ next-env.d.ts
 .startlog
 .buildlog
 .next-start.log
+
+# Internal strategy doc — repo is public
+MASTER.md
