@@ -27,10 +27,10 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   const loc = LOCATIONS.find((l) => l.slug === city);
   if (!loc) return {};
   return {
-    title: `Movers in ${loc.city}, GA`,
-    description: loc.depth
+    title: loc.depth?.headings.title ?? `Movers in ${loc.city}, GA`,
+    description: loc.depth?.headings.description ?? (loc.depth
       ? `Moving in ${loc.city}? Local and long-distance movers open 24/7, rated 5.0 from ${REVIEW_COUNT} Google reviews. Same-day itemized quotes, no hidden fees.`
-      : `Sobi Moving is ${loc.city}'s trusted moving company offering full-service packing, white-glove setup, and a careful, licensed crew for local & long-distance moves. Get a free quote.`,
+      : `Sobi Moving is ${loc.city}'s trusted moving company offering full-service packing, white-glove setup, and a careful, licensed crew for local & long-distance moves. Get a free quote.`),
     alternates: { canonical: `/movers/${loc.slug}` },
   };
 }
@@ -54,7 +54,14 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
     name: `Moving services in ${loc.city}, GA`,
     serviceType: "Moving company",
     provider: { "@type": "MovingCompany", name: "Sobi Moving", "@id": `${SITE}/#business` },
-    areaServed: { "@type": "City", name: `${loc.city}, GA`, containedInPlace: { "@type": "AdministrativeArea", name: loc.county } },
+    // East Cobb, Buckhead and Midtown are neighbourhoods or CDPs, not
+    // municipalities. The East Cobb page opens by saying exactly that, so
+    // marking it up as a City contradicted its own copy.
+    areaServed: {
+      "@type": ["east-cobb", "buckhead", "midtown"].includes(loc.slug) ? "Place" : "City",
+      name: `${loc.city}, GA`,
+      containedInPlace: { "@type": "AdministrativeArea", name: loc.county },
+    },
     description: loc.depth?.answer ?? loc.intro,
     url: `${SITE}/movers/${loc.slug}`,
   };
@@ -92,7 +99,13 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
         <div className="container">
           <div style={{ maxWidth: 760 }}>
             <div className="eyebrow">Sobi Moving · {loc.county}</div>
-            <h1 style={{ marginTop: 8 }}>Movers in <em style={{ fontStyle: "italic", color: "var(--accent)", fontWeight: 400 }}>{loc.city}, GA.</em></h1>
+            <h1 style={{ marginTop: 8 }}>
+              {loc.depth?.headings.h1 ? (
+                loc.depth.headings.h1
+              ) : (
+                <>Movers in <em style={{ fontStyle: "italic", color: "var(--accent)", fontWeight: 400 }}>{loc.city}, GA.</em></>
+              )}
+            </h1>
             <p className="lead" style={{ marginTop: 20, maxWidth: 640 }}>
               {loc.depth ? loc.depth.answer : loc.intro}
             </p>

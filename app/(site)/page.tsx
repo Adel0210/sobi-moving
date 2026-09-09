@@ -263,7 +263,7 @@ export default async function HomePage() {
           <div className="section-head-row">
             <div>
               <div className="eyebrow">How It Works</div>
-              <h2>Simple. Seamless.<br/><em style={{ fontStyle: "italic", color: "var(--accent)" }}>Done.</em></h2>
+              <h2>Simple. Steady.<br/><em style={{ fontStyle: "italic", color: "var(--accent)" }}>Done.</em></h2>
             </div>
             <p className="lead" style={{ maxWidth: 380 }}>
               Four steps from "I'm thinking about moving" to "this already feels like home."

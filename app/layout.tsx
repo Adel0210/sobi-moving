@@ -19,6 +19,13 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Sobi Moving",
     locale: "en_US",
+    // Placeholder until a real 1200x630 share image exists. The logo is square,
+    // so it letterboxes, but an imageless share card is worse.
+    images: [{ url: "/assets/logo.png", width: 512, height: 512, alt: "Sobi Moving" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/assets/logo.png"],
   },
 };
 

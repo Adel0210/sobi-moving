@@ -47,7 +47,7 @@ export default async function CityServicePage({
     serviceType: svc.name,
     provider: { "@type": "MovingCompany", name: "Sobi Moving", "@id": `${SITE}/#business` },
     areaServed: {
-      "@type": "City",
+      "@type": ["east-cobb", "buckhead", "midtown"].includes(location.slug) ? "Place" : "City",
       name: `${location.city}, GA`,
       containedInPlace: { "@type": "AdministrativeArea", name: location.county },
     },

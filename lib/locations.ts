@@ -17,6 +17,9 @@ export type CityDepth = {
   // threshold. Each city names its own sections after what is actually
   // distinctive there instead.
   headings: {
+    title?: string; // overrides the templated SEO title (brand is appended by the layout)
+    h1?: string;    // overrides the templated H1; must agree with the title
+    description?: string; // 130-155 chars, written for the click, not boilerplate
     local: string;   // the existing "Moving in X, done right" slot
     capabilities: string; // the six-capability grid
     areas: string;
@@ -49,11 +52,11 @@ export const LOCATIONS: Location[] = [
     city: "Sandy Springs",
     full: "Sandy Springs, GA",
     county: "Fulton County",
-    neighborhoods: ["City Springs", "Sandy Springs Heights", "High Point", "Riverside", "Dunwoody Springs", "Huntcliff"],
+    neighborhoods: ["City Springs", "North Springs", "High Point", "Riverside", "Dunwoody Springs", "Huntcliff"],
     intro:
       "Sandy Springs sits right along the Chattahoochee with a mix of established mid-century homes and sleek new builds around City Springs. Sobi Moving knows these streets, and we handle every move here with the same careful, full-service approach. From a townhome near GA-400 to a riverside estate, we make the day feel easy.",
     local:
-      "Moving in Sandy Springs means navigating everything from gated communities like Huntcliff to busy condo corridors near Roswell Road and the Perimeter office district. Many homes here are split-levels and ranches on wooded, sloping lots, so our crew comes ready for steep driveways and long carries. The newer mixed-use buildings around City Springs often require elevator reservations and certificate-of-insurance paperwork, which we handle for you in advance. We also time loading around the GA-400 and I-285 crunch so the truck is never stuck while the clock runs.",
+      "Moving in Sandy Springs means everything from gated communities like Huntcliff to busy condo corridors near Roswell Road and the Perimeter office district. Many homes here are split-levels and ranches on wooded, sloping lots, so our crew comes ready for steep driveways and long carries. The newer mixed-use buildings around City Springs often require elevator reservations and certificate-of-insurance paperwork, which we handle for you in advance. We also time loading around the GA-400 and I-285 crunch so the truck is never stuck while the clock runs.",
     faq: [
       {
         q: "Do you handle moves into the City Springs high-rise and condo buildings?",
@@ -70,13 +73,16 @@ export const LOCATIONS: Location[] = [
     ],
     depth: {
       headings: {
+        title: "Sandy Springs Movers & Relocation Specialists",
+        description: "From Perimeter high-rises to Huntcliff, the building sets the plan. Elevator and COI paperwork handled. Open 24/7, rated 5.0 from 32 reviews.",
+        h1: "Sandy Springs movers and relocation specialists",
         local: "Here, the building matters more than the address",
         capabilities: "The parts people forget to budget for",
         areas: "Perimeter towers to riverside ranches",
         challenges: "Elevator buildings, gated streets and the 400/285 squeeze",
         process: "How a Sandy Springs move runs",
         cost: "How much do movers in Sandy Springs cost?",
-        services: "Choose your Sandy Springs service",
+        services: "What a relocation specialist in Sandy Springs actually does",
         nearby: "We also cover the northern Perimeter",
         faq: "Questions from Perimeter and City Springs",
         reviews: "What people say after the truck leaves",
@@ -86,8 +92,8 @@ export const LOCATIONS: Location[] = [
         "Sandy Springs is the densest mix of building types in the metro. A relocation here can mean a Perimeter high-rise with a booked loading dock and a certificate of insurance, a gated estate off the Chattahoochee, or a 1960s split-level on a steep wooded lot. The building decides the plan more than the address does.",
       areas: [
         {
-          name: "City Springs & the civic centre",
-          note: "Newer mixed-use condos and apartments around the civic centre. Elevator reservations and a certificate of insurance are standard requirements, and management usually wants both booked days ahead.",
+          name: "City Springs & the civic center",
+          note: "Newer mixed-use condos and apartments around the civic center. Elevator reservations and a certificate of insurance are standard requirements, and management usually wants both booked days ahead.",
         },
         {
           name: "Perimeter Center",
@@ -103,7 +109,7 @@ export const LOCATIONS: Location[] = [
         },
         {
           name: "Roswell Road corridor",
-          note: "Older apartment stock and townhomes along the main artery. Parking is kerbside and traffic is constant, so the truck position gets sorted before the crew starts carrying.",
+          note: "Older apartment stock and townhomes along the main artery. Parking is curbside and traffic is constant, so the truck position gets sorted before the crew starts carrying.",
         },
         {
           name: "Dunwoody Springs & the 285 edge",
@@ -179,7 +185,10 @@ export const LOCATIONS: Location[] = [
     ],
     depth: {
       headings: {
-        local: "Two Roswells, two different moves",
+        title: "Roswell Moving Company & Local Movers",
+        description: "Historic district or river-side subdivision, a Roswell move turns on access. Open 24/7, rated 5.0 from 32 Google reviews. Same-day quotes.",
+        h1: "Roswell moving company",
+        local: "What a Roswell moving company has to plan for",
         capabilities: "The work either side of the drive",
         areas: "From Canton Street to Martin's Landing",
         challenges: "Antebellum houses, event weekends and river-side lots",
@@ -192,7 +201,7 @@ export const LOCATIONS: Location[] = [
         cta: "Let's plan your Roswell move",
       },
       answer:
-        "Roswell splits into two very different moving jobs. The historic district around Canton Street is 1800s houses on narrow streets with event closures most weekends, and the subdivisions out toward the Chattahoochee are large homes on deep, wooded lots. One needs patience and protection, the other needs a plan for the carry.",
+        "Choosing a Roswell moving company comes down to which Roswell you are moving in, because the city splits into two very different jobs. The historic district around Canton Street is 1800s houses on narrow streets with event closures most weekends, and the subdivisions out toward the Chattahoochee are large homes on deep, wooded lots. One needs patience and protection, the other needs a plan for the carry.",
       areas: [
         {
           name: "Historic Roswell & Canton Street",
@@ -222,7 +231,7 @@ export const LOCATIONS: Location[] = [
       challenges: [
         {
           title: "The historic district is a protected streetscape, not just old houses",
-          body: "Roswell's historic core has design guidelines, mature trees close to the kerb, and on-street parking that fills early. Where a truck can legally sit is a real constraint, and getting it wrong means a much longer carry than anyone planned for.",
+          body: "Roswell's historic core has design guidelines, mature trees close to the curb, and on-street parking that fills early. Where a truck can legally sit is a real constraint, and getting it wrong means a much longer carry than anyone planned for.",
         },
         {
           title: "Canton Street events reshape a weekend",
@@ -363,6 +372,8 @@ export const LOCATIONS: Location[] = [
     ],
     depth: {
       headings: {
+        title: "Movers in Marietta, GA",
+        description: "Historic Square parking, west-side driveway grades, Dobbins report dates. Marietta movers open 24/7, rated 5.0 from 32 Google reviews.",
         local: "Marietta moves, from the Square outward",
         capabilities: "More than a truck and a crew",
         areas: "Marietta, block by block",
@@ -533,7 +544,7 @@ export const LOCATIONS: Location[] = [
     county: "DeKalb County",
     neighborhoods: ["Decatur Square", "Oakhurst", "Winnona Park", "MAK Historic District", "Clairemont", "Agnes Scott"],
     intro:
-      "Decatur is famously walkable, with a charming square, historic bungalows, and a tight-knit, community feel. Sobi Moving knows how to navigate its narrow streets and beloved older homes with care. We bring a full-service, neighborly approach to every move in this distinctive city.",
+      "Decatur is famously walkable, with a charming square, historic bungalows, and a tight-knit, community feel. Sobi Moving works its narrow streets and beloved older homes with care. We bring a full-service, neighborly approach to every move in this distinctive city.",
     local:
       "Decatur is defined by early-1900s craftsman bungalows and cottages in neighborhoods like Oakhurst, Winnona Park, and the MAK Historic District, many with narrow doorways, steep porch steps, and original hardwood floors. The compact, walkable streets near Decatur Square leave little room for large trucks, so we plan parking and shuttle access carefully. These older homes reward patience and protection, and our crew pads tight hallways and staircases to keep both the house and your furniture safe. Where lots are small and on-street parking is tight, we coordinate timing to avoid blocking neighbors.",
     faq: [
@@ -602,7 +613,10 @@ export const LOCATIONS: Location[] = [
     ],
     depth: {
       headings: {
-        local: "What an East Cobb move really takes",
+        title: "East Cobb Moving Company & Movers",
+        description: "Split-foyers, wooded driveways and school-zone timing shape every East Cobb move. Open 24/7, rated 5.0 from 32 Google reviews. Same-day quotes.",
+        h1: "East Cobb moving company",
+        local: "What an East Cobb moving company has to plan for",
         capabilities: "Packing, assembly and clearing out",
         areas: "Johnson Ferry, Sandy Plains and the school lines",
         challenges: "Wooded lots, split foyers and a school-year deadline",
@@ -615,19 +629,19 @@ export const LOCATIONS: Location[] = [
         cta: "Book your East Cobb date",
       },
       answer:
-        "East Cobb is not a city, it is a stretch of unincorporated Cobb County, and moves here are shaped by two things: mature subdivisions of split-foyer and two-storey homes on wooded, sloping lots, and a school-attendance calendar that concentrates most family moves into a few summer weeks.",
+        "An East Cobb moving company is working an area, not a city: East Cobb is a stretch of unincorporated Cobb County, and moves here are shaped by two things: mature subdivisions of split-foyer and two-story homes on wooded, sloping lots, and a school-attendance calendar that concentrates most family moves into a few summer weeks.",
       areas: [
         {
           name: "Johnson Ferry Road corridor",
-          note: "The spine of East Cobb, lined with established subdivisions and the shopping centres at Merchants Walk and The Avenue. Traffic here is heavy through the school run in both directions, which shapes start times.",
+          note: "The spine of East Cobb, lined with established subdivisions and the shopping centers at Merchants Walk and The Avenue. Traffic here is heavy through the school run in both directions, which shapes start times.",
         },
         {
           name: "Indian Hills",
-          note: "1970s and 80s homes on large wooded lots around the country club. Long driveways, mature trees close to the kerb, and split-level layouts are all common.",
+          note: "1970s and 80s homes on large wooded lots around the country club. Long driveways, mature trees close to the curb, and split-level layouts are all common.",
         },
         {
           name: "Sandy Plains & Sewell Mill",
-          note: "Family subdivisions with basements and two-storey plans. Most have an HOA, and some ask for a move-in window to be booked with the board.",
+          note: "Family subdivisions with basements and two-story plans. Most have an HOA, and some ask for a move-in window to be booked with the board.",
         },
         {
           name: "Chimney Springs & Sope Creek",
@@ -645,7 +659,7 @@ export const LOCATIONS: Location[] = [
       challenges: [
         {
           title: "Split-foyers and basements are extra levels, not extra rooms",
-          body: "Much of the East Cobb housing stock is split-foyer or two-storey with a finished basement. A short flight up and a short flight down from the entry means almost nothing gets carried on the flat, and that is the biggest single driver of how long a day here takes.",
+          body: "Much of the East Cobb housing stock is split-foyer or two-story with a finished basement. A short flight up and a short flight down from the entry means almost nothing gets carried on the flat, and that is the biggest single driver of how long a day here takes.",
         },
         {
           title: "Wooded lots decide where the truck can sit",
@@ -717,7 +731,7 @@ export const LOCATIONS: Location[] = [
     county: "Fulton County",
     neighborhoods: ["Atlantic Station", "Piedmont Park", "Peachtree Street", "Ansley Park", "Home Park", "Tech Square"],
     intro:
-      "Midtown is the dense, energetic heart of the city, packed with high-rise condos, walk-up lofts, and historic Ansley Park homes. Sobi Moving is built for the logistics of in-town moves like these. We navigate the towers, traffic, and tight streets so your move stays smooth.",
+      "Midtown is the dense, energetic heart of the city, packed with high-rise condos, walk-up lofts, and historic Ansley Park homes. Sobi Moving is built for the logistics of in-town moves like these. We plan around the towers, traffic, and tight streets so your move stays smooth.",
     local:
       "Midtown is dominated by high-rise condo towers and apartments along Peachtree and West Peachtree, plus older walk-up lofts and historic homes in Ansley Park and Home Park. Nearly every high-rise requires reserved freight elevators, narrow loading-dock windows, and certificates of insurance, all of which we arrange with building staff ahead of time. Street parking is scarce and traffic is constant, so precise scheduling and truck placement are essential to keep the day on track. Our crew is experienced with walk-up lofts that have no elevator, carrying carefully up and down multiple flights without damaging stairwells.",
     faq: [

@@ -50,7 +50,7 @@ export const SERVICE_TYPES: ServiceType[] = [
       "Long-distance moves have more moving parts than a local job, so we build a detailed plan that covers your timeline, your route, and the safest way to load every item for a longer haul. Your belongings are inventoried, padded, and secured for the drive, and the same trusted, background-checked team that loads your home is part of the journey to your destination. We stay in touch along the way, so there are no surprises on delivery day.\n\nBecause we are licensed and insured for interstate moving, you get real protection and accountability, not a faceless broker handing your move off to strangers. We can pack everything, set up your new home with white-glove care, reassemble your furniture, and clear out the leftover boxes so you can settle in fast. Every long-distance quote is free and transparent, with no hidden fees added later.",
     includes: [
       "Custom long-distance moving plan with a clear timeline",
-      "Full inventory of your belongings for peace of mind",
+      "Full inventory of your belongings, itemised before the truck loads",
       "Heavy-duty padding and secure loading for the long haul",
       "Licensed and insured interstate transport",
       "White-glove unpacking and furniture reassembly at your new home",

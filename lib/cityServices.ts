@@ -41,7 +41,7 @@ export const CITY_SERVICES: CityService[] = [
     description:
       "Office, retail and warehouse moves in Marietta. Open 24/7 so you relocate outside trading hours. Rated 5.0 from 32 Google reviews.",
     answer:
-      "A commercial move in Marietta is scheduled around the hours you are closed, not the hours you are open. That usually means an evening or a weekend, a loading dock or elevator booked with building management in advance, and every workstation labelled so it lands in the right department instead of a pile in the new space.",
+      "A commercial move in Marietta is scheduled around the hours you are closed, not the hours you are open. That usually means an evening or a weekend, a loading dock or elevator booked with building management in advance, and every workstation labeled so it lands in the right department instead of a pile in the new space.",
     headings: {
       areas: "Where we move businesses in Marietta",
       challenges: "What slows a commercial move down here",
@@ -88,7 +88,7 @@ export const CITY_SERVICES: CityService[] = [
       },
       {
         title: "Labelling decides how fast you reopen",
-        body: "Desks, monitors, files and equipment get labelled by department and destination before anything is loaded. Without that, a move that took a night to carry takes a week to sort out.",
+        body: "Desks, monitors, files and equipment get labeled by department and destination before anything is loaded. Without that, a move that took a night to carry takes a week to sort out.",
       },
       {
         title: "The Square closes for events",
@@ -107,9 +107,9 @@ export const CITY_SERVICES: CityService[] = [
         body: "The date is built around when you are closed. We are open 24 hours, so an overnight or weekend relocation is a normal booking rather than a special request.",
       },
       {
-        stage: "Building access and labelling",
+        stage: "Building access and labeling",
         when: "Before the move",
-        body: "Freight elevator or dock booked with management, certificate of insurance provided where the building asks for one, and a labelling plan agreed by department so everything lands where it belongs.",
+        body: "Freight elevator or dock booked with management, certificate of insurance provided where the building asks for one, and a labeling plan agreed by department so everything lands where it belongs.",
       },
       {
         stage: "Move and reinstate",
@@ -124,7 +124,7 @@ export const CITY_SERVICES: CityService[] = [
       "Specialist equipment: servers, medical or dental kit, machinery, safes",
       "Retail fixtures, shelving and display cases that need dismantling",
       "Whether old furniture and fit-out debris are cleared as part of the job",
-      "How much is packed and labelled by your team before we arrive",
+      "How much is packed and labeled by your team before we arrive",
     ],
     faq: [
       {
@@ -141,7 +141,7 @@ export const CITY_SERVICES: CityService[] = [
       },
       {
         q: "Can you move IT equipment and reconnect workstations?",
-        a: "We disconnect, transport and reconnect desks, monitors and standard office equipment, and everything is labelled by department so it lands in the right place. For specialist servers or medical equipment tell us in advance so it is handled correctly.",
+        a: "We disconnect, transport and reconnect desks, monitors and standard office equipment, and everything is labeled by department so it lands in the right place. For specialist servers or medical equipment tell us in advance so it is handled correctly.",
       },
       {
         q: "Do you move retail stores and warehouses, or only offices?",
