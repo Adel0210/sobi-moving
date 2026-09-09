@@ -59,6 +59,7 @@ export default async function HomePage() {
                 <span className="row" style={{ gap: 8 }}><Icon name="shield" size={14}/> Licensed &amp; Insured</span>
                 <span className="row" style={{ gap: 8 }}><Icon name="check" size={14}/> No Hidden Fees</span>
                 <span className="row" style={{ gap: 8 }}><Icon name="phone" size={14}/> Free Consultation</span>
+                <span className="row" style={{ gap: 8 }}><Icon name="heart" size={14}/> Woman-Owned</span>
               </div>
               <div className="hero-promo">
                 <span className="dot" />

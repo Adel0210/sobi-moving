@@ -85,7 +85,7 @@ export const SiteFooter = ({
       </div>
       <div className="footer-bottom">
         <span>© 2025 Sobi Moving. All rights reserved. Metro Atlanta, GA.</span>
-        <span>Licensed &amp; Insured · Background-Checked Team · No Hidden Fees</span>
+        <span>Woman-owned · Licensed &amp; Insured · Background-Checked Team · No Hidden Fees</span>
       </div>
     </div>
   </footer>

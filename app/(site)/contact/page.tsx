@@ -70,9 +70,9 @@ const ContactPage = () => {
                 <div className="contact-card">
                   <div className="contact-icon"><Icon name="map" size={18}/></div>
                   <div>
-                    <div style={{ fontSize: 13, color: "var(--ink-mute)", letterSpacing: "0.04em", textTransform: "uppercase" }}>Visit</div>
+                    <div style={{ fontSize: 13, color: "var(--ink-mute)", letterSpacing: "0.04em", textTransform: "uppercase" }}>Service area</div>
                     <div style={{ fontFamily: "var(--serif)", fontSize: 20, color: "var(--ink)", display: "block", marginTop: 4, lineHeight: 1.3 }}>
-                      2208 Treelodge Pkwy<br/>Sandy Springs, GA 30350
+                      Serving all of metro Atlanta<br/>Based in Sandy Springs, GA
                     </div>
                   </div>
                 </div>

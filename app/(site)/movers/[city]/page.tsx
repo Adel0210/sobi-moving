@@ -117,6 +117,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
               <span className="row" style={{ gap: 8 }}><Icon name="shield" size={14} /> Licensed &amp; insured</span>
               <span className="row" style={{ gap: 8 }}><Icon name="check" size={14} /> No hidden fees</span>
               <span className="row" style={{ gap: 8 }}><Icon name="star" size={14} /> 5.0 rated</span>
+              <span className="row" style={{ gap: 8 }}><Icon name="heart" size={14} /> Woman-owned</span>
             </div>
           </div>
         </div>

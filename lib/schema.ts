@@ -23,9 +23,11 @@ export function movingCompanySchema(c: SiteContent) {
     image: `${SITE}/assets/logo.png`,
     telephone: c.phone_display ?? CONTENT_DEFAULTS.phone_display,
     email: c.email ?? CONTENT_DEFAULTS.email,
+    // Service-area business: the Google Business Profile deliberately publishes
+    // no street address, so neither does this. Locality and region stay so the
+    // local signal survives, and areaServed carries the actual coverage.
     address: {
       "@type": "PostalAddress",
-      streetAddress: "2208 Treelodge Pkwy",
       addressLocality: "Sandy Springs",
       addressRegion: "GA",
       postalCode: "30350",
@@ -53,6 +55,10 @@ export function movingCompanySchema(c: SiteContent) {
       "https://www.yelp.com/biz/sobi-moving-sandy-springs-2",
       "https://www.instagram.com/sobimoving/",
       "https://www.mapquest.com/us/georgia/sobi-moving-796212179",
+    ],
+    // Attribute Google already shows on the Business Profile.
+    additionalProperty: [
+      { "@type": "PropertyValue", name: "Women-owned", value: true },
     ],
     knowsAbout: [
       "Local moving", "Long distance moving", "Senior moving", "Packing services",
