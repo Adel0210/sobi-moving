@@ -8,7 +8,7 @@ export const CONTENT_DEFAULTS: SiteContent = {
   phone_display: "(630) 456-1347",
   phone_tel: "6304561347",
   email: "hello@sobimoving.com",
-  hours: "Mon–Sun · 7:30am–8:00pm",
+  hours: "Open 24 hours · 7 days a week",
   address: "2208 Treelodge Pkwy, Sandy Springs, GA 30350",
   hero_eyebrow: "Atlanta Moving Company · Locally Owned",
   hero_headline: "Atlanta movers",

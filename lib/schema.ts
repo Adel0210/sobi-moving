@@ -37,8 +37,8 @@ export function movingCompanySchema(c: SiteContent) {
       {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        opens: "07:30",
-        closes: "20:00",
+        opens: "00:00",
+        closes: "23:59",
       },
     ],
     // Mirrors the real Google Business Profile (5.0 from 32 reviews). Keep this

@@ -6,7 +6,7 @@ export const SiteFooter = ({
   phoneDisplay = "(630) 456-1347",
   phoneTel = "6304561347",
   email = "hello@sobimoving.com",
-  hours = "Mon–Sun · 7:30am–8:00pm",
+  hours = "Open 24 hours · 7 days a week",
 }: {
   phoneDisplay?: string;
   phoneTel?: string;

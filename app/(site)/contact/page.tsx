@@ -56,7 +56,7 @@ const ContactPage = () => {
                   <div>
                     <div style={{ fontSize: 13, color: "var(--ink-mute)", letterSpacing: "0.04em", textTransform: "uppercase" }}>Call us</div>
                     <a href="tel:6304561347" style={{ fontFamily: "var(--serif)", fontSize: 24, color: "var(--ink)", display: "block", marginTop: 4 }}>(630) 456-1347</a>
-                    <div style={{ fontSize: 13, color: "var(--ink-mute)", marginTop: 4 }}>Mon–Sun · 7:30am–8:00pm</div>
+                    <div style={{ fontSize: 13, color: "var(--ink-mute)", marginTop: 4 }}>Open 24 hours · 7 days a week</div>
                   </div>
                 </div>
                 <div className="contact-card">
