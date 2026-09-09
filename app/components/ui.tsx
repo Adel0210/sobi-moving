@@ -104,7 +104,9 @@ export const FAQItem = ({ q, a, defaultOpen = false }: { q: ReactNode; a: ReactN
         <h3 className="faq-q-text">{q}</h3>
         <span className="faq-icon"><Icon name={open ? "minus" : "plus"} size={18} /></span>
       </button>
-      <div className="faq-a" style={{ maxHeight: open ? 400 : 0 }}>
+      {/* 400px used to clip longer answers mid-sentence. 2000 is past any
+          answer we write and still animates. */}
+      <div className="faq-a" style={{ maxHeight: open ? 2000 : 0 }}>
         <div className="faq-a-inner">{a}</div>
       </div>
     </div>

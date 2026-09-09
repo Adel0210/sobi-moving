@@ -17,7 +17,7 @@ export function movingCompanySchema(c: SiteContent) {
     "@id": `${SITE}/#business`,
     name: "Sobi Moving",
     description:
-      "Local and long-distance movers serving metro Atlanta — full-service moving, white-glove setup, packing, unpacking, furniture assembly, junk removal, and senior moving.",
+      "Local and long-distance movers serving metro Atlanta. Full-service moving, white-glove setup, packing, unpacking, furniture assembly, junk removal, and senior moving.",
     url: SITE,
     logo: `${SITE}/assets/logo.png`,
     image: `${SITE}/assets/logo.png`,

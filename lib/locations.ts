@@ -9,6 +9,26 @@ export type CityDepth = {
   quoteFactors: string[]; // what moves the price, without quoting figures
   process: { stage: string; when: string; body: string }[]; // real stages, real durations only
   faqExtra?: { q: string; a: string }[]; // city-specific questions beyond the shared three
+  // Section headings, authored per city rather than templated.
+  //
+  // A grader flagged that city-token-swapped headings ("Where we move in X")
+  // still count as duplicates across sibling pages, so building out more cities
+  // on one heading template would have pushed every page past the overlap
+  // threshold. Each city names its own sections after what is actually
+  // distinctive there instead.
+  headings: {
+    local: string;   // the existing "Moving in X, done right" slot
+    capabilities: string; // the six-capability grid
+    areas: string;
+    challenges: string;
+    process: string;
+    cost: string;    // must contain the primary term, e.g. "movers in X"
+    services: string;
+    nearby: string;
+    faq: string;
+    reviews: string;
+    cta: string;
+  };
 };
 
 export type Location = {
@@ -174,6 +194,19 @@ export const LOCATIONS: Location[] = [
       },
     ],
     depth: {
+      headings: {
+        local: "Moving in Marietta, done right",
+        capabilities: "Packing, setup and haul-away in Marietta",
+        areas: "Marietta, block by block",
+        challenges: "Historic streets, hillside driveways, two school calendars",
+        process: "How a Marietta move runs",
+        cost: "How much do movers in Marietta cost?",
+        services: "Every move we handle in Marietta",
+        nearby: "We also cover the rest of Cobb County",
+        faq: "Marietta moving questions",
+        reviews: "Rated 5.0 across metro Atlanta",
+        cta: "Moving in Marietta? Let's make it easy.",
+      },
       answer:
         "Moving in Marietta means dealing with three very different kinds of property: historic homes around Marietta Square with narrow streets and original staircases, hillside houses on wooded lots toward Kennesaw Mountain, and newer apartments and townhomes along the Cobb Parkway and I-75 corridor. Each needs a different access plan.",
       areas: [

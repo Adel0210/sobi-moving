@@ -115,7 +115,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
       <section className="alt" style={{ paddingTop: 64, paddingBottom: 64 }}>
         <div className="container">
           <div style={{ maxWidth: 760 }}>
-            <h2>Moving in {loc.city}, done right</h2>
+            <h2>{loc.depth?.headings.local ?? `Moving in ${loc.city}, done right`}</h2>
             <p className="lead" style={{ marginTop: 16, color: "var(--ink-soft)" }}>{loc.local}</p>
             <p style={{ marginTop: 18, fontSize: 14, color: "var(--ink-mute)" }}>
               <strong>Areas we serve in {loc.city}:</strong> {loc.neighborhoods.join(" · ")}
@@ -128,7 +128,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
       <section style={{ paddingTop: 64, paddingBottom: 64 }}>
         <div className="container">
           <div className="eyebrow">What we do in {loc.city}</div>
-          <h2 style={{ marginTop: 8, marginBottom: 28 }}>Full-service, start to finish</h2>
+          <h2 style={{ marginTop: 8, marginBottom: 28 }}>{loc.depth?.headings.capabilities ?? "Full-service, start to finish"}</h2>
           <div className="services-grid">
             {SERVICES.map((s) => (
               <Link key={s.id} href={`/services#svc-${s.id}`} className="service-card">
@@ -149,7 +149,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
         <section style={{ paddingTop: 64, paddingBottom: 64 }}>
           <div className="container">
             <div style={{ maxWidth: 760 }}>
-              <h2 style={{ marginBottom: 8 }}>Where we move in {loc.city}</h2>
+              <h2 style={{ marginBottom: 8 }}>{loc.depth!.headings.areas}</h2>
               <p style={{ color: "var(--ink-soft)", marginBottom: 28 }}>
                 Access is different in every part of {loc.city}, and it changes how the day is planned.
               </p>
@@ -175,7 +175,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
           <div className="container">
             <div style={{ maxWidth: 760 }}>
               <div className="eyebrow">Local knowledge</div>
-              <h2 style={{ marginTop: 8, marginBottom: 28 }}>What makes a {loc.city} move different</h2>
+              <h2 style={{ marginTop: 8, marginBottom: 28 }}>{loc.depth!.headings.challenges}</h2>
               {loc.depth.challenges.map((c) => (
                 <div key={c.title} style={{ marginBottom: 28 }}>
                   <h3 style={{ fontSize: 19, marginBottom: 8 }}>{c.title}</h3>
@@ -194,7 +194,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
         <section className="alt" style={{ paddingTop: 64, paddingBottom: 64 }}>
           <div className="container">
             <div className="eyebrow">How it works</div>
-            <h2 style={{ marginTop: 8, marginBottom: 28 }}>How a {loc.city} move works</h2>
+            <h2 style={{ marginTop: 8, marginBottom: 28 }}>{loc.depth!.headings.process}</h2>
             <div className="process-grid">
               {loc.depth.process.map((p, i) => (
                 <div key={p.stage} className="process-step">
@@ -216,7 +216,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
           <div className="container">
             <div style={{ maxWidth: 760 }}>
               <div className="eyebrow">Pricing</div>
-              <h2 style={{ marginTop: 8, marginBottom: 12 }}>How much do movers in {loc.city} cost?</h2>
+              <h2 style={{ marginTop: 8, marginBottom: 12 }}>{loc.depth!.headings.cost}</h2>
               <p style={{ color: "var(--ink-soft)", marginBottom: 24, fontSize: 16, lineHeight: 1.65 }}>
                 Every quote is itemized, and these are the things that move the number. Tell us about
                 your move and you get the figure back the same day, with nothing added later.
@@ -239,7 +239,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
       <section style={{ paddingTop: 8, paddingBottom: 64 }}>
         <div className="container">
           <div style={{ maxWidth: 760 }}>
-            <h2 style={{ marginBottom: 8 }}>Moving services in {loc.city}</h2>
+            <h2 style={{ marginBottom: 8 }}>{loc.depth?.headings.services ?? `Moving services in ${loc.city}`}</h2>
             <p style={{ color: "var(--ink-soft)", marginBottom: 24 }}>
               Every kind of move we handle for {loc.city} families and businesses.
             </p>
@@ -262,7 +262,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
         <section className="alt" style={{ paddingTop: 56, paddingBottom: 56 }}>
           <div className="container">
             <div className="eyebrow">Nearby</div>
-            <h2 style={{ marginTop: 8, marginBottom: 24 }}>We also move around {loc.city}</h2>
+            <h2 style={{ marginTop: 8, marginBottom: 24 }}>{loc.depth?.headings.nearby ?? `We also move around ${loc.city}`}</h2>
             <div className="services-grid">
               {nearby.map((n) => (
                 <Link key={n.slug} href={`/movers/${n.slug}`} className="service-card">
@@ -283,7 +283,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
         <div className="container">
           <div style={{ maxWidth: 760 }}>
             <div className="eyebrow">{loc.city} moving FAQ</div>
-            <h2 style={{ marginTop: 8, marginBottom: 24 }}>Questions, answered</h2>
+            <h2 style={{ marginTop: 8, marginBottom: 24 }}>{loc.depth?.headings.faq ?? "Questions, answered"}</h2>
             <div className="faq-list">
               {[...(loc.depth?.faqExtra ?? []), ...loc.faq].map((f, i) => (
                 <FAQItem key={i} q={f.q} a={f.a} defaultOpen={i === 0} />
@@ -300,7 +300,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
           <div className="section-head-row">
             <div>
               <div className="eyebrow">Reviews</div>
-              <h2 style={{ marginTop: 8 }}>What customers say</h2>
+              <h2 style={{ marginTop: 8 }}>{loc.depth?.headings.reviews ?? "What customers say"}</h2>
             </div>
             <div className="row" style={{ gap: 4 }}>
               {[1, 2, 3, 4, 5].map((i) => <Icon key={i} name="star" size={20} />)}
@@ -333,7 +333,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
       {/* CTA */}
       <section className="dark" style={{ paddingTop: 64, paddingBottom: 64 }}>
         <div className="container" style={{ textAlign: "center" }}>
-          <h2 style={{ color: "#f5efe4" }}>Moving in {loc.city}? Let&apos;s make it easy.</h2>
+          <h2 style={{ color: "#f5efe4" }}>{loc.depth?.headings.cta ?? `Moving in ${loc.city}? Let\u2019s make it easy.`}</h2>
           <p style={{ color: "#c9c2b3", marginTop: 12, maxWidth: 540, marginLeft: "auto", marginRight: "auto" }}>
             Free, no-obligation quote, usually back to you the same day.
           </p>

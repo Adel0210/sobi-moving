@@ -10,11 +10,11 @@ import "./mobile-fixes.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.sobimoving.com"),
   title: {
-    default: "Sobi Moving — Atlanta's Trusted Moving Company",
+    default: "Sobi Moving | Atlanta's Trusted Moving Company",
     template: "%s | Sobi Moving",
   },
   description:
-    "Local and long-distance movers across metro Atlanta — honest pricing, a careful crew, and full-service packing, moving, and setup.",
+    "Local and long-distance movers across metro Atlanta. Honest pricing, a careful crew, and full-service packing, moving, and setup.",
   openGraph: {
     type: "website",
     siteName: "Sobi Moving",
