@@ -6,6 +6,9 @@ import "./legacy-styles/styles-pages.css";
 import "./legacy-styles/styles-extras.css";
 import "./legacy-styles/mobile.css";
 import "./mobile-fixes.css";
+// Imported after the stylesheets so it cannot inject anything ahead of them and
+// disturb the cascade order above.
+import { SiteAnalytics } from "./components/Analytics";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.sobimoving.com"),
@@ -36,7 +39,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        {/* Last in the body so instrumentation never sits ahead of the page
+            content it measures. */}
+        <SiteAnalytics />
+      </body>
     </html>
   );
 }

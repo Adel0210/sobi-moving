@@ -2,6 +2,7 @@
 import { useState, useMemo } from "react";
 import { Icon } from "@/app/components/Icon";
 import { createClient } from "@/lib/supabase/client";
+import { notifyLead, type LeadPayload } from "@/lib/leads";
 
 interface QuoteData {
   size: string;
@@ -69,8 +70,7 @@ const QuotePage = () => {
   const submitQuote = async () => {
     setSending(true);
     setError(null);
-    const supabase = createClient();
-    const { error } = await supabase.from("leads").insert({
+    const payload: LeadPayload = {
       type: "quote",
       name: d.name,
       email: d.email,
@@ -85,10 +85,16 @@ const QuotePage = () => {
       estimate_low: estimate.low,
       estimate_high: estimate.high,
       message: d.notes || null,
-    });
+    };
+    const supabase = createClient();
+    const { error } = await supabase.from("leads").insert(payload);
     setSending(false);
+    // Fire and forget, never awaited: the row above is the record of truth, so
+    // the customer must not wait on the owner's email or hear about it failing.
+    // Sent even when the insert failed so the lead still reaches a human.
+    void notifyLead(payload, !error);
     if (error) {
-      setError("Sorry — something went wrong. Please call us at (630) 456-1347.");
+      setError("Sorry, something went wrong. Please call us at (630) 456-1347.");
       return;
     }
     setSubmitted(true);
@@ -102,7 +108,7 @@ const QuotePage = () => {
             <div className="eyebrow">Free Quote · Same-Day Reply</div>
             <h1 style={{ marginTop: 8 }}>Get your <em style={{ fontStyle: "italic", color: "var(--accent)", fontWeight: 400 }}>free quote.</em></h1>
             <p className="lead" style={{ marginTop: 16, maxWidth: 600, marginLeft: "auto", marginRight: "auto" }}>
-              Three quick steps. Tell us about your move and we&apos;ll follow up fast with a custom quote — no spam, no hard sell.
+              Three quick steps. Tell us about your move and we&apos;ll follow up fast with a custom quote. No spam, no hard sell.
             </p>
           </div>
 
@@ -223,7 +229,7 @@ const QuotePage = () => {
                     <Icon name="check" size={26}/>
                   </div>
                   <h3 style={{ marginTop: 20 }}>Quote request received!</h3>
-                  <p style={{ marginTop: 8, color: "var(--ink-soft)" }}>Thanks{d.name ? `, ${d.name.split(" ")[0]}` : ""} — we&apos;ll reach out within a few hours with your detailed quote. Need us sooner? Call <a href="tel:6304561347" style={{ color: "var(--accent)" }}>(630) 456-1347</a>.</p>
+                  <p style={{ marginTop: 8, color: "var(--ink-soft)" }}>Thanks{d.name ? `, ${d.name.split(" ")[0]}` : ""}. We&apos;ll reach out within a few hours with your detailed quote. Need us sooner? Call <a href="tel:6304561347" style={{ color: "var(--accent)" }}>(630) 456-1347</a>.</p>
                 </div>
               ) : step === 3 ? (
                 <div>
@@ -279,8 +285,8 @@ const QuotePage = () => {
                 <div className="eyebrow">What happens next</div>
                 <ol style={{ listStyle: "none", padding: 0, margin: "16px 0 0", display: "flex", flexDirection: "column", gap: 16 }}>
                   {[
-                    { t: "We review your move", d: "A real person looks at your details — home size, distance, and the services you need." },
-                    { t: "You get a custom, itemized quote", d: "Clear pricing for your exact move — no hidden fees, no guesswork." },
+                    { t: "We review your move", d: "A real person looks at your details: home size, distance, and the services you need." },
+                    { t: "You get a custom, itemized quote", d: "Clear pricing for your exact move, with no hidden fees and no guesswork." },
                     { t: "We lock in your date", d: "Pick a day that works and our crew handles the rest." },
                   ].map((s, i) => (
                     <li key={i} style={{ display: "flex", gap: 12 }}>
@@ -294,13 +300,13 @@ const QuotePage = () => {
                 </ol>
                 <div style={{ marginTop: 22, paddingTop: 18, borderTop: "1px solid var(--line)", display: "flex", flexDirection: "column", gap: 9, fontSize: 13.5, color: "var(--ink-soft)" }}>
                   <span className="row" style={{ gap: 8 }}><Icon name="shield" size={14}/> Licensed &amp; insured · background-checked crew</span>
-                  <span className="row" style={{ gap: 8 }}><Icon name="clock" size={14}/> Same-day reply — usually within a few hours</span>
+                  <span className="row" style={{ gap: 8 }}><Icon name="clock" size={14}/> Same-day reply, usually within a few hours</span>
                 </div>
               </div>
 
               <div style={{ marginTop: 20, padding: 24, background: "var(--bg-deep)", borderRadius: 14, color: "#c9c2b3" }}>
                 <div style={{ fontFamily: "var(--serif)", fontSize: 20, color: "#f5efe4", marginBottom: 8 }}>Prefer to talk?</div>
-                <p style={{ fontSize: 14, lineHeight: 1.5 }}>Some moves are easier to scope on the phone — especially senior moves and complex packs.</p>
+                <p style={{ fontSize: 14, lineHeight: 1.5 }}>Some moves are easier to scope on the phone, especially senior moves and complex packs.</p>
                 <a href="tel:6304561347" className="btn btn-accent btn-arrow" style={{ marginTop: 16 }}><Icon name="phone" size={14}/> (630) 456-1347</a>
               </div>
             </aside>

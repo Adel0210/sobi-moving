@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Icon } from "@/app/components/Icon";
 import { createClient } from "@/lib/supabase/client";
+import { notifyLead, type LeadPayload } from "@/lib/leads";
 
 type ContactForm = {
   name: string;
@@ -21,18 +22,23 @@ const ContactPage = () => {
     e.preventDefault();
     setSending(true);
     setError(null);
-    const supabase = createClient();
-    const { error } = await supabase.from("leads").insert({
+    const payload: LeadPayload = {
       type: "contact",
       name: form.name,
       email: form.email,
       phone: form.phone || null,
       subject: form.subject,
       message: form.message || null,
-    });
+    };
+    const supabase = createClient();
+    const { error } = await supabase.from("leads").insert(payload);
     setSending(false);
+    // Fire and forget, never awaited: the row above is the record of truth, so
+    // the customer must not wait on the owner's email or hear about it failing.
+    // Sent even when the insert failed so the lead still reaches a human.
+    void notifyLead(payload, !error);
     if (error) {
-      setError("Sorry — something went wrong sending your message. Please call us at (630) 456-1347.");
+      setError("Sorry, something went wrong sending your message. Please call us at (630) 456-1347.");
       return;
     }
     setSubmitted(true);
@@ -47,7 +53,7 @@ const ContactPage = () => {
               <div className="eyebrow">Get in Touch</div>
               <h1 style={{ marginTop: 8 }}>Let's <em style={{ fontStyle: "italic", color: "var(--accent)", fontWeight: 400 }}>start a conversation.</em></h1>
               <p className="lead" style={{ marginTop: 20, maxWidth: 460 }}>
-                Whether you have questions, want a free quote, or are planning a senior move for a parent — reach out. We answer the phone and reply to every message, usually same day.
+                Whether you have questions, want a free quote, or are planning a senior move for a parent, reach out. We answer the phone and reply to every message, usually same day.
               </p>
 
               <div className="contact-cards">
@@ -92,7 +98,7 @@ const ContactPage = () => {
               ) : (
                 <>
                   <div style={{ fontFamily: "var(--serif)", fontSize: 28, marginBottom: 6 }}>Send us a message</div>
-                  <p style={{ fontSize: 14, color: "var(--ink-mute)", marginBottom: 24 }}>Fill in what you can — we'll follow up to fill in the rest.</p>
+                  <p style={{ fontSize: 14, color: "var(--ink-mute)", marginBottom: 24 }}>Fill in what you can and we'll follow up to fill in the rest.</p>
 
                   <label>
                     <span>Your name</span>
