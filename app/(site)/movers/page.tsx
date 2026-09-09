@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { LOCATIONS } from "@/lib/locations";
+import { CITY_SERVICES } from "@/lib/cityServices";
+import { SERVICE_TYPES } from "@/lib/serviceTypes";
 import { Icon } from "@/app/components/Icon";
 
 export const metadata: Metadata = {
@@ -25,6 +27,33 @@ export default function MoversIndexPage() {
           </div>
         </div>
       </section>
+
+      {/* City + service pages. Without a link here they are reachable only from
+          the sitemap, which is how the first one shipped orphaned. */}
+      {CITY_SERVICES.length ? (
+        <section style={{ paddingBottom: 8 }}>
+          <div className="container">
+            <div style={{ maxWidth: 760 }}>
+              <h2 style={{ marginBottom: 16 }}>Specialist moves by city</h2>
+              <ul className="service-includes">
+                {CITY_SERVICES.map((cs) => {
+                  const loc = LOCATIONS.find((l) => l.slug === cs.citySlug);
+                  const svc = SERVICE_TYPES.find((x) => x.slug === cs.serviceSlug);
+                  if (!loc || !svc) return null;
+                  return (
+                    <li key={`${cs.citySlug}-${cs.serviceSlug}`}>
+                      <Icon name="check" size={15} />
+                      <Link href={`/movers/${cs.citySlug}/${cs.serviceSlug}`} style={{ color: "var(--accent)", borderBottom: "1px solid currentColor" }}>
+                        {svc.name} in {loc.city}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <section style={{ paddingBottom: 72 }}>
         <div className="container">

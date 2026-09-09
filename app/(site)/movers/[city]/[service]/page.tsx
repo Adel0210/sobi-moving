@@ -96,6 +96,7 @@ export default async function CityServicePage({
         <div className="container">
           <div style={{ maxWidth: 760 }}>
             <nav className="blog-breadcrumb" aria-label="Breadcrumb" style={{ marginBottom: 14 }}>
+              <Link href="/">Home</Link> <span className="sep">/</span>{" "}
               <Link href="/movers">Service Areas</Link> <span className="sep">/</span>{" "}
               <Link href={`/movers/${city}`}>{location.city}</Link> <span className="sep">/</span>{" "}
               <span className="current">Commercial</span>

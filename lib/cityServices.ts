@@ -48,7 +48,7 @@ export const CITY_SERVICES: CityService[] = [
       process: "How an office relocation runs",
       cost: "How much does commercial moving in Marietta cost?",
       faq: "Questions from Marietta businesses",
-      reviews: "What customers say",
+      reviews: "What Marietta customers say about the crew",
       cta: "Planning an office move in Marietta?",
     },
     areas: [
@@ -61,7 +61,7 @@ export const CITY_SERVICES: CityService[] = [
         note: "Redeveloped office and light-industrial space along the corridor. Dock height varies a lot between buildings here, so we confirm it rather than turning up and finding out.",
       },
       {
-        name: "Powers Ferry & Interstate North",
+        name: "Powers Ferry & the I-75 corridor",
         note: "Multi-tenant office parks close to I-75. Freight elevators are shared between tenants and get booked out, which usually decides the date before anything else does.",
       },
       {
@@ -84,7 +84,7 @@ export const CITY_SERVICES: CityService[] = [
       },
       {
         title: "Freight elevators are shared and booked",
-        body: "In the Powers Ferry and Interstate North office parks the freight elevator is shared with every other tenant and with commercial deliveries. The window you get is the window you get, so we size the crew to it instead of stretching the day.",
+        body: "In the multi-tenant office parks along Powers Ferry the freight elevator is shared with every other tenant and with commercial deliveries. The window you get is the window you get, so we size the crew to it instead of stretching the day.",
       },
       {
         title: "Labelling decides how fast you reopen",
@@ -154,6 +154,21 @@ export const CITY_SERVICES: CityService[] = [
     ],
   },
 ];
+
+// Where a city+service page exists, the city page's exact-match anchor must
+// point at it rather than at the metro-wide service page. Without this the
+// generic page collects every "<Service> in <City>" anchor on the site and the
+// purpose-built page collects none.
+export function cityServiceHref(citySlug: string, serviceSlug: string): string {
+  const exists = CITY_SERVICES.some(
+    (x) => x.citySlug === citySlug && x.serviceSlug === serviceSlug
+  );
+  return exists ? `/movers/${citySlug}/${serviceSlug}` : `/services/${serviceSlug}`;
+}
+
+export function cityServicesFor(citySlug: string) {
+  return CITY_SERVICES.filter((x) => x.citySlug === citySlug);
+}
 
 export function findCityService(citySlug: string, serviceSlug: string) {
   const cs = CITY_SERVICES.find((x) => x.citySlug === citySlug && x.serviceSlug === serviceSlug);

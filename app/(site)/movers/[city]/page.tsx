@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { LOCATIONS, nearbyLocations } from "@/lib/locations";
 import { REVIEWS, REVIEW_COUNT, REVIEW_RATING, GBP_URL } from "@/lib/reviews";
 import { SERVICE_TYPES } from "@/lib/serviceTypes";
+import { cityServiceHref } from "@/lib/cityServices";
 import { Icon } from "@/app/components/Icon";
 import { FAQItem } from "@/app/components/ui";
 
@@ -261,7 +262,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
               {SERVICE_TYPES.map((svc) => (
                 <li key={svc.slug}>
                   <Icon name="check" size={15} />
-                  <Link href={`/services/${svc.slug}`} style={{ color: "var(--accent)", borderBottom: "1px solid currentColor" }}>
+                  <Link href={cityServiceHref(loc.slug, svc.slug)} style={{ color: "var(--accent)", borderBottom: "1px solid currentColor" }}>
                     {svc.name} in {loc.city}
                   </Link>
                 </li>

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SERVICE_TYPES } from "@/lib/serviceTypes";
+import { CITY_SERVICES } from "@/lib/cityServices";
+import { LOCATIONS } from "@/lib/locations";
 import { Icon } from "@/app/components/Icon";
 import { FAQItem } from "@/app/components/ui";
 
@@ -17,7 +19,9 @@ export async function generateMetadata({ params }: { params: Promise<{ type: str
   if (!svc) return {};
   return {
     title: `${svc.name} in Metro Atlanta`,
-    description: svc.intro,
+    // svc.intro runs well past the 155-char limit, so trim to the first
+    // sentence and top up with the proof that earns the click.
+    description: `${svc.intro.split(". ")[0]}. Open 24/7, rated 5.0 from 32 Google reviews.`.slice(0, 155),
     alternates: { canonical: `/services/${svc.slug}` },
   };
 }
@@ -39,7 +43,9 @@ export default async function ServiceTypePage({ params }: { params: Promise<{ ty
     serviceType: svc.name,
     provider: { "@type": "MovingCompany", name: "Sobi Moving", url: SITE },
     areaServed: { "@type": "City", name: "Atlanta, GA" },
-    description: svc.intro,
+    // svc.intro runs well past the 155-char limit, so trim to the first
+    // sentence and top up with the proof that earns the click.
+    description: `${svc.intro.split(". ")[0]}. Open 24/7, rated 5.0 from 32 Google reviews.`.slice(0, 155),
   };
 
   return (
@@ -99,6 +105,32 @@ export default async function ServiceTypePage({ params }: { params: Promise<{ ty
           </div>
         </div>
       </section>
+
+      {/* CITY PAGES for this service, so the metro page hands equity down
+          instead of competing with the city+service pages. */}
+      {CITY_SERVICES.filter((x) => x.serviceSlug === svc.slug).length ? (
+        <section style={{ paddingTop: 8, paddingBottom: 64 }}>
+          <div className="container">
+            <div style={{ maxWidth: 760 }}>
+              <h2 style={{ marginBottom: 16 }}>{svc.name} by city</h2>
+              <ul className="service-includes">
+                {CITY_SERVICES.filter((x) => x.serviceSlug === svc.slug).map((cs) => {
+                  const loc = LOCATIONS.find((l) => l.slug === cs.citySlug);
+                  if (!loc) return null;
+                  return (
+                    <li key={cs.citySlug}>
+                      <Icon name="check" size={15} />
+                      <Link href={`/movers/${cs.citySlug}/${cs.serviceSlug}`} style={{ color: "var(--accent)", borderBottom: "1px solid currentColor" }}>
+                        {svc.name} in {loc.city}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       {/* CTA */}
       <section className="dark" style={{ paddingTop: 64, paddingBottom: 64 }}>

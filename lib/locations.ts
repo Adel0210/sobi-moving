@@ -89,7 +89,7 @@ export const LOCATIONS: Location[] = [
         cta: "Ready when your building is",
       },
       answer:
-        "Sandy Springs is the densest mix of building types in the metro. A relocation here can mean a Perimeter high-rise with a booked loading dock and a certificate of insurance, a gated estate off the Chattahoochee, or a 1960s split-level on a steep wooded lot. The building decides the plan more than the address does.",
+        "Sandy Springs has one of the widest mixes of building types in the metro. A relocation here can mean a Perimeter high-rise with a booked loading dock and a certificate of insurance, a gated estate off the Chattahoochee, or a 1960s split-level on a steep wooded lot. The building decides the plan more than the address does.",
       areas: [
         {
           name: "City Springs & the civic center",
@@ -119,7 +119,7 @@ export const LOCATIONS: Location[] = [
       challenges: [
         {
           title: "The building sets the rules, not the mover",
-          body: "More of Sandy Springs is elevator-access than anywhere else we work. Buildings require a booked freight elevator, a protected lobby route and a certificate of insurance naming the management company. We arrange all three in advance, because a move that turns up without them does not start.",
+          body: "A lot of Sandy Springs is elevator-access. Buildings require a booked freight elevator, a protected lobby route and a certificate of insurance naming the management company. We arrange all three in advance, because a move that turns up without them does not start.",
         },
         {
           title: "Gated communities need access arranged in your name",
@@ -131,7 +131,7 @@ export const LOCATIONS: Location[] = [
         },
         {
           title: "GA-400 and I-285 meet in the middle of the job",
-          body: "The interchange is the busiest point in the metro at peak, and almost every route in Sandy Springs touches it. Load and travel times are planned around the peak rather than through it.",
+          body: "The interchange is one of the busiest in Georgia, carrying around 420,000 vehicles a day on a design built for far fewer, and almost every route in Sandy Springs touches it. Load and travel times are planned around the peak rather than through it.",
         },
       ],
       process: [
