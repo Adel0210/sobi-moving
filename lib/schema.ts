@@ -2,6 +2,8 @@ import { CONTENT_DEFAULTS, type SiteContent } from "./content";
 
 const SITE = "https://www.sobimoving.com";
 
+const NOT_CITIES = new Set(["East Cobb", "Buckhead", "Midtown", "Vinings"]);
+
 const SERVICE_AREAS = [
   "Sandy Springs", "Alpharetta", "Roswell", "Marietta", "Dunwoody",
   "Brookhaven", "Decatur", "Buckhead", "Midtown", "East Cobb",
@@ -34,7 +36,13 @@ export function movingCompanySchema(c: SiteContent) {
       addressCountry: "US",
     },
     geo: { "@type": "GeoCoordinates", latitude: 33.9304, longitude: -84.3733 },
-    areaServed: SERVICE_AREAS.map((name) => ({ "@type": "City", name: `${name}, GA` })),
+    // East Cobb, Buckhead, Midtown and Vinings are neighbourhoods or CDPs, not
+  // municipalities. The East Cobb page opens by saying exactly that, so shipping
+  // City here contradicted the page's own first sentence.
+  areaServed: SERVICE_AREAS.map((name) => ({
+    "@type": NOT_CITIES.has(name) ? "Place" : "City",
+    name: `${name}, GA`,
+  })),
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
