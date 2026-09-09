@@ -23,7 +23,7 @@ export const SiteFooter = ({
             <strong>Sobi Moving</strong>
           </div>
           <p style={{ fontSize: 14, lineHeight: 1.6, marginBottom: 20, color: "#c9c2b3" }}>
-            Atlanta&apos;s trusted moving company. We handle every detail so you can focus on what matters — feeling at home.
+            Atlanta&apos;s trusted moving company. We handle every detail so you can focus on what matters: feeling at home.
           </p>
           <div style={{ fontSize: 13, color: "#908a7f", lineHeight: 1.7 }}>
             Serving the Metro Atlanta area · Georgia

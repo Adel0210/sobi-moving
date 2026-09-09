@@ -419,3 +419,14 @@ html[data-palette="ochre"] .cta-band {
 }
 .cta-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
 @media (max-width: 760px) { .cta-grid { grid-template-columns: 1fr; } }
+
+/* The FAQ question is a heading inside the toggle button. It inherits the
+   button's type styling so giving it heading semantics changes nothing
+   visually. */
+.faq-q-text {
+  margin: 0;
+  font: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  font-weight: inherit;
+}

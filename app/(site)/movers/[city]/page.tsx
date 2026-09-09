@@ -27,10 +27,10 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   const loc = LOCATIONS.find((l) => l.slug === city);
   if (!loc) return {};
   return {
-    title: `Movers in ${loc.city}, GA | Sobi Moving`,
+    title: `Movers in ${loc.city}, GA`,
     description: loc.depth
-      ? `Moving in ${loc.city}? Local and long-distance movers open 24/7, rated 5.0 from ${REVIEW_COUNT} Google reviews. Same-day itemised quotes, no hidden fees.`
-      : `Sobi Moving is ${loc.city}'s trusted moving company — full-service packing, white-glove setup, and a careful, licensed crew for local & long-distance moves. Get a free quote.`,
+      ? `Moving in ${loc.city}? Local and long-distance movers open 24/7, rated 5.0 from ${REVIEW_COUNT} Google reviews. Same-day itemized quotes, no hidden fees.`
+      : `Sobi Moving is ${loc.city}'s trusted moving company offering full-service packing, white-glove setup, and a careful, licensed crew for local & long-distance moves. Get a free quote.`,
     alternates: { canonical: `/movers/${loc.slug}` },
   };
 }
@@ -187,6 +187,28 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
         </section>
       ) : null}
 
+      {/* PROCESS — stages with the durations we can actually stand behind.
+          Only on cities that have been built out, so it does not become another
+          shared template heading across all fifteen. */}
+      {loc.depth ? (
+        <section className="alt" style={{ paddingTop: 64, paddingBottom: 64 }}>
+          <div className="container">
+            <div className="eyebrow">How it works</div>
+            <h2 style={{ marginTop: 8, marginBottom: 28 }}>How a {loc.city} move works</h2>
+            <div className="process-grid">
+              {loc.depth.process.map((p, i) => (
+                <div key={p.stage} className="process-step">
+                  <div className="process-num">{String(i + 1).padStart(2, "0")}</div>
+                  <h3>{p.stage}</h3>
+                  <div style={{ fontSize: 13, color: "var(--accent)", marginBottom: 8, fontWeight: 500 }}>{p.when}</div>
+                  <p>{p.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       {/* WHAT AFFECTS YOUR QUOTE — the cost question, answered honestly without
           publishing figures we do not have. */}
       {loc.depth ? (
@@ -194,9 +216,9 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
           <div className="container">
             <div style={{ maxWidth: 760 }}>
               <div className="eyebrow">Pricing</div>
-              <h2 style={{ marginTop: 8, marginBottom: 12 }}>What affects the cost of your {loc.city} move</h2>
+              <h2 style={{ marginTop: 8, marginBottom: 12 }}>How much do movers in {loc.city} cost?</h2>
               <p style={{ color: "var(--ink-soft)", marginBottom: 24, fontSize: 16, lineHeight: 1.65 }}>
-                Every quote is itemised, and these are the things that move the number. Tell us about
+                Every quote is itemized, and these are the things that move the number. Tell us about
                 your move and you get the figure back the same day, with nothing added later.
               </p>
               <ul className="service-includes">
@@ -313,7 +335,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
         <div className="container" style={{ textAlign: "center" }}>
           <h2 style={{ color: "#f5efe4" }}>Moving in {loc.city}? Let&apos;s make it easy.</h2>
           <p style={{ color: "#c9c2b3", marginTop: 12, maxWidth: 540, marginLeft: "auto", marginRight: "auto" }}>
-            Free, no-obligation quote — usually back to you the same day.
+            Free, no-obligation quote, usually back to you the same day.
           </p>
           <div className="row" style={{ marginTop: 28, gap: 12, justifyContent: "center" }}>
             <Link href="/quote" className="btn btn-accent btn-arrow">Get your free quote</Link>

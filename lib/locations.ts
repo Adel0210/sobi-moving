@@ -7,6 +7,7 @@ export type CityDepth = {
   areas: { name: string; note: string }[]; // named areas with a real, checkable specific
   challenges: { title: string; body: string }[]; // what actually makes a move here different
   quoteFactors: string[]; // what moves the price, without quoting figures
+  process: { stage: string; when: string; body: string }[]; // real stages, real durations only
   faqExtra?: { q: string; a: string }[]; // city-specific questions beyond the shared three
 };
 
@@ -186,7 +187,7 @@ export const LOCATIONS: Location[] = [
         },
         {
           name: "Kennesaw Mountain & west Marietta",
-          note: "Larger homes on hilly, wooded lots. Steep and curved driveways are common, and a full-size truck often cannot get to the door — we shuttle with a smaller vehicle when that is the case.",
+          note: "Larger homes on hilly, wooded lots. Steep and curved driveways are common, and a full-size truck often cannot get to the door, so we shuttle with a smaller vehicle when that is the case.",
         },
         {
           name: "East Cobb border",
@@ -208,7 +209,7 @@ export const LOCATIONS: Location[] = [
         },
         {
           title: "Hills and driveways decide where the truck parks",
-          body: "West Marietta lots slope, and a loaded truck cannot safely use a steep or curved driveway. Where the truck has to stay on the street, the carry gets longer — planning it up front is the difference between a normal day and an overtime one.",
+          body: "West Marietta lots slope, and a loaded truck cannot safely use a steep or curved driveway. Where the truck has to stay on the street, the carry gets longer. Planning it up front is the difference between a normal day and an overtime one.",
         },
         {
           title: "I-75 and the Loop set the schedule",
@@ -216,22 +217,44 @@ export const LOCATIONS: Location[] = [
         },
         {
           title: "Two school systems, two calendars",
-          body: "Marietta City Schools and Cobb County Schools run separate calendars, and families time moves to them. Late July and early August book out first — the earlier the date is set, the more of the day is yours to choose.",
+          body: "Marietta City Schools and Cobb County Schools run separate calendars, and families time moves to them. Late July and early August book out first, so the earlier the date is set, the more of the day is yours to choose.",
         },
       ],
       quoteFactors: [
         "How much there is to move, and how much of it is packed before the crew arrives",
-        "Stairs, and how many flights — historic homes near the Square are frequently three levels",
+        "Stairs, and how many flights. Historic homes near the Square are frequently three levels",
         "Carry distance from the door to where the truck can legally and safely park",
         "Elevator or loading-dock booking in apartment and condo buildings",
         "Whether packing, unpacking, or furniture disassembly is added to the move",
-        "Specialty items — pianos, safes, oversized glass, gym equipment",
+        "Specialty items: pianos, safes, oversized glass, gym equipment",
         "The date itself: weekends, month-end and the August school-year rush are the busiest windows",
+      ],
+      process: [
+        {
+          stage: "Free quote",
+          when: "Back the same day",
+          body: "Send the addresses, the date, and roughly what is moving. You get an itemized quote back the same day, with every line written out and nothing added later.",
+        },
+        {
+          stage: "Book the date",
+          when: "2 to 4 weeks ahead for most moves",
+          body: "Two to four weeks is the comfortable window for a Marietta move. Late July and early August fill first around the school calendars, and month-end weekends go early year round. Last-minute dates are worth asking about, because we are open 24 hours and can often fit them.",
+        },
+        {
+          stage: "Access plan",
+          when: "Before move day",
+          body: "We confirm where the truck can legally park, whether the driveway takes a full-size vehicle, and what the building or HOA requires. Elevator reservations and certificates of insurance get arranged with management before the day, not on it.",
+        },
+        {
+          stage: "Move day",
+          when: "Any day, any start time",
+          body: "Floors and doorways get protected first, furniture is padded and wrapped, and large pieces come apart and go back together at the other end. Early starts, evenings and weekends are all normal for us.",
+        },
       ],
       faqExtra: [
         {
           q: "How much do movers in Marietta cost?",
-          a: "There is no flat rate that is honest for every home, because the things that actually drive the number vary so much across Marietta — volume, stairs, carry distance, packing, and the date. Tell us the address, the date, and roughly what is moving, and you get an itemised quote back the same day with no hidden fees.",
+          a: "There is no flat rate that is honest for every home, because the things that actually drive the number vary so much across Marietta: volume, stairs, carry distance, packing, and the date. Tell us the address, the date, and roughly what is moving, and you get an itemized quote back the same day with no hidden fees.",
         },
         {
           q: "Can you move a historic home near Marietta Square?",

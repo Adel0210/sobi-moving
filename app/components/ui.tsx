@@ -99,7 +99,9 @@ export const FAQItem = ({ q, a, defaultOpen = false }: { q: ReactNode; a: ReactN
   return (
     <div className={`faq-item ${open ? "open" : ""}`}>
       <button className="faq-q" onClick={() => setOpen(!open)} aria-expanded={open}>
-        <span>{q}</span>
+        {/* The question carries heading semantics: these are real H2/H3-level
+            questions and were previously invisible to crawlers as bare spans. */}
+        <h3 className="faq-q-text">{q}</h3>
         <span className="faq-icon"><Icon name={open ? "minus" : "plus"} size={18} /></span>
       </button>
       <div className="faq-a" style={{ maxHeight: open ? 400 : 0 }}>
