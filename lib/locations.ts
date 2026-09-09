@@ -68,6 +68,90 @@ export const LOCATIONS: Location[] = [
         a: "We are fully licensed and insured for both local and long-distance moves, with no hidden fees on your estimate.",
       },
     ],
+    depth: {
+      headings: {
+        local: "Here, the building matters more than the address",
+        capabilities: "The parts people forget to budget for",
+        areas: "Perimeter towers to riverside ranches",
+        challenges: "Elevator buildings, gated streets and the 400/285 squeeze",
+        process: "How a Sandy Springs move runs",
+        cost: "How much do movers in Sandy Springs cost?",
+        services: "Choose your Sandy Springs service",
+        nearby: "We also cover the northern Perimeter",
+        faq: "Questions from Perimeter and City Springs",
+        reviews: "What people say after the truck leaves",
+        cta: "Ready when your building is",
+      },
+      answer:
+        "Sandy Springs is the densest mix of building types in the metro. A relocation here can mean a Perimeter high-rise with a booked loading dock and a certificate of insurance, a gated estate off the Chattahoochee, or a 1960s split-level on a steep wooded lot. The building decides the plan more than the address does.",
+      areas: [
+        {
+          name: "City Springs & the civic centre",
+          note: "Newer mixed-use condos and apartments around the civic centre. Elevator reservations and a certificate of insurance are standard requirements, and management usually wants both booked days ahead.",
+        },
+        {
+          name: "Perimeter Center",
+          note: "High-rise residential wrapped around the office district and the hospitals. Loading docks are shared with commercial deliveries, so the move window is fixed and worth protecting.",
+        },
+        {
+          name: "Huntcliff & the river estates",
+          note: "Gated communities off the Chattahoochee with guard-house entry, long private drives and multi-level homes. Gate access has to be arranged in the resident's name before the truck arrives.",
+        },
+        {
+          name: "Riverside & High Point",
+          note: "Mid-century split-levels and ranches on sloping, wooded lots. Split-levels mean short flights of stairs in several directions rather than one clean staircase.",
+        },
+        {
+          name: "Roswell Road corridor",
+          note: "Older apartment stock and townhomes along the main artery. Parking is kerbside and traffic is constant, so the truck position gets sorted before the crew starts carrying.",
+        },
+        {
+          name: "Dunwoody Springs & the 285 edge",
+          note: "Condos and townhomes tight to the interchange. Access windows here are shaped almost entirely by peak-hour traffic on GA-400 and I-285.",
+        },
+      ],
+      challenges: [
+        {
+          title: "The building sets the rules, not the mover",
+          body: "More of Sandy Springs is elevator-access than anywhere else we work. Buildings require a booked freight elevator, a protected lobby route and a certificate of insurance naming the management company. We arrange all three in advance, because a move that turns up without them does not start.",
+        },
+        {
+          title: "Gated communities need access arranged in your name",
+          body: "Huntcliff and the river estates run guard-house entry. The crew and the vehicle have to be on the list, and the private drives inside are often long and narrow with limited turning room.",
+        },
+        {
+          title: "Split-levels are stairs in every direction",
+          body: "The mid-century housing stock through Riverside and High Point splits over three or four half-levels. It reads as a small house and moves like a large one, which is the most common underestimate here.",
+        },
+        {
+          title: "GA-400 and I-285 meet in the middle of the job",
+          body: "The interchange is the busiest point in the metro at peak, and almost every route in Sandy Springs touches it. Load and travel times are planned around the peak rather than through it.",
+        },
+      ],
+      process: [
+        { stage: "Free quote", when: "Back the same day", body: "Send the addresses, the date and roughly what is moving. You get an itemized quote back the same day with nothing added later." },
+        { stage: "Book the date", when: "2 to 4 weeks ahead for most moves", body: "Two to four weeks is comfortable. If your building only releases the freight elevator on certain days, that usually decides the date before anything else does." },
+        { stage: "Building and access paperwork", when: "Before move day", body: "We book the elevator or dock, provide the certificate of insurance the management company asks for, and get the crew and vehicle onto the gate list where there is one." },
+        { stage: "Move day", when: "Any day, any start time", body: "Lobby routes and floors get protected first, furniture is padded and wrapped, and large pieces come apart and go back together at the other end. We are open 24 hours, which matters when a building restricts moves to a set window." },
+      ],
+      quoteFactors: [
+        "How much there is to move, and how much is packed before the crew arrives",
+        "Whether it is an elevator building, and how far the unit is from the freight lift",
+        "Split-level layouts, which add short flights in several directions",
+        "Carry distance from the door to where the truck can legally park",
+        "Gate and guard-house access on the private communities",
+        "Packing, unpacking or furniture disassembly added to the move",
+        "Specialty items: pianos, safes, oversized glass, gym equipment",
+        "The date, and any window your building restricts moves to",
+      ],
+      faqExtra: [
+        { q: "How much do movers in Sandy Springs cost?", a: "No flat rate is honest here, because a Perimeter high-rise and a split-level off Riverside are completely different jobs even at the same square footage. Send the address, the date and roughly what is moving, and you get an itemized quote back the same day with no hidden fees." },
+        { q: "Do you handle the certificate of insurance my building asks for?", a: "Yes. We provide the certificate naming your management company and book the freight elevator or loading dock with them ahead of the day. It is a standard requirement across City Springs and Perimeter, and it is on us to sort, not you." },
+        { q: "Can you get into a gated community like Huntcliff?", a: "Yes, as long as the crew and vehicle are added to the gate list in your name before the move. Tell us the community when you book and we will confirm what the guard house needs." },
+        { q: "My building only allows moves in a four-hour window. Is that enough?", a: "Usually, and it is why we size the crew to the window rather than to the house. Tell us the window when you book so the plan is built around it." },
+        { q: "Are you available on weekends and outside business hours?", a: "We are open 24 hours, 7 days a week. Many Perimeter buildings only permit moves outside business hours, so early starts and weekends are routine for us." },
+      ],
+    },
   },
   {
     slug: "roswell",
@@ -93,6 +177,90 @@ export const LOCATIONS: Location[] = [
         a: "Yes, we can haul away unwanted items and debris so you start fresh in your new place without the clutter.",
       },
     ],
+    depth: {
+      headings: {
+        local: "Two Roswells, two different moves",
+        capabilities: "The work either side of the drive",
+        areas: "From Canton Street to Martin's Landing",
+        challenges: "Antebellum houses, event weekends and river-side lots",
+        process: "How a Roswell move runs",
+        cost: "How much do movers in Roswell cost?",
+        services: "Pick the Roswell service that fits",
+        nearby: "We also cover north Fulton",
+        faq: "Questions we get from Roswell",
+        reviews: "5.0 from 32 Google reviews",
+        cta: "Let's plan your Roswell move",
+      },
+      answer:
+        "Roswell splits into two very different moving jobs. The historic district around Canton Street is 1800s houses on narrow streets with event closures most weekends, and the subdivisions out toward the Chattahoochee are large homes on deep, wooded lots. One needs patience and protection, the other needs a plan for the carry.",
+      areas: [
+        {
+          name: "Historic Roswell & Canton Street",
+          note: "Antebellum and Victorian homes near Bulloch Hall and Barrington Hall. Narrow streets, tight stair turns, and original floors that get runners before anything moves. Canton Street events close roads on weekends, so truck placement is agreed in advance.",
+        },
+        {
+          name: "Roswell Mill & Vickery Creek",
+          note: "Converted mill lofts and older homes on steep ground above the creek. Access is often stairs rather than a level walk to the door, which changes crew size more than square footage does.",
+        },
+        {
+          name: "Martin's Landing",
+          note: "Large traditional homes on wooded lots near the river, most with finished basements. Long driveways and multi-level carries are the norm here.",
+        },
+        {
+          name: "Willeo & the river corridor",
+          note: "Deep lots off winding two-lane roads with no shoulder. A full-size truck cannot always turn or park close, so we confirm the approach before the day.",
+        },
+        {
+          name: "Crabapple",
+          note: "Newer construction on the Milton and Alpharetta edge, much of it under active HOAs with move-in windows and insurance paperwork we arrange with management first.",
+        },
+        {
+          name: "Holcomb Bridge & Alpharetta Highway",
+          note: "Apartments and condos along the GA-400 corridor. Elevator reservations and loading-zone timing matter more here than anywhere else in Roswell.",
+        },
+      ],
+      challenges: [
+        {
+          title: "The historic district is a protected streetscape, not just old houses",
+          body: "Roswell's historic core has design guidelines, mature trees close to the kerb, and on-street parking that fills early. Where a truck can legally sit is a real constraint, and getting it wrong means a much longer carry than anyone planned for.",
+        },
+        {
+          title: "Canton Street events reshape a weekend",
+          body: "Street festivals and market days close sections of Canton Street and push parking blocks away. We check the event calendar against your date rather than finding out on the morning.",
+        },
+        {
+          title: "Basements and river-side slopes add a level",
+          body: "Homes toward Martin's Landing and Willeo commonly have finished basements and sloped approaches. That is an extra flight in both directions, and it is the single thing most often missed when people estimate their own move.",
+        },
+        {
+          title: "GA-400 sets the clock",
+          body: "Holcomb Bridge Road and the GA-400 ramps back up hard at peak in both directions. Load times get planned around that, not into it.",
+        },
+      ],
+      process: [
+        { stage: "Free quote", when: "Back the same day", body: "Send the addresses, the date and roughly what is moving. You get an itemized quote back the same day with nothing added later." },
+        { stage: "Book the date", when: "2 to 4 weeks ahead for most moves", body: "Two to four weeks is comfortable for Roswell. Weekends during the Canton Street event season go first, and month-end fills early year round." },
+        { stage: "Access plan", when: "Before move day", body: "We confirm where the truck can legally park in the historic district, whether the driveway takes a full-size vehicle, and what any HOA or building requires. Paperwork is handled with management ahead of the day." },
+        { stage: "Move day", when: "Any day, any start time", body: "Floors and doorways get protected first, furniture is padded and wrapped, and large pieces come apart and go back together at the other end. We are open 24 hours, so early starts and weekends are normal." },
+      ],
+      quoteFactors: [
+        "How much there is to move, and how much is packed before the crew arrives",
+        "Stairs and levels. Finished basements near the river effectively add a floor",
+        "Carry distance from the door to where the truck can legally park",
+        "Whether the historic district restricts where that truck can sit on your street",
+        "Elevator or loading-dock booking along the Holcomb Bridge corridor",
+        "Packing, unpacking or furniture disassembly added to the move",
+        "Specialty items: pianos, safes, oversized glass, gym equipment",
+        "The date. Weekends, month-end and event weekends are the busiest windows",
+      ],
+      faqExtra: [
+        { q: "How much do movers in Roswell cost?", a: "No flat rate is honest across Roswell, because the things that actually drive the number vary so much between a Canton Street cottage and a Martin's Landing house with a finished basement. Send the address, the date and roughly what is moving, and you get an itemized quote back the same day with no hidden fees." },
+        { q: "Can you move a home in the Roswell historic district?", a: "Yes, and it is worth a walk-through first. Narrow streets, limited parking, tight stair turns and original floors all change how the day runs, and knowing that in advance is what keeps the house and the furniture intact." },
+        { q: "What happens if there is an event on Canton Street on my move date?", a: "We check the event calendar against your date when you book. If a closure affects your street, we plan truck placement and the carry route around it beforehand rather than improvising." },
+        { q: "Do you handle homes with finished basements?", a: "Regularly. A finished basement is an extra level in both directions, so we size the crew for it up front instead of running long on the day." },
+        { q: "Are you available on weekends and outside business hours?", a: "We are open 24 hours, 7 days a week. Early starts, evenings and weekends are all normal, which matters when a building only allows moves in a set window." },
+      ],
+    },
   },
   {
     slug: "alpharetta",
@@ -195,17 +363,17 @@ export const LOCATIONS: Location[] = [
     ],
     depth: {
       headings: {
-        local: "Moving in Marietta, done right",
-        capabilities: "Packing, setup and haul-away in Marietta",
+        local: "Marietta moves, from the Square outward",
+        capabilities: "More than a truck and a crew",
         areas: "Marietta, block by block",
         challenges: "Historic streets, hillside driveways, two school calendars",
         process: "How a Marietta move runs",
         cost: "How much do movers in Marietta cost?",
-        services: "Every move we handle in Marietta",
+        services: "Which kind of Marietta move is yours?",
         nearby: "We also cover the rest of Cobb County",
         faq: "Marietta moving questions",
         reviews: "Rated 5.0 across metro Atlanta",
-        cta: "Moving in Marietta? Let's make it easy.",
+        cta: "Tell us about your Marietta move",
       },
       answer:
         "Moving in Marietta means dealing with three very different kinds of property: historic homes around Marietta Square with narrow streets and original staircases, hillside houses on wooded lots toward Kennesaw Mountain, and newer apartments and townhomes along the Cobb Parkway and I-75 corridor. Each needs a different access plan.",
@@ -432,6 +600,90 @@ export const LOCATIONS: Location[] = [
         a: "Yes. We can haul away furniture and items you no longer want as part of the move so you only bring what you need.",
       },
     ],
+    depth: {
+      headings: {
+        local: "What an East Cobb move really takes",
+        capabilities: "Packing, assembly and clearing out",
+        areas: "Johnson Ferry, Sandy Plains and the school lines",
+        challenges: "Wooded lots, split foyers and a school-year deadline",
+        process: "How an East Cobb move runs",
+        cost: "How much do movers in East Cobb cost?",
+        services: "Find the right East Cobb service",
+        nearby: "We also cover the rest of Cobb County",
+        faq: "Questions from East Cobb families",
+        reviews: "The last word goes to customers",
+        cta: "Book your East Cobb date",
+      },
+      answer:
+        "East Cobb is not a city, it is a stretch of unincorporated Cobb County, and moves here are shaped by two things: mature subdivisions of split-foyer and two-storey homes on wooded, sloping lots, and a school-attendance calendar that concentrates most family moves into a few summer weeks.",
+      areas: [
+        {
+          name: "Johnson Ferry Road corridor",
+          note: "The spine of East Cobb, lined with established subdivisions and the shopping centres at Merchants Walk and The Avenue. Traffic here is heavy through the school run in both directions, which shapes start times.",
+        },
+        {
+          name: "Indian Hills",
+          note: "1970s and 80s homes on large wooded lots around the country club. Long driveways, mature trees close to the kerb, and split-level layouts are all common.",
+        },
+        {
+          name: "Sandy Plains & Sewell Mill",
+          note: "Family subdivisions with basements and two-storey plans. Most have an HOA, and some ask for a move-in window to be booked with the board.",
+        },
+        {
+          name: "Chimney Springs & Sope Creek",
+          note: "Wooded lots on rolling ground near the creek. Driveways can be steep enough that a loaded truck stays on the street and we shuttle the last stretch.",
+        },
+        {
+          name: "Roswell Road & the Chattahoochee edge",
+          note: "Older ranches and newer infill along the river side of East Cobb, with narrow two-lane approaches and limited turning room for a full-size truck.",
+        },
+        {
+          name: "Walton, Pope and Lassiter attendance zones",
+          note: "School zones drive both prices and timing here. Families move to land inside a specific zone before the year starts, which makes late July and early August the tightest booking window of the year.",
+        },
+      ],
+      challenges: [
+        {
+          title: "Split-foyers and basements are extra levels, not extra rooms",
+          body: "Much of the East Cobb housing stock is split-foyer or two-storey with a finished basement. A short flight up and a short flight down from the entry means almost nothing gets carried on the flat, and that is the biggest single driver of how long a day here takes.",
+        },
+        {
+          title: "Wooded lots decide where the truck can sit",
+          body: "Mature trees, steep driveways and long approaches are the norm rather than the exception. Where a loaded truck cannot safely use the driveway, we park on the street and shuttle, and that gets planned rather than discovered.",
+        },
+        {
+          title: "The school calendar compresses the whole season",
+          body: "Because attendance zones drive so many moves here, late July and early August book out before anywhere else in the metro. A date set early is worth more in East Cobb than almost anywhere we work.",
+        },
+        {
+          title: "It is unincorporated, so the rules come from the HOA",
+          body: "There is no city hall setting move rules in East Cobb. Requirements come from individual HOAs instead, and they vary street to street. We confirm what yours asks for before the day rather than assuming.",
+        },
+      ],
+      process: [
+        { stage: "Free quote", when: "Back the same day", body: "Send the addresses, the date and roughly what is moving. You get an itemized quote back the same day with nothing added later." },
+        { stage: "Book the date", when: "2 to 4 weeks ahead, earlier for August", body: "Two to four weeks works most of the year. For a move tied to the start of the school year, book further out than that, because the last two weeks of summer are the tightest window in East Cobb." },
+        { stage: "Access plan", when: "Before move day", body: "We confirm whether the driveway takes a full-size truck, how many levels the carry involves, and what your HOA requires. Anything the board needs is sorted ahead of the day." },
+        { stage: "Move day", when: "Any day, any start time", body: "Floors and doorways get protected first, furniture is padded and wrapped, and large pieces come apart and go back together at the other end. We are open 24 hours, so we can start before the school run rather than in it." },
+      ],
+      quoteFactors: [
+        "How much there is to move, and how much is packed before the crew arrives",
+        "Levels. Split-foyers and finished basements mean stairs in both directions from the entry",
+        "Whether a loaded truck can safely use the driveway, or has to stay on the street",
+        "Carry distance on the longer wooded lots",
+        "HOA move-in requirements where the subdivision has them",
+        "Packing, unpacking or furniture disassembly added to the move",
+        "Specialty items: pianos, safes, oversized glass, gym equipment",
+        "The date. Late July and early August are the busiest weeks of the East Cobb year",
+      ],
+      faqExtra: [
+        { q: "How much do movers in East Cobb cost?", a: "No flat rate is honest across East Cobb, because levels and driveway access change the day more than square footage does. A split-foyer with a finished basement is a different job to a ranch of the same size. Send the address, the date and roughly what is moving, and you get an itemized quote back the same day with no hidden fees." },
+        { q: "Do you cover all of East Cobb, or only certain subdivisions?", a: "All of it. East Cobb is unincorporated Cobb County rather than a city, so we work the whole area from Johnson Ferry through Sandy Plains to the river side, including the gated and HOA communities." },
+        { q: "My driveway is steep and wooded. Can a truck get up it?", a: "Sometimes, and where it cannot we park on the street and shuttle the last stretch with a smaller vehicle. It is common here and it is not a problem as long as we know before the day so it is in the plan." },
+        { q: "We are moving before the school year starts. How early should we book?", a: "Earlier than you would anywhere else in the metro. Attendance zones drive a lot of moves in East Cobb, so the last two weeks of summer fill first. If your date is tied to the school calendar, set it as soon as you know it." },
+        { q: "Are you available on weekends and outside business hours?", a: "We are open 24 hours, 7 days a week. Early starts are popular here specifically to get loaded before Johnson Ferry backs up with the school run." },
+      ],
+    },
   },
   {
     slug: "vinings",
