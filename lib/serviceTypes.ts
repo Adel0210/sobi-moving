@@ -1,3 +1,24 @@
+// Optional deep-content block for a service page, mirroring CityDepth in
+// locations.ts. The four service pages launched as ~300-word templates; a page
+// gets upgraded by filling this in and renders as before without it.
+export type ServiceDepth = {
+  answer: string; // direct answer to the primary query, first thing on the page
+  sections: { heading: string; body: string }[]; // 4-6 explainer sections, each a real decision the customer faces
+  quoteFactors: string[]; // what moves the price, without quoting figures
+  process: { stage: string; when: string; body: string }[]; // real stages only, no invented transit times
+  faqExtra: { q: string; a: string }[]; // service-specific questions beyond the shared three
+  headings: {
+    title: string; // 50-60 chars before the layout appends the brand
+    h1: string; // must agree with the title
+    description: string; // 130-155 chars, written for the click
+    sections: string; // heading over the explainer block
+    process: string;
+    cost: string; // must contain the primary term
+    faq: string;
+    cta: string;
+  };
+};
+
 export type ServiceType = {
   slug: string; // "long-distance-moving"
   name: string; // "Long-Distance Moving"
@@ -6,6 +27,7 @@ export type ServiceType = {
   body: string; // 1-2 paragraphs of detail (use \n\n between paragraphs)
   includes: string[]; // 5-6 bullet points of what's included
   faq: { q: string; a: string }[]; // 3 Q&As specific to this service
+  depth?: ServiceDepth; // present once the service page has been built out properly
 };
 
 export const SERVICE_TYPES: ServiceType[] = [
@@ -70,6 +92,70 @@ export const SERVICE_TYPES: ServiceType[] = [
         a: "We keep your move with a dedicated, background-checked team rather than handing it off to a chain of unknown contractors, so the people who carefully load your home are the people you can count on at the other end.",
       },
     ],
+    depth: {
+      headings: {
+        title: "Long Distance Movers Atlanta | Interstate Moving",
+        h1: "Long distance movers in Atlanta",
+        description: "Leaving Atlanta for another state? Itemized written quote, one crew end to end, open 24/7. Rated 5.0 from 32 Google reviews. Same-day quotes.",
+        sections: "What an interstate move out of Atlanta actually involves",
+        process: "How a long-distance move runs, from first call to last box",
+        cost: "What drives the price of long distance movers in Atlanta",
+        faq: "Long-distance questions, answered straight",
+        cta: "Tell us where you are headed",
+      },
+      answer:
+        "A long-distance move is any move that crosses a state line, and the rules change the moment it does. Interstate moves are regulated federally rather than by Georgia, which means a written estimate, a signed inventory and a stated valuation option are not extras, they are what a legitimate mover is required to give you. The practical difference for you is planning: the truck leaves once, so what is on it, how it is protected and when it arrives all have to be settled before load day, not worked out on the road.",
+      sections: [
+        {
+          heading: "Where Atlanta moves actually go",
+          body: "Atlanta sits on three interstates that cover most of the country. I-85 runs northeast through Charlotte and Richmond toward Washington and the Northeast. I-75 runs north through Chattanooga toward Nashville, Cincinnati and the Midwest, and south through Macon to Florida. I-20 runs east to Columbia and Charleston and west through Birmingham toward Dallas. Which corridor you are on shapes the drive time, the overnight stops and the delivery window, so we plan the route before we quote it rather than treating every state the same.",
+        },
+        {
+          heading: "Written estimate, and what kind",
+          body: "Federal rules require an interstate mover to give you a written estimate based on what is actually moving. Ask what kind it is. A binding estimate fixes the price for the listed inventory. A non-binding estimate can change on move day if the inventory changes. Either way, the number should be itemized so you can see what each line is for. Ours is written out line by line and sent the same day, and nothing gets added later that was not on it.",
+        },
+        {
+          heading: "Valuation is not the same as insurance",
+          body: "Every interstate mover has to offer two levels of liability. Released value is included at no extra charge and covers a fixed amount per pound per item, which on a heavy, inexpensive piece is fine and on a light, valuable one is not. Full value protection covers the repair, replacement or cash value of anything lost or damaged and costs more. You choose in writing before the truck loads. We walk you through both before you sign so the choice is deliberate.",
+        },
+        {
+          heading: "The inventory is the contract",
+          body: "Before anything goes on the truck, every item is listed and its condition noted, and you sign it. At delivery you check items off the same sheet. That inventory is what any claim is settled against, so it is worth being in the room while it is written. On a local move this step barely matters. On a move that crosses three states it is the single most important piece of paper in the process.",
+        },
+        {
+          heading: "Packing for distance is a different job",
+          body: "A box that survives twenty minutes on I-285 will not necessarily survive eight hours of highway vibration. Long-haul packing means heavier padding on furniture, corner protection on anything with an edge, dish packs for the kitchen, and load planning so weight sits low and nothing shifts. If you pack yourself, we tell you where the shortcuts fail. If we pack, the kitchen and the fragile items usually get done the day before load day.",
+        },
+        {
+          heading: "Delivery window, not delivery day",
+          body: "Interstate deliveries are quoted as a window rather than a single day, because distance, weather and mandated driver rest hours all sit between load and unload. You get that window in writing before you book, and we stay in touch on the road so you are not guessing. If you need a firm arrival for a lease start or a closing, say so at the quote stage and we plan the load date backwards from it.",
+        },
+      ],
+      quoteFactors: [
+        "Distance and route out of Atlanta, and how many overnight stops the drive requires",
+        "How much is moving, by weight and volume, and how much is packed before the crew arrives",
+        "The valuation option you choose, released value or full value protection",
+        "Packing, unpacking, furniture disassembly and reassembly added to the move",
+        "Access at both ends: stairs, elevators, long carries, and whether a full-size truck can reach the door",
+        "Specialty items: pianos, safes, oversized glass, gym equipment, anything crated",
+        "Whether the destination building needs a certificate of insurance or a booked move-in window",
+        "The date. Summer, month-end and lease-turnover weeks are the busiest windows for interstate work",
+      ],
+      process: [
+        { stage: "Free quote", when: "Back the same day", body: "Send both addresses, the date you need to be out and the date you need to be in, and roughly what is moving. You get an itemized written quote back the same day, with the estimate type and valuation options spelled out." },
+        { stage: "Book the date", when: "3 to 6 weeks ahead where possible", body: "Interstate moves need more lead time than local ones because the load date, the drive and the delivery window all have to fit together. Summer and month-end go first. Short notice is still worth asking about, because we are open 24 hours and can sometimes fit a date." },
+        { stage: "Inventory and access plan", when: "Before load day", body: "The inventory is written and signed, packing is scheduled if we are doing it, and access at the destination is confirmed: elevator reservations, certificates of insurance, gate codes and where the truck can legally park at the other end." },
+        { stage: "Load, drive, deliver", when: "Your delivery window, in writing", body: "Floors and doorways are protected, furniture is padded and wrapped, and the truck is loaded to the plan. You hear from us on the road. At delivery you check items off the inventory while the crew reassembles furniture and places it where you want it." },
+      ],
+      faqExtra: [
+        { q: "How much do long distance movers in Atlanta cost?", a: "No single figure is honest across interstate moves, because distance, weight, packing and the valuation option you choose all move the number, and a Charlotte move and a Denver move are not the same job. Send both addresses, your dates and roughly what is moving, and you get an itemized written quote back the same day with the estimate type stated." },
+        { q: "What is the difference between a binding and a non-binding estimate?", a: "A binding estimate fixes the price for the inventory listed on it. A non-binding estimate is the mover's best guess and can change on move day if what is actually moving differs. Both are legal for interstate moves. Whichever you are given, it should be in writing and itemized before you agree to anything." },
+        { q: "Should I take released value or full value protection?", a: "Released value is included at no cost and pays a fixed amount per pound, which undervalues anything light and expensive. Full value protection costs more and covers repair, replacement or cash value. If you own electronics, art, instruments or antiques, full value protection is usually the right call. We explain both before you choose." },
+        { q: "Can you deliver on a specific day for a lease start or closing?", a: "Tell us the fixed date at the quote stage and we plan the load date backwards from it. Interstate deliveries are quoted as a window, but a hard deadline at the destination is a normal constraint and it gets built into the schedule rather than hoped for." },
+        { q: "Do you move from Atlanta to Florida, Texas, the Carolinas and the Northeast?", a: "Yes. Atlanta sits on I-75, I-85 and I-20, which between them reach Florida, Texas, both Carolinas and the whole Northeast corridor. Any state is quotable. Send the destination and we route it." },
+        { q: "Who is actually driving my belongings?", a: "The same background-checked crew that loads your home, not a broker's subcontractor you have never met. One team is accountable for the load, the drive and the delivery." },
+      ],
+    },
   },
   {
     slug: "residential-moving",

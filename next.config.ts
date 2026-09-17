@@ -26,6 +26,9 @@ const nextConfig: NextConfig = {
       { source: "/gallery.php", destination: "/about", permanent: true },
       { source: "/faq.php", destination: "/", permanent: true },
       { source: "/testimonials.php", destination: "/about", permanent: true },
+      // Two more legacy static pages GSC still reports as 404s (Sep 2026).
+      { source: "/terms.html", destination: "/", permanent: true },
+      { source: "/privacy.html", destination: "/", permanent: true },
     ];
   },
 };

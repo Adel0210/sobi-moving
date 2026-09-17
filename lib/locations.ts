@@ -295,6 +295,124 @@ export const LOCATIONS: Location[] = [
         a: "Yes. We do both local and long-distance moves, fully licensed and insured, with a single careful crew handling your belongings end to end.",
       },
     ],
+    depth: {
+          headings: {
+            title: "Movers in Alpharetta, GA for Local and Long-Distance Moves",
+            description: "Avalon elevators, Windward HOA gates and GA-400 timing shape every Alpharetta move. Movers open 24/7, rated 5.0 from 32 Google reviews. Same-day quotes.",
+            h1: "Movers in Alpharetta, GA for local and long-distance moves",
+            local: "Why Alpharetta moves run on paperwork and timing",
+            capabilities: "Alpharetta moving services, past the truck",
+            areas: "Where in Alpharetta, exit by exit",
+            challenges: "The Alpharetta details that catch people out",
+            process: "Four steps from quote to keys in Alpharetta",
+            cost: "What movers in Alpharetta, GA are actually pricing",
+            services: "Local, long-distance or white-glove: the Alpharetta options",
+            nearby: "Alpharetta's neighbors on our route",
+            faq: "Asked before booking in Alpharetta",
+            reviews: "Thirty-two reviews, one rating: 5.0",
+            cta: "Send the Alpharetta addresses, get the quote back today",
+          },
+          answer:
+            "Movers in Alpharetta, GA are working three very different kinds of address. There are the mixed-use buildings at Avalon and downtown, where the elevator reservation and the certificate of insurance decide the day. There are the master-planned communities like Windward, where a gate and a sub-neighborhood HOA set the move-in window. And there are the newer subdivisions off Webb Bridge, Kimball Bridge and Haynes Bridge, where the job is mostly volume and a two-story carry. All three sit on GA-400 between exits 9 and 11, so the clock matters as much as the address.",
+          areas: [
+            {
+              name: "Avalon",
+              note: "Mixed-use on Old Milton Parkway at GA-400 exit 10, with apartments and residences stacked above retail and restaurants. Moves here go through a freight or service elevator on a booked slot, and the truck has to work around delivery bays and shoppers during retail hours. The certificate of insurance and elevator reservation are arranged with management before the day.",
+            },
+            {
+              name: "Downtown Alpharetta and City Center",
+              note: "New townhomes and condos within a few blocks of the Town Green, between North and South Broad Streets. On Saturday mornings from April to November the Farmers Market fills the green and the surrounding street parking from 8:30 to 12:30, so a downtown move in that window is planned around the Milton Avenue and City Center parking decks rather than the curb.",
+            },
+            {
+              name: "Windward",
+              note: "A master-planned community started in the mid-1980s around the 195-acre Lake Windward, split into roughly 20 neighborhoods that each carry their own rules on top of the master association. Some sections are gated, some are lakefront, and Windward Parkway at exit 11 is also where the Milton city line runs at Highway 9. Gate access and any move-in window are confirmed with the specific sub-neighborhood, not just the master HOA.",
+            },
+            {
+              name: "Webb Bridge and Kimball Bridge",
+              note: "Two-story subdivisions on the Johns Creek edge, around the 109-acre Webb Bridge Park. The Big Creek Greenway runs under Webb Bridge Road here, and the roads into the neighborhoods are two-lane with school traffic in the morning and afternoon. For local movers in Alpharetta, most of these homes are a straightforward volume job once the truck is in the driveway.",
+            },
+            {
+              name: "Haynes Bridge and North Point",
+              note: "Apartment and townhome communities along Haynes Bridge Road at exit 9 and up North Point Parkway, which parallels GA-400 from Mansell Road to Windward. Gated complexes, assigned parking and third-floor walk-ups are common, and the loading area is often a shared drive that other residents need to get through.",
+            },
+            {
+              name: "Halcyon and the Forsyth edge",
+              note: "Halcyon is a mixed-use village off GA-400 at McFarland Parkway with townhomes and apartments above the shops. It carries an Alpharetta mailing address but sits in Forsyth County, not the City of Alpharetta, which matters for schools and taxes. The new McGinnis Ferry interchange at exit 11A has changed how a truck approaches from the south.",
+            },
+          ],
+          challenges: [
+            {
+              title: "Mixed-use buildings run on reservations",
+              body: "At Avalon and the newer downtown buildings, the elevator is shared with residents, deliveries and retail, and it is booked in windows. Miss the slot and the crew is waiting, not moving. We lock in the elevator time, the loading position and the certificate of insurance with the building before move day, so the only thing left to do on the day is the work.",
+            },
+            {
+              title: "Windward is one community and twenty rulebooks",
+              body: "The master association covers the whole of Windward, but each neighborhood inside it can set its own gate procedure, guest-truck rules and move-in hours. A plan that works for a lakefront section may not work for a gated one two streets over. We ask for the specific neighborhood, not just the Windward name, and confirm access with that office.",
+            },
+            {
+              title: "GA-400 exits 9 to 11 and concert nights",
+              body: "Haynes Bridge, Old Milton and Windward Parkway all back up onto GA-400 at peak, and on show nights the Ameris Bank Amphitheatre puts 12,000 people onto Encore Parkway through a single venue access road. A load time set for late afternoon on a concert evening near Westside Parkway is a long sit in traffic. We check the amphitheatre calendar against your date and set the start time around it.",
+            },
+            {
+              title: "Corporate start dates and the Fulton County Schools calendar",
+              body: "Alpharetta has more than 700 technology companies, and Windward is the largest office district in metro Atlanta, so a large share of moves here are tied to a start date at ADP, Fiserv, Equifax or one of the other corridor employers. Families on top of that are working toward the Fulton County Schools first day in the first week of August. Late July books out first, and a fixed start date is the point we schedule backward from.",
+            },
+          ],
+          quoteFactors: [
+            "How much is moving, and how much of it is boxed before the crew arrives",
+            "Whether the building needs a freight elevator reservation, a loading-dock slot or a certificate of insurance, as at Avalon and downtown",
+            "Gate access and any HOA move-in window in Windward and the other master-planned communities",
+            "Stairs and levels, including third-floor walk-ups along Haynes Bridge and North Point and two-story homes off Webb Bridge",
+            "Carry distance from the front door to where the truck can legally sit",
+            "Packing, unpacking, furniture disassembly or white-glove setup added to the move",
+            "Specialty items: pianos, safes, oversized glass, gym equipment, large TVs",
+            "The date. Month-end, weekends, late July and amphitheatre concert nights are the tight windows",
+          ],
+          process: [
+            {
+              stage: "Free quote",
+              when: "Back the same day",
+              body: "Send both addresses, the date and roughly what is moving. If either end is Avalon, a downtown building or a gated Windward neighborhood, say so, because that changes the plan. You get an itemized quote back the same day with nothing added later.",
+            },
+            {
+              stage: "Book the date",
+              when: "2 to 4 weeks ahead for most moves",
+              body: "Two to four weeks is comfortable for Alpharetta. Late July fills first as families work toward the Fulton County Schools start, and month-end weekends go early year round. Corporate relocations with a fixed start date should book as soon as the date is known. We are open 24 hours, so short-notice dates are worth asking about.",
+            },
+            {
+              stage: "Access plan",
+              when: "Before move day",
+              body: "We confirm the elevator reservation and certificate of insurance with the building at Avalon or downtown, the gate procedure and move-in window with your Windward neighborhood office, and where the truck can sit at a Haynes Bridge or North Point complex. We also check the Ameris Bank Amphitheatre schedule and the Farmers Market calendar against your date.",
+            },
+            {
+              stage: "Move day",
+              when: "Any day, any start time",
+              body: "Floors, door jambs and elevator cabs get protected first, furniture is padded and wrapped, and beds and tables come apart and go back together at the other end. If you booked white-glove setup, furniture is placed and rooms are arranged before the crew leaves. Early starts to beat the GA-400 backup are normal.",
+            },
+          ],
+          faqExtra: [
+            {
+              q: "How much do movers in Alpharetta cost?",
+              a: "There is no single honest number, and any moving company in Alpharetta, GA that quotes one before seeing the details is guessing. An Avalon apartment with a booked freight elevator, a gated Windward lakefront house and a two-story home off Webb Bridge are three different jobs even at the same square footage. What moves the price is volume, stairs and elevators, carry distance, building paperwork, added packing or setup, and the date. Send the addresses, the date and roughly what is moving, and you get an itemized quote back the same day with no hidden fees.",
+            },
+            {
+              q: "Do you handle long-distance moves out of Alpharetta?",
+              a: "Yes. We are licensed and insured for both local and long-distance moves, and one crew handles your belongings from the Alpharetta address to the destination. Long-distance moves out of Alpharetta are often tied to a corporate transfer, so the schedule is built backward from the start date on the other end, and the quote is itemized the same way a local move is.",
+            },
+            {
+              q: "Can you move me into or out of Avalon?",
+              a: "Yes, and the building paperwork is the main part of it. Avalon residences use booked elevator slots and require a certificate of insurance from the mover, and the truck has to be positioned around retail deliveries and shoppers on Old Milton Parkway. We handle the reservation and the insurance paperwork with management ahead of time and arrive in the window that was booked.",
+            },
+            {
+              q: "Is Halcyon inside your Alpharetta service area?",
+              a: "Yes. Halcyon has an Alpharetta address but sits in Forsyth County off GA-400 at McFarland Parkway, and we treat it as part of the same north Fulton and south Forsyth run. Like Avalon, its apartments and townhomes above the shops need elevator timing and loading coordination with the property, which we arrange before the day.",
+            },
+            {
+              q: "My company gave me a start date. Can you work to it?",
+              a: "That is a normal Alpharetta move for us. Corporate relocations along the Windward Parkway and GA-400 corridor come with a fixed first day, so we schedule the move, and any packing or white-glove setup, backward from that date. If the new home is not ready in time, tell us early and we will plan the sequence around it. We are open 24 hours, 7 days a week, so evening and weekend moves are available when a weekday will not work.",
+            },
+          ],
+        },
   },
   {
     slug: "dunwoody",
@@ -320,6 +438,124 @@ export const LOCATIONS: Location[] = [
         a: "Yes. A consistent, careful crew loads, transports, and unloads your belongings so nothing gets lost in a handoff.",
       },
     ],
+    depth: {
+      headings: {
+        title: "Movers in Dunwoody, GA: Perimeter Condos to Houses",
+        h1: "Movers in Dunwoody, GA: Perimeter condos to houses",
+        description: "High Street towers, Dunwoody Village cul-de-sacs, HOA and elevator paperwork done for you. Dunwoody movers open 24/7, rated 5.0 from 32 Google reviews.",
+        local: "Perimeter towers on one side, swim and tennis streets on the other",
+        capabilities: "Packing, paperwork and the pieces that come apart",
+        areas: "Dunwoody by neighborhood, Georgetown to Dunwoody North",
+        challenges: "The four things that catch a Dunwoody move out",
+        process: "Your Dunwoody move, quote to last box",
+        cost: "Dunwoody movers pricing, line by line",
+        services: "Condo, apartment or house move in Dunwoody",
+        nearby: "Just across I-285 and GA-400",
+        reviews: "Thirty-two Google reviews, all five stars",
+        faq: "Asked before a Dunwoody move",
+        cta: "Send us your Dunwoody addresses",
+      },
+      answer:
+        "Movers in Dunwoody, GA deal with two very different jobs, often in the same week. Around Perimeter Center and the Dunwoody MARTA station the work is apartments and condos in elevator buildings, where the freight elevator reservation, the shared loading dock and the certificate of insurance decide how the day goes. West of Ashford-Dunwoody Road, in Dunwoody Village, the Branches, Kingsley and Dunwoody North, it is 1960s and 1970s ranches, split-levels and two-stories on wooded lots with basements, where the stairs and the driveway decide it instead. A Dunwoody moving company earns its fee by planning for whichever one you are in before anything is loaded.",
+      areas: [
+        {
+          name: "Perimeter Center & High Street",
+          note: "Apartment and condo towers around Perimeter Mall, Perimeter Center Parkway and Hammond Drive, including the new High Street buildings beside the Dunwoody MARTA station. Freight elevators are booked in set windows, docks are shared with deliveries, and management wants a certificate of insurance on file before a crew is let in. That paperwork is arranged with the building ahead of the day.",
+        },
+        {
+          name: "Dunwoody Village & Mount Vernon Road",
+          note: "The commercial center at Mount Vernon Road and Chamblee-Dunwoody Road, with streets like Mount Vernon Woods off it. Single-family homes from the 1960s and 1970s on wooded lots with driveways that were laid out for a sedan, not a moving truck. Mount Vernon Road closes between Jett Ferry Road and the Village on the morning of the Fourth of July parade, so a move that day is routed around it.",
+        },
+        {
+          name: "The Branches & Vanderlyn",
+          note: "Swim and tennis neighborhoods between Mount Vernon Road and Spalding Drive, with the Branches straddling the Sandy Springs line. Traditional two-stories and split-levels, many with finished basements and rear decks that sit a full level below the front door. That adds a flight in both directions and a longer carry than the street view suggests.",
+        },
+        {
+          name: "Kingsley & Redfield",
+          note: "Off Tilly Mill Road and Womack Road, close to Dunwoody High School and Peachtree Middle. Family houses on curving streets that end in cul-de-sacs tight enough that a full-size truck has to be positioned before anything comes out. Moves here tend to follow the DeKalb County Schools calendar.",
+        },
+        {
+          name: "Dunwoody North",
+          note: "About 1,250 homes bounded by North Peachtree Road, Peachtree Industrial and both sides of Tilly Mill Road, next to Brook Run Park. Ranches and split-levels where the half flight inside the front door is the detail people forget to mention when they describe the house.",
+        },
+        {
+          name: "Georgetown & Chamblee-Dunwoody Road",
+          note: "Early 1960s ranches and split-levels tucked between I-285 and Chamblee-Dunwoody Road, with townhomes around the Georgetown shopping district. Being this close to the interstate makes a long-distance load-out simple, but the on-ramp backs up at peak, so the truck is timed around it.",
+        },
+      ],
+      challenges: [
+        {
+          title: "Perimeter buildings run on reservations, not arrival times",
+          body: "The towers along Perimeter Center Parkway, Hammond Drive and Ashford-Dunwoody Road book the freight elevator in fixed windows, and several want the truck in a specific dock bay with a certificate of insurance already approved. Miss the window and the move does not happen that day. Elevator reservations, dock access and building paperwork get confirmed with management before the date is locked, and the crew arrives sized to finish inside the window.",
+        },
+        {
+          title: "The I-285 and GA-400 interchange is Dunwoody's front door",
+          body: "Ashford-Dunwoody Road meets I-285 at a diverging diamond that carries Perimeter Mall traffic on top of the commuter load, and Hammond Drive and Perimeter Center Parkway feed the same knot. At peak, and through the holiday shopping weeks, a truck can sit a long time covering a single mile. Load and unload times are set around that, so the clock runs while furniture is moving, not while the truck idles.",
+        },
+        {
+          title: "Basements and wooded lots hide a level from the quote",
+          body: "In the Branches, Vanderlyn, Kingsley and Mount Vernon Woods, a house that reads as two stories from the street often has a finished basement opening onto a sloped back yard. That is a third level and frequently a second door. It is the single most common thing left out when people describe their own home, and it is why the crew size and the quote are based on the whole house, not the front elevation.",
+        },
+        {
+          title: "One school calendar and one parade shape the busy dates",
+          body: "Dunwoody has no city school system. Its schools, from Austin and Vanderlyn up to Dunwoody High, are DeKalb County Schools, so families here move in the same late-July stretch before the first day of class. Then the Fourth of July parade closes Mount Vernon Road between Jett Ferry Road and Dunwoody Village from mid-morning. Both are known well in advance, which is exactly why the date gets checked against them when you book.",
+        },
+      ],
+      process: [
+        {
+          stage: "Free quote",
+          when: "Back the same day",
+          body: "Send both addresses, the date and roughly what is moving. If either end is a Perimeter Center building, mention the floor and whether there is a freight elevator. You get an itemized quote back the same day with every line written out and nothing added afterward.",
+        },
+        {
+          stage: "Book the date",
+          when: "2 to 4 weeks ahead for most moves",
+          body: "Two to four weeks is comfortable for Dunwoody. The late-July window before DeKalb County Schools start goes first, month-end weekends go early all year, and High Street and Perimeter buildings can only take so many moves per day because of the elevator schedule. Last-minute dates are worth asking about, since we are open 24 hours.",
+        },
+        {
+          stage: "Access plan",
+          when: "Before move day",
+          body: "For a condo or apartment, we reserve the freight elevator, confirm the dock and send the certificate of insurance to management. For a house in the Branches, Kingsley or Dunwoody North, we confirm whether the driveway takes a full-size truck, how many levels are in play including the basement, and what the HOA requires. Nothing is left to be discovered on the morning.",
+        },
+        {
+          stage: "Move day",
+          when: "Any day, any start time",
+          body: "Floors, door jambs and elevator cabs are protected first. Furniture is padded and wrapped, beds and tables come apart and go back together at the other end, and the truck is loaded in the order it will unload. Early starts to beat the Ashford-Dunwoody traffic, evening moves for buildings with late windows, and weekends are all normal for us.",
+        },
+      ],
+      quoteFactors: [
+        "How much there is to move, and how much of it is boxed before the crew arrives",
+        "Levels, including the finished basement that most Branches and Vanderlyn homes have",
+        "Carry distance from the door to where the truck can legally sit, whether that is a Kingsley cul-de-sac or a Perimeter dock",
+        "Freight elevator and loading dock booking in Perimeter Center and High Street buildings",
+        "Whether packing, unpacking or furniture disassembly is added to the move",
+        "Specialty items: pianos, safes, oversized glass, treadmills and gym equipment",
+        "Local versus long-distance. An interstate move out of Dunwoody is quoted on the full route, not the hourly clock",
+        "The date. Late July, month-end weekends and the holiday shopping weeks around Perimeter Mall are the busiest windows",
+      ],
+      faqExtra: [
+        {
+          q: "How much do movers in Dunwoody cost?",
+          a: "No flat rate is honest across Dunwoody, because a studio in a High Street building and a four-bedroom with a finished basement in the Branches are different jobs with different crews. What moves the number is volume, levels, carry distance, elevator and dock booking, packing, and the date. Send the addresses, the date and roughly what is moving, and you get an itemized quote back the same day with no hidden fees.",
+        },
+        {
+          q: "Do you offer moving and storage in Dunwoody?",
+          a: "We are movers, not a storage facility, so we do not have units to rent. What we do is move you in stages: if you have rented a storage unit, we load from your home and deliver to the unit, and later collect from the unit and deliver to the new address. Tell us the unit location and access hours when you request the quote and both legs get itemized.",
+        },
+        {
+          q: "Can you handle an interstate move out of Dunwoody?",
+          a: "Yes. We are licensed and insured for local and long-distance moves, and Dunwoody sits right on I-285 and GA-400, which makes the load-out straightforward once the truck is past the peak traffic. The long-distance quote is itemized the same way as a local one, so the full route is priced before you commit.",
+        },
+        {
+          q: "What do Perimeter Center condo and apartment buildings require from movers?",
+          a: "Almost all of them want a certificate of insurance naming the building, a reserved freight elevator window, and sometimes a specific dock bay or a move-in deposit. We handle the certificate and the elevator and dock reservations with management before the date, so the only thing left for you is to be there with the keys.",
+        },
+        {
+          q: "My house has a finished basement and a steep driveway. Does that change the plan?",
+          a: "It changes the crew size and the parking, and it is common on the wooded lots in the Branches, Vanderlyn and Mount Vernon Woods. If a loaded truck cannot use the driveway safely, it stays on the street and the carry gets longer, and the basement adds a level in both directions. Both go into the quote up front, which is what keeps the day on schedule.",
+        },
+      ],
+    },
   },
   {
     slug: "johns-creek",
@@ -345,6 +581,124 @@ export const LOCATIONS: Location[] = [
         a: "We do. After delivery we can unpack boxes, assemble furniture, and set up rooms so your family can settle in right away.",
       },
     ],
+    depth: {
+          headings: {
+            title: "Movers in Johns Creek, GA: Gates, HOAs, Big Homes",
+            description: "Gate lists, HOA move-in windows and the long drive from GA-400 shape a Johns Creek move. Open 24/7, 5.0 from 32 Google reviews, same-day itemized quotes.",
+            h1: "Movers in Johns Creek, GA: gates, HOAs and big homes",
+            local: "Behind the gate, the move is already half planned",
+            capabilities: "Packing, setup and the paperwork nobody enjoys",
+            areas: "Golf communities, swim-tennis streets and the 141 corridor",
+            challenges: "Guard gates, three-level houses and no interstate of your own",
+            process: "A Johns Creek move, start to finish",
+            cost: "Movers in Johns Creek, GA: where the quote comes from",
+            services: "Local, long-distance or office: which Johns Creek move is this?",
+            nearby: "Across the river and up the 141",
+            faq: "Asked by Johns Creek homeowners and office managers",
+            reviews: "Thirty-two five-star reviews, none of them ours",
+            cta: "Send the address and the gate name",
+          },
+          answer:
+            "Movers in Johns Creek, GA are mostly working inside master-planned communities, and that changes the job before a single box is lifted. St Ives Country Club, Country Club of the South and Bellmoore Park sit behind staffed gates with their own move-in rules. Medlock Bridge, Seven Oaks and Sugar Mill are large swim-tennis subdivisions of two-story homes with finished basements and bonus rooms over the garage. Add the fact that Johns Creek has no interstate of its own, so every truck arrives by way of GA-141, State Bridge Road or McGinnis Ferry Road, and a local moving company in Johns Creek needs a plan for access and timing as much as for the furniture.",
+          areas: [
+            {
+              name: "St Ives Country Club",
+              note: "A gated golf, swim and tennis community east of Medlock Bridge Road and south of Parsons Road, built out between 1987 and 2013. The clubhouse sits on one of the highest points in North Fulton, and the lots around it slope with it, so driveways are steep and the carry from the truck is rarely level. Gate access and the HOA move-in procedure are settled with the office before the crew arrives.",
+            },
+            {
+              name: "Medlock Bridge & Seven Oaks",
+              note: "Two of the big swim-tennis subdivisions off the GA-141 corridor, Seven Oaks between State Bridge Road and McGinnis Ferry Road. Traditional two-story homes with daylight basements and a bonus room over the garage are the norm, which makes three levels of stairs the standard here rather than the exception.",
+            },
+            {
+              name: "Sugar Mill & the Abbotts Bridge corridor",
+              note: "Sugar Mill runs off Abbotts Bridge Road between Medlock Bridge Road and Peachtree Industrial, with homes built from 1993 to 2006. Abbotts Bridge Road is also GA-120, the crossing into Gwinnett at the Chattahoochee, and it backs up at the bridge in both rush hours. We load around that rather than into it.",
+            },
+            {
+              name: "Country Club of the South & Rivermont",
+              note: "Country Club of the South is over 900 acres of estate homes behind a gate that is staffed 24 hours a day, entered from Old Alabama Road, with an Alpharetta mailing address despite sitting inside Johns Creek. Rivermont is between the club and the Chattahoochee, with wooded hillside lots and the Holcomb Bridge Road back route toward GA-400. Both need the guest list and the certificate of insurance filed ahead of the date.",
+            },
+            {
+              name: "Newtown & Doublegate",
+              note: "The established heart of the city around Newtown Park on Old Alabama Road and the Doublegate swim-tennis neighborhood, which grew out of the old Autrey Mill farmland next to the 46-acre nature preserve. Mature trees hang low over the subdivision roads here, and a full-height truck has to be routed around a few of them.",
+            },
+            {
+              name: "Bellmoore Park & Technology Park",
+              note: "Bellmoore Park is the newest gated community in the city, more than 600 homes at Bell Road and Medlock Bridge Road with 24/7 security at the entrance. Across McGinnis Ferry Road, Johns Creek Technology Park holds the office buildings along Medlock Bridge Road and Emory Johns Creek Hospital on Hospital Parkway. Office moves here happen outside trading hours so the building stays open for everyone else.",
+            },
+          ],
+          challenges: [
+            {
+              title: "The gate is the first stop, and it has a process",
+              body: "Country Club of the South, St Ives and Bellmoore Park all run staffed gates, and most of the ungated subdivisions still have an HOA with a written move-in procedure. That usually means the crew on a guest list by name, a certificate of insurance on file with the management office, and sometimes a set window for trucks. We collect the requirements when the date is booked and file everything in advance, so the truck is waved through rather than parked at the guardhouse while someone makes phone calls.",
+            },
+            {
+              title: "Johns Creek has no interstate, so the approach is long",
+              body: "GA-400 is west of the city and I-85 is east of it, and neither touches Johns Creek. Everything comes in on Medlock Bridge Road, State Bridge Road, Abbotts Bridge Road or McGinnis Ferry Road, all of which slow to a crawl at peak, and McGinnis Ferry is in the middle of a widening project. A long approach in both directions is built into the schedule, and start times are chosen so the loaded truck is not sitting on GA-141 at five o'clock.",
+            },
+            {
+              title: "Three levels is the standard house here",
+              body: "The typical Johns Creek home in Medlock Bridge, Seven Oaks or Sugar Mill is a two-story with a finished daylight basement and a bonus room over the garage. That is three flights in both directions, often with a long driveway on top, and it is the thing people most often leave out when they guess the size of their own move. The crew is sized for the levels, not the square footage.",
+            },
+            {
+              title: "The Fulton County school calendar decides the busy weeks",
+              body: "Johns Creek families are zoned to Northview on Parsons Road, Chattahoochee on Taylor Road or Johns Creek High on State Bridge Road, and most want to be in the new house before Fulton County Schools starts in early August. Late July fills first, then the month-end weekends. Booking earlier keeps the choice of date and start time with you.",
+            },
+          ],
+          quoteFactors: [
+            "How much is moving, and how much of it is boxed before the crew arrives",
+            "Levels. A finished basement plus a bonus room over the garage is three flights each way",
+            "Carry distance from the front door to where the truck can sit, which on sloped St Ives and Rivermont lots is often the street",
+            "Whether the community is gated and what its HOA requires: guest list, certificate of insurance, a move-in window",
+            "The drive itself. Local moves within Johns Creek and long-distance moves out of Georgia are priced very differently",
+            "Packing, unpacking, furniture disassembly or white-glove setup added to the move",
+            "Specialty pieces: pianos, safes, home gym equipment, oversized glass and stone tops",
+            "The date. Late July, month-end and weekends are the busiest windows in Johns Creek",
+          ],
+          process: [
+            {
+              stage: "Free quote",
+              when: "Back the same day",
+              body: "Send both addresses, the date, roughly what is moving and the name of the community if there is a gate. You get an itemized quote back the same day with every line written out and no hidden fees added afterward.",
+            },
+            {
+              stage: "Book the date",
+              when: "2 to 4 weeks ahead for most moves",
+              body: "Two to four weeks is comfortable for Johns Creek. The weeks before the Fulton County Schools start date go first, and month-end weekends fill early all year. We are open 24 hours, so a short-notice date is still worth asking about.",
+            },
+            {
+              stage: "Access plan",
+              when: "Before move day",
+              body: "We contact the HOA or gatehouse for St Ives, Country Club of the South, Bellmoore Park or whichever community you are in, get the crew on the guest list, file the certificate of insurance and confirm any move-in window. We also check whether the driveway takes a full-size truck or the load goes from the street, and for office moves in Technology Park, book the loading dock and elevator.",
+            },
+            {
+              stage: "Move day",
+              when: "Any day, any start time",
+              body: "The truck arrives with the gate already expecting it. Floors, stair rails and door jambs are protected first, furniture is padded and wrapped, and beds, tables and sectionals come apart and go back together in the new house. Early starts that beat the Medlock Bridge Road traffic and evening or weekend office moves are normal for us.",
+            },
+          ],
+          faqExtra: [
+            {
+              q: "How much do movers in Johns Creek cost?",
+              a: "There is no single honest number for Johns Creek, because a townhome near Medlock Corners and a three-level estate behind the gate at Country Club of the South are not the same job. What moves the price is volume, the number of levels, carry distance, whether packing or setup is added, the gate and HOA requirements, and the date. Send the address, the date and roughly what is moving, and you get an itemized quote back the same day with no hidden fees.",
+            },
+            {
+              q: "Do you handle gated communities like St Ives and Country Club of the South?",
+              a: "Yes, and the gate is where the planning starts. We get the crew on the guest list, file the certificate of insurance with the management office and confirm any move-in window before the date, so the truck goes straight through on the morning. Bellmoore Park, St Ives and Country Club of the South each have their own procedure and we follow whichever applies.",
+            },
+            {
+              q: "Do you do long-distance moves out of Johns Creek?",
+              a: "Yes. We are licensed and insured for both local and long-distance moves, and a full-service long-distance move out of Johns Creek can include packing, furniture disassembly, loading, the drive and unpacking at the other end. Relocations tied to a start date get scheduled backwards from that date, and the long approach out to GA-400 or I-85 is part of the plan, not a surprise on the day.",
+            },
+            {
+              q: "Can you move a small office in Technology Park or along Medlock Bridge Road?",
+              a: "Yes. Office moves in Johns Creek Technology Park and the buildings along Medlock Bridge Road are done outside trading hours, on evenings or weekends, so the business is open as normal the next morning. We arrange the loading dock, freight elevator and certificate of insurance with building management in advance, and desks and workstations are disassembled, labeled and set back up in the new suite.",
+            },
+            {
+              q: "When should a Johns Creek family book a summer move?",
+              a: "As early as the closing or lease date is known. Most families zoned to Northview, Chattahoochee or Johns Creek High want to be settled before Fulton County Schools starts in early August, so late July is the first thing to fill on the calendar. Two to four weeks ahead is comfortable most of the year, but for a July date, sooner is better.",
+            },
+          ],
+        },
   },
   {
     slug: "marietta",
