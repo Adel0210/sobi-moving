@@ -3,6 +3,7 @@ import { useState, useMemo } from "react";
 import { Icon } from "@/app/components/Icon";
 import { createClient } from "@/lib/supabase/client";
 import { notifyLead, type LeadPayload } from "@/lib/leads";
+import { trackLeadConversion } from "@/lib/google-ads";
 
 interface QuoteData {
   size: string;
@@ -97,6 +98,9 @@ const QuotePage = () => {
       setError("Sorry, something went wrong. Please call us at (630) 456-1347.");
       return;
     }
+    // Google Ads "Contact" conversion. Fired only on a lead that actually
+    // saved, so a failed submit never counts as a conversion.
+    trackLeadConversion();
     setSubmitted(true);
   };
 
