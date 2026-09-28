@@ -9,11 +9,21 @@
 // routed through, any other property.
 export const GOOGLE_ADS_ID = "AW-18424228441";
 
-// Conversion action: "Contact". Fired when a visitor completes either public
-// form, because the site confirms a lead in place rather than redirecting to a
-// separate thank-you page.
-export const LEAD_CONVERSION_LABEL = "0B7UCKDbuPscENnUrdFE";
-export const LEAD_CONVERSION_SEND_TO = `${GOOGLE_ADS_ID}/${LEAD_CONVERSION_LABEL}`;
+// Two conversion actions exist in the Ads account, one per form. Both fire on
+// the success branch of their form, because the site confirms a lead in place
+// rather than redirecting to a separate thank-you page.
+//
+// "Contact" for the contact form.
+export const CONTACT_CONVERSION_LABEL = "0B7UCKDbuPscENnUrdFE";
+// "Quote Form Submit" for the quote wizard.
+export const QUOTE_CONVERSION_LABEL = "2FPMCJrbuPscENnUrdFE";
+
+export const CONVERSION_SEND_TO = {
+  contact: `${GOOGLE_ADS_ID}/${CONTACT_CONVERSION_LABEL}`,
+  quote: `${GOOGLE_ADS_ID}/${QUOTE_CONVERSION_LABEL}`,
+} as const;
+
+export type LeadFormKind = keyof typeof CONVERSION_SEND_TO;
 
 declare global {
   interface Window {
@@ -25,15 +35,18 @@ declare global {
 /**
  * Reports one completed lead form to Google Ads.
  *
+ * Takes which form it was, so the contact form and the quote wizard land on
+ * their own conversion actions instead of being merged into one number.
+ *
  * A no-op unless gtag.js has loaded, so an ad blocker, a blocked request or a
  * dropped script costs nothing and breaks nothing. No name, email, phone
  * number or address is ever passed: the payload is the conversion label and a
  * flat value, exactly as Google's snippet defines it.
  */
-export function trackLeadConversion(): void {
+export function trackLeadConversion(form: LeadFormKind): void {
   try {
     window.gtag?.("event", "conversion", {
-      send_to: LEAD_CONVERSION_SEND_TO,
+      send_to: CONVERSION_SEND_TO[form],
       value: 1.0,
       currency: "USD",
     });

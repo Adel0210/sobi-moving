@@ -100,7 +100,7 @@ const QuotePage = () => {
     }
     // Google Ads "Contact" conversion. Fired only on a lead that actually
     // saved, so a failed submit never counts as a conversion.
-    trackLeadConversion();
+    trackLeadConversion("quote");
     setSubmitted(true);
   };
 
