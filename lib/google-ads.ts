@@ -23,7 +23,7 @@ export const CONVERSION_SEND_TO = {
   quote: `${GOOGLE_ADS_ID}/${QUOTE_CONVERSION_LABEL}`,
 } as const;
 
-export type LeadFormKind = keyof typeof CONVERSION_SEND_TO;
+export type ConversionKind = keyof typeof CONVERSION_SEND_TO;
 
 declare global {
   interface Window {
@@ -33,17 +33,22 @@ declare global {
 }
 
 /**
- * Reports one completed lead form to Google Ads.
+ * Reports one lead to Google Ads.
  *
- * Takes which form it was, so the contact form and the quote wizard land on
- * their own conversion actions instead of being merged into one number.
+ * "contact" covers both a completed contact form and a tap on a phone or text
+ * link, because each one is the same thing to this business: a person reaching
+ * out. "quote" is the quote wizard, kept separate so the two read as their own
+ * numbers in the dashboard.
  *
  * A no-op unless gtag.js has loaded, so an ad blocker, a blocked request or a
  * dropped script costs nothing and breaks nothing. No name, email, phone
  * number or address is ever passed: the payload is the conversion label and a
  * flat value, exactly as Google's snippet defines it.
+ *
+ * Google counts this action once per ad click, so a visitor who taps the phone
+ * number three times is still one conversion.
  */
-export function trackLeadConversion(form: LeadFormKind): void {
+export function trackAdsConversion(form: ConversionKind): void {
   try {
     window.gtag?.("event", "conversion", {
       send_to: CONVERSION_SEND_TO[form],

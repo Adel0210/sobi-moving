@@ -8,6 +8,7 @@ import { track } from "@vercel/analytics";
 // constants so the dashboard filters and the code cannot drift apart.
 export const CONVERSION_EVENTS = {
   phone: "Phone Call Click",
+  text: "Text Message Click",
   email: "Email Click",
   businessProfile: "Business Profile Click",
 } as const;

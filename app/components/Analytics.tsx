@@ -10,6 +10,7 @@ import {
   trackConversion,
   type ConversionEvent,
 } from "@/lib/analytics";
+import { trackAdsConversion } from "@/lib/google-ads";
 
 // Hosts that resolve to the Google Business Profile. A click on one of these is
 // map pack adjacent: the visitor is heading for the profile, where the next step
@@ -24,10 +25,19 @@ function isBusinessProfileLink(hostname: string, pathname: string): boolean {
   return host === "goo.gl" && pathname.startsWith("/maps");
 }
 
+// A tap on a phone or text link is the closest thing to a lead this site can
+// observe: the visitor is handing off to their dialer or messages app, and
+// everything after that happens on the owner's phone where no tag can reach.
+// Reported to Google Ads as "Contact", the same action the contact form uses.
+function isDirectContactLink(link: HTMLAnchorElement): boolean {
+  return link.protocol === "tel:" || link.protocol === "sms:";
+}
+
 function conversionFor(link: HTMLAnchorElement): ConversionEvent | null {
   // protocol and hostname are read off the resolved href, so a relative link can
   // never be mistaken for an outbound one.
   if (link.protocol === "tel:") return CONVERSION_EVENTS.phone;
+  if (link.protocol === "sms:") return CONVERSION_EVENTS.text;
   if (link.protocol === "mailto:") return CONVERSION_EVENTS.email;
   if (isBusinessProfileLink(link.hostname, link.pathname)) {
     return CONVERSION_EVENTS.businessProfile;
@@ -65,6 +75,16 @@ export function SiteAnalytics() {
         if (!(target instanceof Element)) return;
         const link = target.closest("a");
         if (!link) return;
+
+        // Google Ads first, and only off the admin panel, where a staff member
+        // calling a customer back must never look like a new lead.
+        if (
+          isDirectContactLink(link) &&
+          !window.location.pathname.startsWith("/admin")
+        ) {
+          trackAdsConversion("contact");
+        }
+
         const conversion = conversionFor(link);
         if (!conversion) return;
         // Read at click time rather than from a render closure, so the pathname
