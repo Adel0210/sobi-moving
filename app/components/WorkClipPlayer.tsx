@@ -34,6 +34,11 @@ export function WorkClipPlayer({ clip }: { clip: WorkClip }) {
           poster={clip.poster}
           controls
           playsInline
+          // Muted by default: the footage is shot on real jobs and its audio is
+          // site noise and whatever was playing nearby, none of it licensed for
+          // this site. Controls stay on, so a visitor who wants sound can
+          // unmute; nothing is stripped from the file itself.
+          muted
           preload="none"
           // Read out by screen readers in place of the bare "video" the native
           // control group would otherwise announce.

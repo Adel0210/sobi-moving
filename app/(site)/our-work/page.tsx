@@ -90,13 +90,6 @@ const FAQ = [
     ),
   },
   {
-    // PLACEHOLDER — the actual filming/consent policy has not been confirmed
-    // with the owner. Replace this answer before the page goes live; do not
-    // guess at it, because it is a promise made to a customer.
-    q: "Will you film my move?",
-    a: "[PLACEHOLDER — confirm the filming and consent policy with the owner before publishing. What we need: whether crews film by default, how a customer opts out, and whether anything is posted without asking first.]",
-  },
-  {
     q: "Are you licensed and insured?",
     a: "Yes. Sobi Moving is licensed and insured, and every mover on your job is background-checked. Ask us for the paperwork on the call and we will send it over.",
   },
