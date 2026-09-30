@@ -1,0 +1,129 @@
+/* ── Sobi Moving — Our Work (job clips) ─────────────────────────────────
+   Uses the brand palette vars from legacy-styles/styles.css only:
+   --accent #b85c3c, --ink, --bg, --bg-alt, --line, --serif, --sans.
+   Nothing new is introduced; the cards are the .service-card treatment
+   rebuilt around a 9:16 frame, because the footage is shot on a phone.
+
+   Mobile first: the base rules below ARE the phone layout, and the media
+   queries widen it. Mobile is where this site converts. */
+
+.work-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media (min-width: 720px) {
+  /* Two columns, not three, and the grid is capped rather than filling the
+     1240px container. Three columns would put each clip at roughly 30% of the
+     page width, and Google's video indexing guidance wants a video wider than
+     a third of the page before it will treat it as the page's main content.
+     Two wide columns also read better: this is phone footage, so the frame is
+     9:16, and a narrow 9:16 card looks like an afterthought. */
+  .work-grid { grid-template-columns: repeat(2, 1fr); gap: 28px; max-width: 920px; }
+}
+@media (min-width: 1000px) {
+  .work-grid { gap: 32px; }
+}
+
+.work-clip {
+  margin: 0;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 220ms cubic-bezier(.2, .7, .2, 1), box-shadow 220ms ease, border-color 220ms ease;
+}
+@media (hover: hover) {
+  .work-clip:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--accent-soft); }
+}
+/* Nothing should slide around for anyone who asked the OS to stop it. */
+@media (prefers-reduced-motion: reduce) {
+  .work-clip { transition: none; }
+  .work-clip:hover { transform: none; }
+}
+
+/* Vertical frame: these clips come off a phone, so 9:16 is the real shape.
+   Forcing them into 16:9 would letterbox every one of them. */
+.work-clip-frame {
+  position: relative;
+  aspect-ratio: 9 / 16;
+  background: var(--bg-deep);
+  overflow: hidden;
+}
+/* contain, not cover: the poster and the footage are both 9:16 already, and
+   cropping would cut off whatever the crew is doing at the edge of frame. */
+.work-clip-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: var(--bg-deep);
+  display: block;
+}
+.work-clip-video:focus-visible { outline: 3px solid var(--accent); outline-offset: -3px; }
+
+/* Top-right, clear of the native control bar along the bottom edge. */
+.work-clip-time {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  pointer-events: none;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: #f5efe4;
+  background: rgba(26, 24, 21, 0.68);
+}
+
+.work-clip-body { padding: 20px 20px 22px; }
+.work-clip-body h3 { font-size: 19px; line-height: 1.25; margin-bottom: 8px; }
+.work-clip-body p {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin: 0;
+}
+.work-clip-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  font-family: var(--sans);
+  font-size: 12.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+/* ── "What to look for" cards ── */
+.work-look {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 720px) { .work-look { grid-template-columns: repeat(2, 1fr); gap: 24px; } }
+@media (min-width: 1040px) { .work-look { grid-template-columns: repeat(4, 1fr); } }
+
+.work-look-card {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 26px 24px 28px;
+}
+.work-look-card h3 { font-size: 18px; line-height: 1.3; margin: 16px 0 10px; }
+.work-look-card p { font-size: 14.5px; line-height: 1.65; color: var(--ink-soft); margin: 0; }
+
+/* ── Empty state: shown until the first clip is uploaded ── */
+.work-empty {
+  border: 1px dashed var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--bg-alt);
+  padding: 40px 28px;
+  text-align: center;
+}
+.work-empty p { color: var(--ink-soft); margin: 12px auto 0; max-width: 460px; line-height: 1.65; }

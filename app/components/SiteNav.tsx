@@ -8,6 +8,7 @@ import { Icon } from "./Icon";
 const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
+  { href: "/our-work", label: "Our Work" },
   { href: "/senior-moving", label: "Senior Moving" },
   { href: "/about", label: "About" },
   { href: "/blog", label: "Blog" },

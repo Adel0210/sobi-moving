@@ -4,15 +4,21 @@ import { useState, useRef } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { Icon } from "@/app/components/Icon";
 
-// Reusable image field: upload a file (to the Supabase "media" bucket) OR paste a URL.
+// Reusable media field: upload a file (to the Supabase "media" bucket) OR paste a URL.
+//
+// Defaults to images, which is every existing caller. Pass kind="video" to take
+// an mp4 instead — the job clips on /our-work are uploaded through this, and a
+// video needs a <video> preview and a different accept filter, nothing more.
 export function ImageUpload({
   value,
   onChange,
   folder = "uploads",
+  kind = "image",
 }: {
   value: string;
   onChange: (url: string) => void;
   folder?: string;
+  kind?: "image" | "video";
 }) {
   const [uploading, setUploading] = useState(false);
   const [err, setErr] = useState<string | null>(null);
@@ -26,9 +32,15 @@ export function ImageUpload({
     const supabase = createClient();
     const safe = file.name.replace(/[^a-zA-Z0-9.-]/g, "-").toLowerCase();
     const path = `${folder}/${Date.now()}-${safe}`;
-    const { error } = await supabase.storage.from("media").upload(path, file, { cacheControl: "3600", upsert: false });
+    // A year of browser cache: these files are content-addressed by timestamp
+    // in the path, so a replacement always gets a new URL and nothing goes stale.
+    const { error } = await supabase.storage.from("media").upload(path, file, { cacheControl: "31536000", upsert: false });
     if (error) {
-      setErr("Upload failed — make sure the 'media' storage bucket is set up in Supabase.");
+      setErr(
+        kind === "video"
+          ? "Upload failed — check the 'media' bucket exists in Supabase and that the file is under the bucket's size limit."
+          : "Upload failed — make sure the 'media' storage bucket is set up in Supabase."
+      );
       setUploading(false);
       return;
     }
@@ -42,12 +54,16 @@ export function ImageUpload({
     <div>
       {value ? (
         <div style={{ position: "relative", marginBottom: 10, display: "inline-block" }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={value} alt="" style={{ maxWidth: 220, maxHeight: 140, borderRadius: 8, border: "1px solid var(--a-line)", display: "block", objectFit: "cover" }} />
+          {kind === "video" ? (
+            <video src={value} controls preload="metadata" style={{ maxWidth: 220, maxHeight: 140, borderRadius: 8, border: "1px solid var(--a-line)", display: "block", background: "#000" }} />
+          ) : (
+            /* eslint-disable-next-line @next/next/no-img-element */
+            <img src={value} alt="" style={{ maxWidth: 220, maxHeight: 140, borderRadius: 8, border: "1px solid var(--a-line)", display: "block", objectFit: "cover" }} />
+          )}
           <button
             type="button"
             onClick={() => onChange("")}
-            aria-label="Remove image"
+            aria-label={kind === "video" ? "Remove video" : "Remove image"}
             style={{ position: "absolute", top: 6, right: 6, background: "rgba(26,24,21,0.72)", color: "#fff", border: "none", borderRadius: 6, width: 26, height: 26, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}
           >
             <Icon name="x" size={14} />
@@ -58,11 +74,11 @@ export function ImageUpload({
         <button type="button" className="btn-sm ghost" disabled={uploading} onClick={() => inputRef.current?.click()}>
           <Icon name="box" size={14} /> {uploading ? "Uploading…" : value ? "Replace file" : "Upload from files"}
         </button>
-        <input ref={inputRef} type="file" accept="image/*" onChange={onFile} style={{ display: "none" }} />
+        <input ref={inputRef} type="file" accept={kind === "video" ? "video/mp4,video/quicktime,video/*" : "image/*"} onChange={onFile} style={{ display: "none" }} />
         <input
           className="note-input"
           style={{ minHeight: 0, flex: "1 1 220px" }}
-          placeholder="…or paste an image URL"
+          placeholder={kind === "video" ? "…or paste a video URL" : "…or paste an image URL"}
           value={value}
           onChange={(e) => onChange(e.target.value)}
         />

@@ -3,6 +3,7 @@ import { supabasePublic } from "@/lib/supabase/public";
 import { LOCATIONS } from "@/lib/locations";
 import { SERVICE_TYPES } from "@/lib/serviceTypes";
 import { CITY_SERVICES } from "@/lib/cityServices";
+import { getWorkClips } from "@/lib/workClips";
 
 // Regenerate hourly so newly published blog posts appear in the sitemap
 // without needing a redeploy.
@@ -27,7 +28,13 @@ const STATIC_ROUTES = [
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
 
-  const staticEntries: MetadataRoute.Sitemap = STATIC_ROUTES.map((route) => ({
+  // /our-work is submitted only once it actually has footage on it. An empty
+  // proof-of-work page is a thin page, and asking Google to index one is how a
+  // site teaches it to expect thin pages.
+  const clips = await getWorkClips();
+  const routes = clips.length ? [...STATIC_ROUTES, "/our-work"] : STATIC_ROUTES;
+
+  const staticEntries: MetadataRoute.Sitemap = routes.map((route) => ({
     url: `${SITE_URL}${route}`,
     lastModified: now,
     changeFrequency: route === "" ? "weekly" : "monthly",

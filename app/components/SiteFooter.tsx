@@ -51,6 +51,7 @@ export const SiteFooter = ({
           <h4>Company</h4>
           <ul className="footer-list">
             <li><Link href="/about">About Us</Link></li>
+            <li><Link href="/our-work">Our Work</Link></li>
             <li><Link href="/senior-moving">Senior Moving</Link></li>
             <li><Link href="/blog">Blog</Link></li>
             <li><Link href="/movers">Service Areas</Link></li>

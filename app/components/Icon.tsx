@@ -66,6 +66,11 @@ export function Icon({
       return <svg {...props}><rect x="2" y="4" width="20" height="16" rx="2" /><path d="m22 7-10 6L2 7" /></svg>;
     case "leaf":
       return <svg {...props}><path d="M11 20A7 7 0 0 1 4 13c0-4.97 4-10 12-10 0 8-5 12-9 12-2.21 0-4-1.79-4-4" /></svg>;
+    case "play": {
+      // Solid, so it reads as a play affordance at small sizes over a photo.
+      const filled: SVGProps<SVGSVGElement> = { ...props, fill: "currentColor", stroke: "currentColor", strokeWidth: 1 };
+      return <svg {...filled}><path d="M8 5.14v13.72a1 1 0 0 0 1.52.85l11.15-6.86a1 1 0 0 0 0-1.7L9.52 4.29A1 1 0 0 0 8 5.14z" /></svg>;
+    }
     case "menu":
       return <svg {...props}><path d="M3 6h18M3 12h18M3 18h18" /></svg>;
     case "x":
