@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact Sobi Moving",
-  description: "Get in touch with Sobi Moving in metro Atlanta. Call (630) 456-1347 or send a message — free consultation, fast same-day replies, no pressure.",
+  description: "Call or text Sobi Moving in metro Atlanta on (630) 456-1347. Woman-owned, licensed and insured, open 24 hours a day. Free quote in one short conversation.",
   alternates: { canonical: "/contact" },
 };
 

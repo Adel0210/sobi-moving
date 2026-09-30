@@ -71,6 +71,10 @@ export function Icon({
       const filled: SVGProps<SVGSVGElement> = { ...props, fill: "currentColor", stroke: "currentColor", strokeWidth: 1 };
       return <svg {...filled}><path d="M8 5.14v13.72a1 1 0 0 0 1.52.85l11.15-6.86a1 1 0 0 0 0-1.7L9.52 4.29A1 1 0 0 0 8 5.14z" /></svg>;
     }
+    case "message":
+      // Speech bubble, for the text-us actions. Rounded to sit beside the
+      // phone glyph without looking like a different icon set.
+      return <svg {...props}><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" /></svg>;
     case "menu":
       return <svg {...props}><path d="M3 6h18M3 12h18M3 18h18" /></svg>;
     case "x":

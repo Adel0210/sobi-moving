@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Icon } from "./Icon";
 import { LOCATIONS } from "@/lib/locations";
+import { smsHref } from "@/lib/contactLinks";
 
 export const SiteFooter = ({
   phoneDisplay = "(630) 456-1347",
@@ -79,8 +80,10 @@ export const SiteFooter = ({
           <Link href="/quote" className="btn btn-accent" style={{ marginBottom: 10 }}>
             Get a Free Quote <Icon name="arrow-right" size={14} />
           </Link>
-          <div>
-            <a href={`tel:${phoneTel}`} style={{ fontSize: 14 }}>Or call {phoneDisplay}</a>
+          <div style={{ fontSize: 14 }}>
+            <a href={`tel:${phoneTel}`}>Or call {phoneDisplay}</a>
+            <span aria-hidden="true" style={{ opacity: 0.4, padding: "0 8px" }}>·</span>
+            <a href={smsHref(phoneTel, "Hi Sobi Moving, I'd like a quote for a move.")}>Text us</a>
           </div>
         </div>
       </div>
