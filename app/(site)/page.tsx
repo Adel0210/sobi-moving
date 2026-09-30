@@ -5,8 +5,8 @@ import { PhotoSlot, PhotoPlaceholder, Stat, FAQItem, Marquee } from "@/app/compo
 import { getContent } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Atlanta Movers — Local & Long-Distance Moving",
-  description: "Sobi Moving handles local and long-distance moves across metro Atlanta with honest pricing, careful crews, and full-service packing, setup, and junk removal. Get a free quote.",
+  title: "Atlanta Moving Company, Woman-Owned, Open 24/7",
+  description: "Woman-owned movers across metro Atlanta, rated 5.0 from 32 Google reviews. Itemized written quote back the same day, no hidden fees. Open 24 hours, 7 days.",
   alternates: { canonical: "/" },
 };
 

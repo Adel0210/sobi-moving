@@ -27,6 +27,16 @@ export type ServiceType = {
   body: string; // 1-2 paragraphs of detail (use \n\n between paragraphs)
   includes: string[]; // 5-6 bullet points of what's included
   faq: { q: string; a: string }[]; // 3 Q&As specific to this service
+  // Snippet copy for pages that have not been rebuilt yet. The templated
+  // fallback ("<name> in Metro Atlanta" plus the first sentence of the intro)
+  // was returning zero clicks at position 1, so every service page now names
+  // its own title and description whether or not it has `depth`.
+  // seoTitle carries the brand itself: `app/(site)/services/layout.tsx` sets a
+  // plain-string title, which replaces the root `title.template` for this whole
+  // subtree, so nothing is appended to a service page title the way it is on
+  // `/movers/*`. Write it complete, 50-60 chars. seoDescription: 150-160.
+  seoTitle?: string;
+  seoDescription?: string;
   depth?: ServiceDepth; // present once the service page has been built out properly
 };
 
@@ -34,6 +44,9 @@ export const SERVICE_TYPES: ServiceType[] = [
   {
     slug: "local-moving",
     name: "Local Moving",
+    seoTitle: "Local Moving Company in Metro Atlanta | Sobi Moving",
+    seoDescription:
+      "Moving across town? Floors and furniture protected, beds taken apart and put back together, itemized quote the same day. Woman-owned, 5.0 from 32 reviews.",
     tagline: "Trusted local movers across metro Atlanta",
     intro:
       "When you are moving across town, you want a crew that knows the streets, the traffic, and the neighborhoods of metro Atlanta. Sobi Moving handles local moves from Sandy Springs to Decatur to Marietta with the same care we would give our own homes. You get a friendly, background-checked team and a smooth move from door to door.",
@@ -160,6 +173,9 @@ export const SERVICE_TYPES: ServiceType[] = [
   {
     slug: "residential-moving",
     name: "Residential Moving",
+    seoTitle: "Residential Movers in Metro Atlanta, GA | Sobi Moving",
+    seoDescription:
+      "House, condo or apartment, a woman-owned crew wraps the fragile things and rebuilds the furniture. Same-day itemized quote, no hidden fees. Open 24 hours.",
     tagline: "Moving services for homes, apartments, and condos",
     intro:
       "Your home is full of the things that matter most, and moving them deserves more than a couple of strangers and a rented truck. Sobi Moving specializes in residential moves for houses, apartments, and condos across metro Atlanta, treating every box and every heirloom with real care. From the first walk-through to the last item placed, you are in steady hands.",
@@ -191,6 +207,9 @@ export const SERVICE_TYPES: ServiceType[] = [
   {
     slug: "commercial-moving",
     name: "Commercial & Office Moving",
+    seoTitle: "Commercial & Office Movers in Atlanta | Sobi Moving",
+    seoDescription:
+      "Office, retail and warehouse moves run evenings and weekends so you never close. Labeled by desk, licensed and insured, woman-owned. 5.0 from 32 reviews.",
     tagline: "Office and commercial moves with minimal downtime",
     intro:
       "Every hour your business is offline costs you, so a commercial move has to be fast, organized, and dependable. Sobi Moving relocates offices, retail spaces, and commercial properties across metro Atlanta with a plan built around keeping your downtime to a minimum. Your team gets back to work in a space that is ready to go.",

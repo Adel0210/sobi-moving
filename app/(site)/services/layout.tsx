@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Moving Services — Packing, Setup & More",
-  description: "Full-service moving, packing, white-glove setup, unpacking, furniture assembly, and junk removal across metro Atlanta — transparent pricing from Sobi Moving.",
+  title: "Moving Services in Atlanta — Packing & Setup",
+  description: "Moving, packing, white-glove setup, furniture assembly and junk removal across metro Atlanta — pick only what you need. Woman-owned, 5.0 from 32 reviews.",
   alternates: { canonical: "/services" },
 };
 

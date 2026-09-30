@@ -18,10 +18,13 @@ export async function generateMetadata({ params }: { params: Promise<{ type: str
   const svc = SERVICE_TYPES.find((s) => s.slug === type);
   if (!svc) return {};
   return {
-    title: svc.depth?.headings.title ?? `${svc.name} in Metro Atlanta`,
-    // svc.intro runs well past the 155-char limit, so trim to the first
-    // sentence and top up with the proof that earns the click.
-    description: svc.depth?.headings.description ?? `${svc.intro.split(". ")[0]}. Open 24/7, rated 5.0 from 32 Google reviews.`.slice(0, 155),
+    title: svc.depth?.headings.title ?? svc.seoTitle ?? `${svc.name} in Metro Atlanta`,
+    // Falls back to a trimmed intro only if a page has neither `depth` nor
+    // authored snippet copy. Every current service page has one or the other.
+    description:
+      svc.depth?.headings.description ??
+      svc.seoDescription ??
+      `${svc.intro.split(". ")[0]}. Open 24/7, rated 5.0 from 32 Google reviews.`.slice(0, 155),
     alternates: { canonical: `/services/${svc.slug}` },
   };
 }
