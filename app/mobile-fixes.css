@@ -58,3 +58,94 @@ img {
     font-size: 11px;
   }
 }
+
+/* ============================================================
+   CONVERSION — mobile CRO pass (2026-10-03). Call/text first on
+   phones, a sticky contact bar after the hero, mid-page CTA strips,
+   compact Promise cards, and 44px tap targets in the footer.
+   ============================================================ */
+
+/* Hero CTA pair: desktop set by default, call/text set on phones. */
+.cta-mobile { display: none; }
+@media (max-width: 600px) {
+  .cta-desktop { display: none !important; }
+  .cta-mobile { display: flex !important; flex-direction: column; align-items: stretch; }
+  .cta-mobile .btn { justify-content: center; min-height: 52px; }
+}
+
+/* Mid-page CTA strip */
+.cta-strip-wrap { padding: 8px 0 56px; }
+.cta-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--bg);
+}
+.cta-strip-copy h3 { font-size: 20px; margin: 0 0 4px; }
+.cta-strip-copy p { color: var(--ink-soft); font-size: 15px; margin: 0; }
+.cta-strip-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.cta-strip-actions .btn { min-height: 46px; }
+@media (max-width: 600px) {
+  .cta-strip { flex-direction: column; align-items: stretch; padding: 20px; }
+  .cta-strip-actions { flex-direction: column; align-items: stretch; }
+  .cta-strip-actions .btn { justify-content: center; min-height: 50px; }
+  .cta-strip-quote { text-align: center; }
+}
+
+/* Sticky call / text bar, phones and small tablets only */
+.mobile-contact-bar {
+  display: none;
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 60;
+  gap: 10px;
+  padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+  background: rgba(245, 239, 228, 0.96);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-top: 1px solid var(--line);
+  transform: translateY(110%);
+  transition: transform 220ms ease;
+}
+.mobile-contact-bar.is-visible { transform: translateY(0); }
+.mobile-contact-bar .btn { flex: 1 1 0; justify-content: center; min-height: 50px; font-size: 15px; }
+.mobile-contact-bar .btn-primary { flex-basis: 62%; }
+@media (max-width: 880px) {
+  .mobile-contact-bar { display: flex; }
+  /* Keep the footer's own links reachable above the bar. */
+  footer.footer, .site-footer, footer { padding-bottom: 92px; }
+}
+
+/* Promise cards: three full phone screens became one compact stack. */
+@media (max-width: 600px) {
+  .promise-grid { gap: 10px; }
+  .promise-card {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    column-gap: 14px;
+    row-gap: 4px;
+    align-items: start;
+    padding: 16px 18px;
+  }
+  .promise-card .promise-icon { width: 40px; height: 40px; margin-bottom: 0; grid-row: 1 / span 2; }
+  .promise-card h3 { font-size: 17px; margin: 0; grid-column: 2; }
+  .promise-card p { font-size: 14.5px; margin: 0; grid-column: 2; }
+  .promise-card:hover { transform: none; box-shadow: none; }
+  /* Service card illustrations were a full screen each on phones. */
+  .service-card-photo { max-height: 150px; overflow: hidden; }
+  .service-card-photo .photo-placeholder, .service-card-photo img { min-height: 0 !important; height: 150px !important; }
+}
+
+/* Footer and small inline contact links: 44px tap targets. */
+@media (max-width: 880px) {
+  footer a[href^="tel:"], footer a[href^="sms:"], footer a[href^="mailto:"] {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 4px;
+  }
+}

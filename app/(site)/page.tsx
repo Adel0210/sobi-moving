@@ -3,6 +3,9 @@ import Link from "next/link";
 import { Icon } from "@/app/components/Icon";
 import { PhotoSlot, PhotoPlaceholder, Stat, FAQItem, Marquee } from "@/app/components/ui";
 import { getContent } from "@/lib/content";
+import { REVIEWS, REVIEW_COUNT, REVIEW_RATING } from "@/lib/reviews";
+import { HeroCtas } from "@/app/components/HeroCtas";
+import { CtaStrip } from "@/app/components/CtaStrip";
 
 export const metadata: Metadata = {
   title: "Atlanta Moving Company, Woman-Owned, Open 24/7",
@@ -17,21 +20,6 @@ const SERVICES = [
   { id: "unpacking", icon: "package", title: "Unpacking", desc: "Room by room, no boxes left behind. We even haul away the empties." },
   { id: "furniture", icon: "tool", title: "Furniture assembly", desc: "Beds, dressers, dining tables, flat packs. We bring the tools." },
   { id: "junk-removal", icon: "trash", title: "Junk removal", desc: "Donate first, dispose responsibly. Clear out the old before the new arrives." },
-];
-
-const TESTIMONIALS = [
-  {
-    quote: "Moving my mom was something I dreaded for months. Sobi Moving made it feel easy. They packed everything, set up her new room beautifully, and she walked in and said it felt like home.",
-    name: "Sarah M.", location: "Sandy Springs",
-  },
-  {
-    quote: "From the quote to the final box, everything was perfect. On time, careful with our furniture, and the white glove setup saved us days of work. Worth every penny.",
-    name: "James & Carol T.", location: "Alpharetta",
-  },
-  {
-    quote: "I've moved 4 times in 10 years. This was the first time I actually enjoyed the process. Heebel's team is the real deal.",
-    name: "Marcus R.", location: "Buckhead",
-  },
 ];
 
 const SERVICE_AREAS = ["Sandy Springs","Alpharetta","Roswell","Marietta","Dunwoody","Brookhaven","Decatur","Buckhead","Midtown","East Cobb","Johns Creek","Smyrna","Vinings","Cumming","Woodstock"];
@@ -51,10 +39,7 @@ export default async function HomePage() {
               <p className="lead" style={{ marginTop: 24, maxWidth: 520 }}>
                 {content.hero_sub}
               </p>
-              <div className="row" style={{ marginTop: 32, gap: 12 }}>
-                <Link href="/quote" className="btn btn-primary btn-arrow">Get your free quote</Link>
-                <Link href="/services" className="btn btn-ghost">View services</Link>
-              </div>
+              <HeroCtas phoneDisplay={content.phone_display} phoneTel={content.phone_tel} />
               <div className="hero-trust">
                 <span className="row" style={{ gap: 8 }}><Icon name="shield" size={14}/> Licensed &amp; Insured</span>
                 <span className="row" style={{ gap: 8 }}><Icon name="check" size={14}/> No Hidden Fees</span>
@@ -78,8 +63,8 @@ export default async function HomePage() {
                 <div style={{ display: "flex", gap: 4, marginBottom: 4 }}>
                   {[1,2,3,4,5].map(i => <Icon key={i} name="star" size={14} stroke={1.5} />)}
                 </div>
-                <div style={{ fontFamily: "var(--serif)", fontSize: 22, lineHeight: 1.1 }}>5.0</div>
-                <div style={{ fontSize: 12, color: "var(--ink-mute)" }}>{content.moves_stat} moves completed</div>
+                <div style={{ fontFamily: "var(--serif)", fontSize: 22, lineHeight: 1.1 }}>{REVIEW_RATING}</div>
+                <div style={{ fontSize: 12, color: "var(--ink-mute)" }}>{REVIEW_COUNT} Google reviews</div>
               </div>
             </div>
           </div>
@@ -117,6 +102,8 @@ export default async function HomePage() {
         </div>
       </section>
 
+      <CtaStrip phoneDisplay={content.phone_display} phoneTel={content.phone_tel} />
+
       {/* SERVICES */}
       <section>
         <div className="container">
@@ -150,6 +137,13 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      <CtaStrip
+        phoneDisplay={content.phone_display}
+        phoneTel={content.phone_tel}
+        title="Not sure which of these you need?"
+        body="Tell us about the move in one call or text. We size the crew and the services to it and send the itemized number the same day."
+      />
 
       {/* SENIOR MOVING FEATURE */}
       {seniorEmphasis !== "subtle" ? (
@@ -197,26 +191,28 @@ export default async function HomePage() {
             </div>
             <div className="row" style={{ gap: 4 }}>
               {[1,2,3,4,5].map(i => <Icon key={i} name="star" size={20}/>) }
-              <span style={{ marginLeft: 10, color: "var(--ink-soft)", fontSize: 14 }}>5.0 average — 32 verified Google reviews</span>
+              <span style={{ marginLeft: 10, color: "var(--ink-soft)", fontSize: 14 }}>{REVIEW_RATING} average — {REVIEW_COUNT} Google reviews</span>
             </div>
           </div>
           <div className="testimonial-grid">
-            {TESTIMONIALS.map((t, i) => (
-              <figure key={i} className="testimonial-card">
+            {/* Real Google reviews only (lib/reviews.ts). The aggregate rating
+                above is a claim, and these are the reviews that back it. */}
+            {REVIEWS.map((r) => (
+              <figure key={r.author} className="testimonial-card">
                 <div className="quote-mark">"</div>
-                <blockquote>{t.quote}</blockquote>
+                <blockquote>{r.body}</blockquote>
                 <figcaption>
                   <div className="t-avatar"></div>
                   <div>
-                    <div style={{ fontWeight: 500 }}>{t.name}</div>
-                    <div style={{ fontSize: 13, color: "var(--ink-mute)" }}>{t.location}</div>
+                    <div style={{ fontWeight: 500 }}>{r.author}</div>
+                    <div style={{ fontSize: 13, color: "var(--ink-mute)" }}>Google review · {r.when}</div>
                   </div>
                 </figcaption>
               </figure>
             ))}
           </div>
           <div className="stats-row">
-            <Stat value={content.moves_stat} label="Moves completed" />
+            <Stat value={REVIEW_COUNT} label="Google reviews" />
             <Stat value="5★" label="Average rating" />
             <Stat value="6+ yrs" label="Experience" />
             <Stat value="7 days" label="Per week" />

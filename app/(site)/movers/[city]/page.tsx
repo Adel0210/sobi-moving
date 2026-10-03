@@ -7,6 +7,9 @@ import { SERVICE_TYPES } from "@/lib/serviceTypes";
 import { cityServiceHref } from "@/lib/cityServices";
 import { Icon } from "@/app/components/Icon";
 import { FAQItem } from "@/app/components/ui";
+import { HeroCtas } from "@/app/components/HeroCtas";
+import { CtaStrip } from "@/app/components/CtaStrip";
+import { getContent } from "@/lib/content";
 
 const SITE = "https://www.sobimoving.com";
 
@@ -41,6 +44,7 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
   const loc = LOCATIONS.find((l) => l.slug === city);
   if (!loc) notFound();
   const nearby = nearbyLocations(loc.slug);
+  const content = await getContent();
 
   const faqLd = {
     "@context": "https://schema.org",
@@ -110,10 +114,14 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
             <p className="lead" style={{ marginTop: 20, maxWidth: 640 }}>
               {loc.depth ? loc.depth.answer : loc.intro}
             </p>
-            <div className="row" style={{ marginTop: 30, gap: 12 }}>
-              <Link href="/quote" className="btn btn-primary btn-arrow">Get your free quote</Link>
-              <a href="tel:6304561347" className="btn btn-ghost"><Icon name="phone" size={14} /> (630) 456-1347</a>
-            </div>
+            <HeroCtas
+              phoneDisplay={content.phone_display}
+              phoneTel={content.phone_tel}
+              secondaryHref={`tel:${content.phone_tel}`}
+              secondaryLabel={content.phone_display}
+              smsBody={`Hi Sobi Moving, I'd like a quote for a move in ${loc.city}.`}
+              marginTop={30}
+            />
             <div className="hero-trust" style={{ marginTop: 26 }}>
               <span className="row" style={{ gap: 8 }}><Icon name="shield" size={14} /> Licensed &amp; insured</span>
               <span className="row" style={{ gap: 8 }}><Icon name="check" size={14} /> No hidden fees</span>
@@ -156,6 +164,14 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
           </div>
         </div>
       </section>
+
+      <CtaStrip
+        phoneDisplay={content.phone_display}
+        phoneTel={content.phone_tel}
+        title={`Moving in ${loc.city}? Get the number now.`}
+        body="One call or text, and an itemized quote comes back the same day. No form."
+        smsBody={`Hi Sobi Moving, I'd like a quote for a move in ${loc.city}.`}
+      />
 
       {/* AREAS — named neighbourhoods with a real specific each. Generic metro
           copy is what leaves these pages indistinguishable from every other
@@ -200,6 +216,16 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
             </div>
           </div>
         </section>
+      ) : null}
+
+      {loc.depth ? (
+      <CtaStrip
+        phoneDisplay={content.phone_display}
+        phoneTel={content.phone_tel}
+        title={`Ready to price your ${loc.city} move?`}
+        body="Tell us the address, the date and roughly what is moving. The itemized number comes back the same day."
+        smsBody={`Hi Sobi Moving, I'd like a quote for a move in ${loc.city}.`}
+      />
       ) : null}
 
       {/* PROCESS — stages with the durations we can actually stand behind.

@@ -1,5 +1,6 @@
 import { SiteNav } from "../components/SiteNav";
 import { SiteFooter } from "../components/SiteFooter";
+import { MobileContactBar } from "../components/MobileContactBar";
 import { BusinessSchema } from "../components/BusinessSchema";
 import { GoogleAds } from "../components/GoogleAds";
 import { getContent } from "@/lib/content";
@@ -15,6 +16,7 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
       <SiteNav phoneDisplay={c.phone_display} phoneTel={c.phone_tel} />
       {children}
       <SiteFooter phoneDisplay={c.phone_display} phoneTel={c.phone_tel} email={c.email} hours={c.hours} />
+      <MobileContactBar phoneDisplay={c.phone_display} phoneTel={c.phone_tel} />
     </>
   );
 }
