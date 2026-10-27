@@ -197,7 +197,16 @@ export default async function OurWorkPage() {
           </div>
 
           {clips.length ? (
-            <div className="work-grid">
+            <div
+              className="work-grid"
+              // On a phone this is a horizontal scroller. Chrome does not make
+              // an overflow container focusable on its own, so without a tab
+              // stop a keyboard user cannot reach the clips past the first one.
+              // The name is what a screen reader announces on entering it.
+              role="region"
+              aria-label="Job clips"
+              tabIndex={0}
+            >
               {clips.map((clip) => (
                 <WorkClipPlayer key={clip.slug} clip={clip} />
               ))}

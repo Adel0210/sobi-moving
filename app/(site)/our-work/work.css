@@ -127,3 +127,54 @@
   text-align: center;
 }
 .work-empty p { color: var(--ink-soft); margin: 12px auto 0; max-width: 460px; line-height: 1.65; }
+
+/* ------------------------------------------------------------------
+   Phone: a swipe carousel instead of a stack.
+
+   The grid above collapses to one column on a phone, which means a
+   visitor has to scroll past a full-height 9:16 card before learning a
+   second clip exists. Sideways is how this kind of footage is watched
+   everywhere else, and a peeking second card advertises that there is
+   more without needing a dot row.
+
+   Deliberately CSS only, and deliberately not a slider library. Every
+   <video> stays in the rendered HTML exactly as the grid left it, so
+   none of the video-indexing reasoning in WorkClipPlayer changes: the
+   clips are still present and measurable, and scrolling sideways is no
+   more "a user action to load the video" than scrolling down is. A
+   JS slider that mounts the active slide only would have broken that.
+   ------------------------------------------------------------------ */
+@media (max-width: 719px) {
+  .work-grid {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    /* Room for the card's hover/active shadow, which would otherwise be
+       clipped by the scroll container. */
+    padding-bottom: 10px;
+    scrollbar-width: none;
+  }
+  .work-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .work-grid > .work-clip {
+    /* Just under full width: the next card's edge stays on screen. */
+    flex: 0 0 88%;
+    scroll-snap-align: start;
+  }
+
+  /* One clip has nothing to swipe to, so let it fill the row rather than
+     leaving a confusing empty strip where a second card would be. */
+  .work-grid > .work-clip:only-child {
+    flex-basis: 100%;
+  }
+
+  /* The lift on tap reads as wobble inside a scroller. */
+  .work-grid > .work-clip:hover {
+    transform: none;
+  }
+}
