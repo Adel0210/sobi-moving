@@ -110,15 +110,15 @@ None of that is a trick. It gives the mover less to do, and on an itemized quote
 A [Marietta](/movers/marietta) move often means a single-family house, a garage, and a driveway the truck can reach. A [Smyrna](/movers/smyrna) move is more likely a townhome with interior stairs or an apartment with a reserved elevator. Neither is pricier by default, but each has one input worth mentioning early.
 
 Ready to get a real number instead of a guess? Get your [free itemized quote](/quote) today, or call or text (630) 456-1347. We answer 24 hours a day, 7 days a week, and the quote is in writing, usually the same day.`,
-  cover_image: null,
-  cover_alt: null,
+  cover_image: "/blog/how-movers-price-a-move-atlanta.jpg",
+  cover_alt: "A mover with a clipboard checking labeled boxes before loading.",
   author_name: "Sobi Moving",
   author_bio: null,
   author_credentials: "Licensed and insured metro Atlanta movers, open 24/7",
   category: "Costs & Quotes",
   tags: ["moving costs", "moving quotes", "atlanta movers", "affordable movers", "comparing movers"],
   status: "published",
-  published_at: "2026-11-03T13:00:00.000Z",
+  published_at: "2026-11-02T13:00:00.000Z",
   reviewed_at: null,
   reading_minutes: 7,
   meta_title: "How Much Do Movers Cost in Atlanta? How Quotes Work",

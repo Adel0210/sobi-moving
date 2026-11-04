@@ -117,15 +117,15 @@ On every corridor, the crew that loads your home in [Roswell](/movers/roswell) o
 ## Ready to leave Georgia with the paperwork in order?
 
 Send both addresses, your dates and what is moving, and you get an itemized written quote back the same day with the estimate type and valuation options spelled out. [Get your long-distance quote](/quote), or call or text (630) 456-1347. We are open 24 hours, 7 days.`,
-  cover_image: null,
-  cover_alt: null,
+  cover_image: "/blog/moving-out-of-georgia-interstate-checklist.jpg",
+  cover_alt: "A truck on an interstate highway under a clear sky.",
   author_name: "Sobi Moving",
   author_bio: null,
   author_credentials: "Licensed and insured metro Atlanta movers, open 24/7",
   category: "Long Distance",
   tags: ["interstate moving", "long distance", "fmcsa", "checklist", "atlanta"],
   status: "published",
-  published_at: "2026-11-03T13:00:00.000Z",
+  published_at: "2026-10-21T13:00:00.000Z",
   reviewed_at: null,
   reading_minutes: 7,
   meta_title: "Interstate Movers Atlanta: Moving Out of Georgia Checklist",

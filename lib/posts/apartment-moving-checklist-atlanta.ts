@@ -112,15 +112,15 @@ Two more things worth knowing. For an in-state move, Georgia movers are certifie
 ## Ready to book your apartment move?
 
 [Get your same-day itemized written quote](/quote) with the elevator window, the certificate of insurance and the carry distance already built in, so the price you see is the price you pay. Or call or text (630) 456-1347 any hour, any day, and tell us the building. We will take it from there.`,
-  cover_image: null,
-  cover_alt: null,
+  cover_image: "/blog/apartment-moving-checklist-atlanta.jpg",
+  cover_alt: "A mover carrying a cardboard box up an apartment staircase.",
   author_name: "Sobi Moving",
   author_bio: null,
   author_credentials: "Licensed and insured metro Atlanta movers, open 24/7",
   category: "Apartments & Condos",
   tags: ["apartment moving", "condo moving", "certificate of insurance", "freight elevator", "atlanta"],
   status: "published",
-  published_at: "2026-11-03T13:00:00.000Z",
+  published_at: "2026-10-07T13:00:00.000Z",
   reviewed_at: null,
   reading_minutes: 7,
   meta_title: "Apartment Movers Atlanta: Elevator, Dock and COI Checklist",

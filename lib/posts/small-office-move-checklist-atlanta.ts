@@ -118,15 +118,15 @@ There is no "we will sort it out this week". The sorting happened Saturday, and 
 ## Ready to move your office without losing a business day?
 
 Tell us both addresses, your headcount, and the hour you need to reopen, and you get an itemized written quote back the same day with no hidden fees. Sobi Moving is open 24 hours, so an overnight or weekend office move is a normal booking. [Get your office moving quote](/quote), or call or text (630) 456-1347.`,
-  cover_image: null,
-  cover_alt: null,
+  cover_image: "/blog/small-office-move-checklist-atlanta.jpg",
+  cover_alt: "An office worker packing a desk into a cardboard box before a relocation.",
   author_name: "Sobi Moving",
   author_bio: null,
   author_credentials: "Licensed and insured metro Atlanta movers, open 24/7",
   category: "Planning",
   tags: ["office moving", "commercial moving", "johns creek", "sandy springs", "marietta"],
   status: "published",
-  published_at: "2026-11-03T13:00:00.000Z",
+  published_at: "2026-10-14T13:00:00.000Z",
   reviewed_at: null,
   reading_minutes: 7,
   meta_title: "Office Movers Atlanta: Small Office Move Checklist, 6 Weeks",

@@ -41,13 +41,20 @@ async function supabasePublished(): Promise<Post[]> {
   }
 }
 
-/** Every published post, newest first. */
+// A static post with a published_at in the future is scheduled, not live. The
+// blog pages revalidate every 60 seconds, so it appears on its own once the
+// date passes; nothing has to be deployed on the day.
+function isLive(p: { published_at: string | null }, now = Date.now()): boolean {
+  return !!p.published_at && Date.parse(p.published_at) <= now;
+}
+
+/** Every published post, newest first. Scheduled posts are excluded until due. */
 export async function getPublishedPosts(): Promise<Post[]> {
   const db = await supabasePublished();
   const taken = new Set(db.map((p) => p.slug));
   const merged = [
     ...db,
-    ...STATIC_POSTS.filter((p) => !taken.has(p.slug)).map(fromStatic),
+    ...STATIC_POSTS.filter((p) => !taken.has(p.slug) && isLive(p)).map(fromStatic),
   ];
   return merged.sort((a, b) =>
     (b.published_at ?? "").localeCompare(a.published_at ?? ""),
@@ -68,5 +75,5 @@ export async function getPublishedPost(slug: string): Promise<Post | null> {
     // fall through to the static set
   }
   const s = STATIC_POSTS.find((p) => p.slug === slug);
-  return s ? fromStatic(s) : null;
+  return s && isLive(s) ? fromStatic(s) : null;
 }

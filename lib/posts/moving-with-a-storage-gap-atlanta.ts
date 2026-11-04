@@ -108,15 +108,15 @@ Our [Dunwoody movers](/movers/dunwoody) and [Sandy Springs movers](/movers/sandy
 ## Ready to plan both legs?
 
 Tell us your two dates, the unit size, and what is going in. Sobi Moving is licensed and insured, open 24 hours, 7 days, with a same-day itemized written quote and no hidden fees. We do not run storage. We do the move in and the move out, both on one quote. [Get your quote here](/quote), or call or text (630) 456-1347.`,
-  cover_image: null,
-  cover_alt: null,
+  cover_image: "/blog/moving-with-a-storage-gap-atlanta.jpg",
+  cover_alt: "Cardboard boxes stacked neatly inside a clean storage unit.",
   author_name: "Sobi Moving",
   author_bio: null,
   author_credentials: "Licensed and insured metro Atlanta movers, open 24/7",
   category: "Planning",
   tags: ["storage", "planning", "dunwoody", "sandy springs", "moving and storage"],
   status: "published",
-  published_at: "2026-11-03T13:00:00.000Z",
+  published_at: "2026-09-23T13:00:00.000Z",
   reviewed_at: null,
   reading_minutes: 7,
   meta_title: "Moving and Storage Atlanta: Bridging a Gap Between Homes",

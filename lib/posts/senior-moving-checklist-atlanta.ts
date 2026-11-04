@@ -119,15 +119,15 @@ Plenty of families coordinate a parent's move to Sandy Springs or Roswell from C
 If the sorting itself needs hands on the ground and nobody in the family can be there, senior move managers exist for exactly that, and AARP points families to the National Association of Senior and Specialty Move Managers directory to find one. For the packing, transport, setup and clear-out, our team covers [Sandy Springs](/movers/sandy-springs), [Roswell](/movers/roswell), Marietta, Dunwoody and the rest of metro Atlanta, and we are open 24 hours, 7 days, so an early move-in window is not a problem.
 
 Ready to plan your parent's move? [Get a free senior move quote](/quote) or call or text us at (630) 456-1347. We will walk you through the timeline, call the community for you and send an itemized written quote the same day.`,
-  cover_image: null,
-  cover_alt: null,
+  cover_image: "/blog/senior-moving-checklist-atlanta.jpg",
+  cover_alt: "A mother and adult daughter packing moving boxes together in a sunny kitchen.",
   author_name: "Sobi Moving",
   author_bio: null,
   author_credentials: "Licensed and insured metro Atlanta movers, open 24/7",
   category: "Senior Moving",
   tags: ["senior moving", "downsizing", "assisted living", "checklist", "sandy springs"],
   status: "published",
-  published_at: "2026-11-03T13:00:00.000Z",
+  published_at: "2026-09-09T13:00:00.000Z",
   reviewed_at: null,
   reading_minutes: 7,
   meta_title: "Senior Movers Atlanta: Checklist for Moving a Parent",

@@ -110,15 +110,15 @@ Run through all nine and a pattern shows. A reliable Marietta mover answers ever
 That is the test. Not the ad, not the star count, not the lowest number. Whether the company can show you, in writing, that it is what it says it is. Start with a [local move quote](/services/local-moving) and apply the checks to it.
 
 Ready to run the checks on Sobi? [Get your written quote](/quote) or call or text (630) 456-1347, any hour, any day. Ask for the certificate number while you are at it.`,
-  cover_image: null,
-  cover_alt: null,
+  cover_image: "/blog/how-to-find-reliable-movers-marietta-ga.jpg",
+  cover_alt: "Two uniformed movers carrying boxes through a bright living room.",
   author_name: "Sobi Moving",
   author_bio: null,
   author_credentials: "Licensed and insured metro Atlanta movers, open 24/7",
   category: "Planning",
   tags: ["marietta", "hiring movers", "licensing", "estimates", "red flags"],
   status: "published",
-  published_at: "2026-11-03T13:00:00.000Z",
+  published_at: "2026-11-01T13:00:00.000Z",
   reviewed_at: null,
   reading_minutes: 7,
   meta_title: "Reliable Movers Marietta GA: 9 Checks Before You Book",
