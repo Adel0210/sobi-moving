@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { supabasePublic } from "@/lib/supabase/public";
+import { getPublishedPosts } from "@/lib/blog";
 import { LOCATIONS } from "@/lib/locations";
 import { SERVICE_TYPES } from "@/lib/serviceTypes";
 import { CITY_SERVICES } from "@/lib/cityServices";
@@ -44,21 +44,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   let postEntries: MetadataRoute.Sitemap = [];
 
   try {
-    const { data, error } = await supabasePublic
-      .from("posts")
-      .select("slug, updated_at")
-      .eq("status", "published");
-
-    if (!error && data) {
-      postEntries = data.map((post: { slug: string; updated_at: string | null }) => ({
-        url: `${SITE_URL}/blog/${post.slug}`,
-        lastModified: post.updated_at ? new Date(post.updated_at) : now,
-        changeFrequency: "monthly",
-        priority: 0.6,
-      }));
-    }
+    const posts = await getPublishedPosts();
+    postEntries = posts.map((post) => ({
+      url: `${SITE_URL}/blog/${post.slug}`,
+      lastModified: post.updated_at ? new Date(post.updated_at) : now,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    }));
   } catch {
-    /* Supabase unavailable — return static routes only */
+    // no posts, or the table is unreachable: the static routes still ship
   }
 
   return [...staticEntries, ...postEntries];

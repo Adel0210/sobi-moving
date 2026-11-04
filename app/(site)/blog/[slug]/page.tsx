@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { marked } from "marked";
-import { supabasePublic } from "@/lib/supabase/public";
+import { getPublishedPost, getPublishedPosts } from "@/lib/blog";
 import type { Post } from "@/lib/types";
 import "../blog.css";
 
@@ -29,31 +29,12 @@ function absolute(url: string | null | undefined): string | undefined {
 }
 
 async function getPost(slug: string): Promise<Post | null> {
-  try {
-    const { data, error } = await supabasePublic
-      .from("posts")
-      .select("*")
-      .eq("slug", slug)
-      .eq("status", "published")
-      .maybeSingle();
-    if (error || !data) return null;
-    return data as Post;
-  } catch {
-    return null;
-  }
+  return getPublishedPost(slug);
 }
 
 export async function generateStaticParams() {
-  try {
-    const { data, error } = await supabasePublic
-      .from("posts")
-      .select("slug")
-      .eq("status", "published");
-    if (error || !data) return [];
-    return data.map((row: { slug: string }) => ({ slug: row.slug }));
-  } catch {
-    return [];
-  }
+  const posts = await getPublishedPosts();
+  return posts.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {

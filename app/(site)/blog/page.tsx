@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { supabasePublic } from "@/lib/supabase/public";
+import { getPublishedPosts } from "@/lib/blog";
 import type { Post } from "@/lib/types";
 import "./blog.css";
 
@@ -23,18 +23,7 @@ function formatDate(value: string | null): string {
 }
 
 const BlogIndexPage = async () => {
-  let posts: Post[] = [];
-
-  try {
-    const { data, error } = await supabasePublic
-      .from("posts")
-      .select("*")
-      .eq("status", "published")
-      .order("published_at", { ascending: false });
-    if (!error && data) posts = data as Post[];
-  } catch {
-    /* table missing or connection error — fall through to empty state */
-  }
+  const posts: Post[] = await getPublishedPosts();
 
   return (
     <main className="page-enter">
