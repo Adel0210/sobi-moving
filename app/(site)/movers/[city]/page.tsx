@@ -309,7 +309,22 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
                 <Link key={n.slug} href={`/movers/${n.slug}`} className="service-card">
                   <div className="service-card-body">
                     <div className="service-icon"><Icon name="map" size={18} /></div>
-                    <h3>Movers in {n.city}</h3>
+                    {/* The city name alone, not "Movers in {city}".
+                        Every city page carried four H3s advertising another
+                        city's exact money phrase, so /movers/marietta shipped
+                        headings for East Cobb, Smyrna, Vinings and Woodstock.
+                        It then started ranking for `east cobb moving company`
+                        at position 12.9 while its own `movers marietta ga`
+                        sat at zero impressions — the page was competing for
+                        its neighbours' terms instead of its own.
+
+                        This is a single-variable test of that. The links stay,
+                        because the crawl path and the reader both want them;
+                        only the commercial phrase leaves the heading. The
+                        footer city list is deliberately untouched so that if
+                        Marietta recovers we know which change did it. Read it
+                        2026-11-20, and change nothing else here until then. */}
+                    <h3>{n.city}</h3>
                     <p>{n.county}</p>
                   </div>
                 </Link>
