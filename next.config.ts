@@ -29,6 +29,10 @@ const nextConfig: NextConfig = {
       // Two more legacy static pages GSC still reports as 404s (Sep 2026).
       { source: "/terms.html", destination: "/", permanent: true },
       { source: "/privacy.html", destination: "/", permanent: true },
+      // The Google Ads call campaign shows sobimoving.com/movers/atlanta as its
+      // display address, and no such page exists. Send it to the service-area
+      // hub. Temporary (307) so a real /movers/atlanta page can replace it later.
+      { source: "/movers/atlanta", destination: "/movers", permanent: false },
     ];
   },
 };
